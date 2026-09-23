@@ -25,7 +25,7 @@ class Agent:
         return choose_portfolio(options, budget, contacts)
 
     def act(self, env):
-        self.last_trace = {"pilots": [], "warnings": [], "version": "adaptive-portfolio-v1.3"}
+        self.last_trace = {"pilots": [], "warnings": [], "version": "adaptive-portfolio-v1.2"}
         profile = env.customer_profile.copy().reset_index(drop=True)
         required = {"ID_NUMBER", "current_tariff", "arpu_segment", "predicted_arpu", "data_segment", "call_segment"}
         if required - set(profile.columns):

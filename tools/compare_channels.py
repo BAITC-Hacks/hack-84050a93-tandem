@@ -16,13 +16,16 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from agent import Agent
-from strategy.portfolio import shadow_portfolio
+from strategy.portfolio import choose_portfolio
+from experiments.channel_allocation.optimizer import allocate_channels
 from tools.benchmark import _git_metadata, parse_seeds
 
 
-class ReferenceAgent(Agent):
+class CandidateAgent(Agent):
     def plan_portfolio(self, options, budget, contacts):
-        return shadow_portfolio(options, budget, contacts)
+        reference = choose_portfolio(options, budget, contacts)
+        return sorted(allocate_channels(reference, options, budget), key=lambda o: (
+            -o.gain, o.campaign['filter_current_tariff'], o.campaign['channel']))
 
 
 def main():
@@ -36,7 +39,7 @@ def main():
     provenance = _git_metadata()
     rows = []
     for seed in args.seeds:
-        agents = [ReferenceAgent(), Agent()]
+        agents = [Agent(), CandidateAgent()]
         results, seconds = [], []
         for agent in agents:
             started = time.perf_counter()
