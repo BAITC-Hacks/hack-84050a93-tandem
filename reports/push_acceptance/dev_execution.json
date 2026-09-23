@@ -1,0 +1,30 @@
+{
+  "checked_sha": "3af29c7aa40bf8c4467adb6654910b1c6077c7ae",
+  "started_at_utc": "2026-09-23T11:54:44.669733+00:00",
+  "log_transform": "UTF-8 decoded output; absolute repository prefix replaced case-insensitively by <REPO>; user profile prefix replaced by <USERPROFILE>; CRLF normalized to LF. No lines dropped.",
+  "environment_overrides": {
+    "PYTHONUTF8": "1",
+    "PYTHONIOENCODING": "utf-8"
+  },
+  "commands": [
+    {
+      "command": ".venv/Scripts/python.exe -m pip install -r requirements-dev.txt",
+      "started_at_utc": "2026-09-23T11:54:44.669733+00:00",
+      "finished_at_utc": "2026-09-23T11:54:52.379334+00:00",
+      "elapsed_seconds": 7.718,
+      "exit_code": 0,
+      "stdout": "install_dev_stdout.txt",
+      "stderr": "install_dev_stderr.txt"
+    },
+    {
+      "command": ".venv/Scripts/python.exe -m pytest -q tests experiments/push_overlay",
+      "started_at_utc": "2026-09-23T11:54:52.408810+00:00",
+      "finished_at_utc": "2026-09-23T11:55:04.294741+00:00",
+      "elapsed_seconds": 11.875,
+      "exit_code": 0,
+      "stdout": "pytest_stdout.txt",
+      "stderr": "pytest_stderr.txt"
+    }
+  ],
+  "finished_at_utc": "2026-09-23T11:55:04.295248+00:00"
+}

@@ -1,0 +1,25 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "before_requirements_dev": {
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "pip": "25.0.1",
+    "python-dateutil": "2.9.0.post0",
+    "six": "1.17.0",
+    "tzdata": "2026.4"
+  },
+  "after_requirements_dev": {
+    "colorama": "0.4.6",
+    "iniconfig": "2.3.0",
+    "numpy": "2.5.3",
+    "packaging": "26.3",
+    "pandas": "3.0.6",
+    "pip": "25.0.1",
+    "pluggy": "1.6.0",
+    "Pygments": "2.21.0",
+    "pytest": "9.1.1",
+    "python-dateutil": "2.9.0.post0",
+    "six": "1.17.0",
+    "tzdata": "2026.4"
+  }
+}

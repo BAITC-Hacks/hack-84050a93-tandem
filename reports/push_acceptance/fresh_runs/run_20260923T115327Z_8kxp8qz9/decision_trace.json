@@ -1,0 +1,1050 @@
+{
+  "version": "adaptive-portfolio-v1.3",
+  "trace_schema": "nonadditive_full_coverage_overlay_v1",
+  "base_trace": {
+    "pilots": [
+      {
+        "current_tariff": "tariff_8",
+        "arpu_segment": "HIGH",
+        "target_tariff": "tariff_12",
+        "channel": "sms",
+        "n_customers": 200,
+        "observed_lift_ratio": -0.05680067313305702,
+        "posterior_reference_mean": -0.05291768383716591,
+        "posterior_reference_std": 0.05509334945851192,
+        "confirmation": false,
+        "estimated_information_value": 1088591.1289934798,
+        "stratified_segment": "HIGH"
+      },
+      {
+        "current_tariff": "tariff_4",
+        "arpu_segment": "MID",
+        "target_tariff": "tariff_9",
+        "channel": "sms",
+        "n_customers": 200,
+        "observed_lift_ratio": 0.05323465780814429,
+        "posterior_reference_mean": 0.05542464945773318,
+        "posterior_reference_std": 0.05541615661994558,
+        "confirmation": false,
+        "estimated_information_value": 790562.8810600645,
+        "stratified_segment": "MID"
+      },
+      {
+        "current_tariff": "tariff_8",
+        "arpu_segment": "LOW",
+        "target_tariff": "tariff_9",
+        "channel": "sms",
+        "n_customers": 200,
+        "observed_lift_ratio": 0.20305108178172734,
+        "posterior_reference_mean": 0.20491695196036677,
+        "posterior_reference_std": 0.055192983872174285,
+        "confirmation": false,
+        "estimated_information_value": 391813.4479342482,
+        "stratified_segment": "LOW"
+      },
+      {
+        "current_tariff": "tariff_4",
+        "arpu_segment": "HIGH",
+        "target_tariff": "tariff_12",
+        "channel": "sms",
+        "n_customers": 200,
+        "observed_lift_ratio": -0.0738718931768733,
+        "posterior_reference_mean": -0.06951434042397985,
+        "posterior_reference_std": 0.05535618929687065,
+        "confirmation": false,
+        "estimated_information_value": 552018.1733634288,
+        "stratified_segment": "HIGH"
+      },
+      {
+        "current_tariff": "tariff_8",
+        "arpu_segment": "MID",
+        "target_tariff": "tariff_10",
+        "channel": "sms",
+        "n_customers": 200,
+        "observed_lift_ratio": 0.04489417635687334,
+        "posterior_reference_mean": 0.04588056125445093,
+        "posterior_reference_std": 0.055025555767944295,
+        "confirmation": false,
+        "estimated_information_value": 722597.0222815208,
+        "stratified_segment": "MID"
+      },
+      {
+        "current_tariff": "tariff_4",
+        "arpu_segment": "LOW",
+        "target_tariff": "tariff_9",
+        "channel": "sms",
+        "n_customers": 100,
+        "observed_lift_ratio": 0.2705227000808141,
+        "posterior_reference_mean": 0.26518436169061677,
+        "posterior_reference_std": 0.07601221161384762,
+        "confirmation": false,
+        "estimated_information_value": 240039.2278959819,
+        "stratified_segment": "LOW"
+      },
+      {
+        "current_tariff": "tariff_8",
+        "arpu_segment": "HIGH",
+        "target_tariff": "tariff_9",
+        "channel": "sms",
+        "n_customers": 200,
+        "observed_lift_ratio": 0.043652292004700576,
+        "posterior_reference_mean": 0.041509948522026,
+        "posterior_reference_std": 0.05553917206248626,
+        "confirmation": false,
+        "estimated_information_value": 635752.1076862168,
+        "stratified_segment": null
+      },
+      {
+        "current_tariff": "tariff_10",
+        "arpu_segment": "HIGH",
+        "target_tariff": "tariff_14",
+        "channel": "sms",
+        "n_customers": 100,
+        "observed_lift_ratio": 0.062153909547597516,
+        "posterior_reference_mean": 0.05526738995396755,
+        "posterior_reference_std": 0.0768113407616362,
+        "confirmation": false,
+        "estimated_information_value": 440006.7447390329,
+        "stratified_segment": null
+      },
+      {
+        "current_tariff": "tariff_8",
+        "arpu_segment": "HIGH",
+        "target_tariff": "tariff_14",
+        "channel": "sms",
+        "n_customers": 100,
+        "observed_lift_ratio": 0.09659233199417208,
+        "posterior_reference_mean": 0.08724472551191344,
+        "posterior_reference_std": 0.0768113407616362,
+        "confirmation": false,
+        "estimated_information_value": 295988.9515641876,
+        "stratified_segment": null
+      },
+      {
+        "current_tariff": "tariff_8",
+        "arpu_segment": "HIGH",
+        "target_tariff": "tariff_14",
+        "channel": "sms",
+        "n_customers": 200,
+        "observed_lift_ratio": 0.03254069265837074,
+        "posterior_reference_mean": 0.05190190693371557,
+        "posterior_reference_std": 0.045696398120219014,
+        "confirmation": false,
+        "estimated_information_value": 303157.93758508976,
+        "stratified_segment": null
+      },
+      {
+        "current_tariff": "tariff_10",
+        "arpu_segment": "HIGH",
+        "target_tariff": "tariff_19",
+        "channel": "sms",
+        "n_customers": 100,
+        "observed_lift_ratio": 0.027237336654596683,
+        "posterior_reference_mean": 0.023258688657308763,
+        "posterior_reference_std": 0.0768113407616362,
+        "confirmation": false,
+        "estimated_information_value": 223940.2698069497,
+        "stratified_segment": null
+      },
+      {
+        "current_tariff": "tariff_10",
+        "arpu_segment": "HIGH",
+        "target_tariff": "tariff_19",
+        "channel": "sms",
+        "n_customers": 200,
+        "observed_lift_ratio": -0.0569240304940377,
+        "posterior_reference_mean": -0.02854523051003476,
+        "posterior_reference_std": 0.045696398120219014,
+        "confirmation": false,
+        "estimated_information_value": 217325.65786233495,
+        "stratified_segment": null
+      },
+      {
+        "current_tariff": "tariff_11",
+        "arpu_segment": "HIGH",
+        "target_tariff": "tariff_12",
+        "channel": "sms",
+        "n_customers": 200,
+        "observed_lift_ratio": 0.008001934212499109,
+        "posterior_reference_mean": 0.00831088460592782,
+        "posterior_reference_std": 0.05510148439665935,
+        "confirmation": false,
+        "estimated_information_value": 198274.9255978059,
+        "stratified_segment": null
+      },
+      {
+        "current_tariff": "tariff_10",
+        "arpu_segment": "HIGH",
+        "target_tariff": "tariff_14",
+        "channel": "sms",
+        "n_customers": 200,
+        "observed_lift_ratio": -0.010890243501151668,
+        "posterior_reference_mean": 0.012524705095116814,
+        "posterior_reference_std": 0.045696398120219014,
+        "confirmation": false,
+        "estimated_information_value": 198268.6829443775,
+        "stratified_segment": null
+      },
+      {
+        "current_tariff": "tariff_8",
+        "arpu_segment": "HIGH",
+        "target_tariff": "tariff_19",
+        "channel": "sms",
+        "n_customers": 100,
+        "observed_lift_ratio": 0.10222479825858796,
+        "posterior_reference_mean": 0.09220910708964973,
+        "posterior_reference_std": 0.0768113407616362,
+        "confirmation": false,
+        "estimated_information_value": 182304.6567627385,
+        "stratified_segment": null
+      },
+      {
+        "current_tariff": "tariff_8",
+        "arpu_segment": "HIGH",
+        "target_tariff": "tariff_19",
+        "channel": "sms",
+        "n_customers": 200,
+        "observed_lift_ratio": -0.0048527404817972995,
+        "posterior_reference_mean": 0.02950003262768913,
+        "posterior_reference_std": 0.045696398120219014,
+        "confirmation": true,
+        "estimated_information_value": 822489.1895077319,
+        "stratified_segment": null
+      },
+      {
+        "current_tariff": "tariff_8",
+        "arpu_segment": "HIGH",
+        "target_tariff": "tariff_9",
+        "channel": "sms",
+        "n_customers": 200,
+        "observed_lift_ratio": -0.026361981138087385,
+        "posterior_reference_mean": 0.008366312704203533,
+        "posterior_reference_std": 0.0397279382050451,
+        "confirmation": true,
+        "estimated_information_value": 450340.4831238366,
+        "stratified_segment": null
+      },
+      {
+        "current_tariff": "tariff_8",
+        "arpu_segment": "HIGH",
+        "target_tariff": "tariff_14",
+        "channel": "sms",
+        "n_customers": 200,
+        "observed_lift_ratio": 0.03622465351127218,
+        "posterior_reference_mean": 0.045748684309003765,
+        "posterior_reference_std": 0.0356170032282342,
+        "confirmation": true,
+        "estimated_information_value": 259248.84578516943,
+        "stratified_segment": null
+      },
+      {
+        "current_tariff": "tariff_8",
+        "arpu_segment": "MID",
+        "target_tariff": "tariff_10",
+        "channel": "sms",
+        "n_customers": 200,
+        "observed_lift_ratio": 0.0863374264826837,
+        "posterior_reference_mean": 0.06544891444378763,
+        "posterior_reference_std": 0.039538671754993114,
+        "confirmation": true,
+        "estimated_information_value": 98205.70407156908,
+        "stratified_segment": null
+      },
+      {
+        "current_tariff": "tariff_4",
+        "arpu_segment": "MID",
+        "target_tariff": "tariff_9",
+        "channel": "sms",
+        "n_customers": 200,
+        "observed_lift_ratio": 0.03506323859343751,
+        "posterior_reference_mean": 0.045504201828297335,
+        "posterior_reference_std": 0.03968284051550363,
+        "confirmation": true,
+        "estimated_information_value": 72639.85637604214,
+        "stratified_segment": null
+      }
+    ],
+    "warnings": [],
+    "version": "adaptive-portfolio-v1.2",
+    "prior": "bounded historical prior from 14822 valid transitions",
+    "reference_channel": "sms",
+    "preflight": {
+      "valid": true,
+      "errors": [],
+      "warnings": [],
+      "total_contacts": 2476,
+      "total_cost": 16632.0,
+      "unique_customers": 2476,
+      "campaigns": [
+        {
+          "index": 0,
+          "campaign_name": "tandem_01",
+          "segment_size": 457,
+          "cost_per_contact": 22.0,
+          "cost": 10054.0,
+          "overlap_with_previous": 0
+        },
+        {
+          "index": 1,
+          "campaign_name": "tandem_02",
+          "segment_size": 299,
+          "cost_per_contact": 22.0,
+          "cost": 6578.0,
+          "overlap_with_previous": 0
+        },
+        {
+          "index": 2,
+          "campaign_name": "tandem_03",
+          "segment_size": 1720,
+          "cost_per_contact": 0.0,
+          "cost": 0.0,
+          "overlap_with_previous": 0
+        }
+      ]
+    },
+    "final": {
+      "campaigns": [
+        {
+          "campaign_name": "tandem_01",
+          "filter_arpu_segment": "LOW",
+          "filter_data_segment": null,
+          "filter_call_segment": null,
+          "filter_current_tariff": "tariff_8",
+          "target_tariff": "tariff_9",
+          "channel": "digital_ads",
+          "contacts": 457,
+          "cost": 10054.0,
+          "estimated_mean_gain": 223907.36727040372,
+          "risk_adjusted_gain": 99813.48874292201,
+          "reference_scaled_mean": 0.2679683217943258,
+          "reference_scaled_std": 0.0721754404482279
+        },
+        {
+          "campaign_name": "tandem_02",
+          "filter_arpu_segment": "LOW",
+          "filter_data_segment": null,
+          "filter_call_segment": null,
+          "filter_current_tariff": "tariff_4",
+          "target_tariff": "tariff_9",
+          "channel": "digital_ads",
+          "contacts": 299,
+          "cost": 6578.0,
+          "estimated_mean_gain": 214749.73302245123,
+          "risk_adjusted_gain": 97737.67308238833,
+          "reference_scaled_mean": 0.3467795499031142,
+          "reference_scaled_std": 0.09940058441810842
+        },
+        {
+          "campaign_name": "tandem_03",
+          "filter_arpu_segment": "MID",
+          "filter_data_segment": null,
+          "filter_call_segment": null,
+          "filter_current_tariff": "tariff_8",
+          "target_tariff": "tariff_10",
+          "channel": "push",
+          "contacts": 1720,
+          "cost": 0.0,
+          "estimated_mean_gain": 315505.41096098797,
+          "risk_adjusted_gain": 1012.8448362886486,
+          "reference_scaled_mean": 0.05034531880291356,
+          "reference_scaled_std": 0.03041436288845624
+        }
+      ],
+      "contacts": 2476,
+      "cost": 16632.0,
+      "remaining_contacts_after_pilots": 11500,
+      "remaining_budget_after_pilots": 86000.0,
+      "total_contacts_including_pilots": 5976,
+      "total_cost_including_pilots": 30632.0,
+      "fallback": false,
+      "note": "Planning estimates, not measured judging profit; final audiences are disjoint."
+    }
+  },
+  "baseline_prefix": [
+    {
+      "campaign_name": "tandem_01",
+      "filter_arpu_segment": "LOW",
+      "filter_data_segment": null,
+      "filter_call_segment": null,
+      "filter_current_tariff": "tariff_8",
+      "target_tariff": "tariff_9",
+      "channel": "digital_ads"
+    },
+    {
+      "campaign_name": "tandem_02",
+      "filter_arpu_segment": "LOW",
+      "filter_data_segment": null,
+      "filter_call_segment": null,
+      "filter_current_tariff": "tariff_4",
+      "target_tariff": "tariff_9",
+      "channel": "digital_ads"
+    },
+    {
+      "campaign_name": "tandem_03",
+      "filter_arpu_segment": "MID",
+      "filter_data_segment": null,
+      "filter_call_segment": null,
+      "filter_current_tariff": "tariff_8",
+      "target_tariff": "tariff_10",
+      "channel": "push"
+    }
+  ],
+  "pilots": [
+    {
+      "current_tariff": "tariff_8",
+      "arpu_segment": "HIGH",
+      "target_tariff": "tariff_12",
+      "channel": "sms",
+      "n_customers": 200,
+      "observed_lift_ratio": -0.05680067313305702,
+      "posterior_reference_mean": -0.05291768383716591,
+      "posterior_reference_std": 0.05509334945851192,
+      "confirmation": false,
+      "estimated_information_value": 1088591.1289934798,
+      "stratified_segment": "HIGH"
+    },
+    {
+      "current_tariff": "tariff_4",
+      "arpu_segment": "MID",
+      "target_tariff": "tariff_9",
+      "channel": "sms",
+      "n_customers": 200,
+      "observed_lift_ratio": 0.05323465780814429,
+      "posterior_reference_mean": 0.05542464945773318,
+      "posterior_reference_std": 0.05541615661994558,
+      "confirmation": false,
+      "estimated_information_value": 790562.8810600645,
+      "stratified_segment": "MID"
+    },
+    {
+      "current_tariff": "tariff_8",
+      "arpu_segment": "LOW",
+      "target_tariff": "tariff_9",
+      "channel": "sms",
+      "n_customers": 200,
+      "observed_lift_ratio": 0.20305108178172734,
+      "posterior_reference_mean": 0.20491695196036677,
+      "posterior_reference_std": 0.055192983872174285,
+      "confirmation": false,
+      "estimated_information_value": 391813.4479342482,
+      "stratified_segment": "LOW"
+    },
+    {
+      "current_tariff": "tariff_4",
+      "arpu_segment": "HIGH",
+      "target_tariff": "tariff_12",
+      "channel": "sms",
+      "n_customers": 200,
+      "observed_lift_ratio": -0.0738718931768733,
+      "posterior_reference_mean": -0.06951434042397985,
+      "posterior_reference_std": 0.05535618929687065,
+      "confirmation": false,
+      "estimated_information_value": 552018.1733634288,
+      "stratified_segment": "HIGH"
+    },
+    {
+      "current_tariff": "tariff_8",
+      "arpu_segment": "MID",
+      "target_tariff": "tariff_10",
+      "channel": "sms",
+      "n_customers": 200,
+      "observed_lift_ratio": 0.04489417635687334,
+      "posterior_reference_mean": 0.04588056125445093,
+      "posterior_reference_std": 0.055025555767944295,
+      "confirmation": false,
+      "estimated_information_value": 722597.0222815208,
+      "stratified_segment": "MID"
+    },
+    {
+      "current_tariff": "tariff_4",
+      "arpu_segment": "LOW",
+      "target_tariff": "tariff_9",
+      "channel": "sms",
+      "n_customers": 100,
+      "observed_lift_ratio": 0.2705227000808141,
+      "posterior_reference_mean": 0.26518436169061677,
+      "posterior_reference_std": 0.07601221161384762,
+      "confirmation": false,
+      "estimated_information_value": 240039.2278959819,
+      "stratified_segment": "LOW"
+    },
+    {
+      "current_tariff": "tariff_8",
+      "arpu_segment": "HIGH",
+      "target_tariff": "tariff_9",
+      "channel": "sms",
+      "n_customers": 200,
+      "observed_lift_ratio": 0.043652292004700576,
+      "posterior_reference_mean": 0.041509948522026,
+      "posterior_reference_std": 0.05553917206248626,
+      "confirmation": false,
+      "estimated_information_value": 635752.1076862168,
+      "stratified_segment": null
+    },
+    {
+      "current_tariff": "tariff_10",
+      "arpu_segment": "HIGH",
+      "target_tariff": "tariff_14",
+      "channel": "sms",
+      "n_customers": 100,
+      "observed_lift_ratio": 0.062153909547597516,
+      "posterior_reference_mean": 0.05526738995396755,
+      "posterior_reference_std": 0.0768113407616362,
+      "confirmation": false,
+      "estimated_information_value": 440006.7447390329,
+      "stratified_segment": null
+    },
+    {
+      "current_tariff": "tariff_8",
+      "arpu_segment": "HIGH",
+      "target_tariff": "tariff_14",
+      "channel": "sms",
+      "n_customers": 100,
+      "observed_lift_ratio": 0.09659233199417208,
+      "posterior_reference_mean": 0.08724472551191344,
+      "posterior_reference_std": 0.0768113407616362,
+      "confirmation": false,
+      "estimated_information_value": 295988.9515641876,
+      "stratified_segment": null
+    },
+    {
+      "current_tariff": "tariff_8",
+      "arpu_segment": "HIGH",
+      "target_tariff": "tariff_14",
+      "channel": "sms",
+      "n_customers": 200,
+      "observed_lift_ratio": 0.03254069265837074,
+      "posterior_reference_mean": 0.05190190693371557,
+      "posterior_reference_std": 0.045696398120219014,
+      "confirmation": false,
+      "estimated_information_value": 303157.93758508976,
+      "stratified_segment": null
+    },
+    {
+      "current_tariff": "tariff_10",
+      "arpu_segment": "HIGH",
+      "target_tariff": "tariff_19",
+      "channel": "sms",
+      "n_customers": 100,
+      "observed_lift_ratio": 0.027237336654596683,
+      "posterior_reference_mean": 0.023258688657308763,
+      "posterior_reference_std": 0.0768113407616362,
+      "confirmation": false,
+      "estimated_information_value": 223940.2698069497,
+      "stratified_segment": null
+    },
+    {
+      "current_tariff": "tariff_10",
+      "arpu_segment": "HIGH",
+      "target_tariff": "tariff_19",
+      "channel": "sms",
+      "n_customers": 200,
+      "observed_lift_ratio": -0.0569240304940377,
+      "posterior_reference_mean": -0.02854523051003476,
+      "posterior_reference_std": 0.045696398120219014,
+      "confirmation": false,
+      "estimated_information_value": 217325.65786233495,
+      "stratified_segment": null
+    },
+    {
+      "current_tariff": "tariff_11",
+      "arpu_segment": "HIGH",
+      "target_tariff": "tariff_12",
+      "channel": "sms",
+      "n_customers": 200,
+      "observed_lift_ratio": 0.008001934212499109,
+      "posterior_reference_mean": 0.00831088460592782,
+      "posterior_reference_std": 0.05510148439665935,
+      "confirmation": false,
+      "estimated_information_value": 198274.9255978059,
+      "stratified_segment": null
+    },
+    {
+      "current_tariff": "tariff_10",
+      "arpu_segment": "HIGH",
+      "target_tariff": "tariff_14",
+      "channel": "sms",
+      "n_customers": 200,
+      "observed_lift_ratio": -0.010890243501151668,
+      "posterior_reference_mean": 0.012524705095116814,
+      "posterior_reference_std": 0.045696398120219014,
+      "confirmation": false,
+      "estimated_information_value": 198268.6829443775,
+      "stratified_segment": null
+    },
+    {
+      "current_tariff": "tariff_8",
+      "arpu_segment": "HIGH",
+      "target_tariff": "tariff_19",
+      "channel": "sms",
+      "n_customers": 100,
+      "observed_lift_ratio": 0.10222479825858796,
+      "posterior_reference_mean": 0.09220910708964973,
+      "posterior_reference_std": 0.0768113407616362,
+      "confirmation": false,
+      "estimated_information_value": 182304.6567627385,
+      "stratified_segment": null
+    },
+    {
+      "current_tariff": "tariff_8",
+      "arpu_segment": "HIGH",
+      "target_tariff": "tariff_19",
+      "channel": "sms",
+      "n_customers": 200,
+      "observed_lift_ratio": -0.0048527404817972995,
+      "posterior_reference_mean": 0.02950003262768913,
+      "posterior_reference_std": 0.045696398120219014,
+      "confirmation": true,
+      "estimated_information_value": 822489.1895077319,
+      "stratified_segment": null
+    },
+    {
+      "current_tariff": "tariff_8",
+      "arpu_segment": "HIGH",
+      "target_tariff": "tariff_9",
+      "channel": "sms",
+      "n_customers": 200,
+      "observed_lift_ratio": -0.026361981138087385,
+      "posterior_reference_mean": 0.008366312704203533,
+      "posterior_reference_std": 0.0397279382050451,
+      "confirmation": true,
+      "estimated_information_value": 450340.4831238366,
+      "stratified_segment": null
+    },
+    {
+      "current_tariff": "tariff_8",
+      "arpu_segment": "HIGH",
+      "target_tariff": "tariff_14",
+      "channel": "sms",
+      "n_customers": 200,
+      "observed_lift_ratio": 0.03622465351127218,
+      "posterior_reference_mean": 0.045748684309003765,
+      "posterior_reference_std": 0.0356170032282342,
+      "confirmation": true,
+      "estimated_information_value": 259248.84578516943,
+      "stratified_segment": null
+    },
+    {
+      "current_tariff": "tariff_8",
+      "arpu_segment": "MID",
+      "target_tariff": "tariff_10",
+      "channel": "sms",
+      "n_customers": 200,
+      "observed_lift_ratio": 0.0863374264826837,
+      "posterior_reference_mean": 0.06544891444378763,
+      "posterior_reference_std": 0.039538671754993114,
+      "confirmation": true,
+      "estimated_information_value": 98205.70407156908,
+      "stratified_segment": null
+    },
+    {
+      "current_tariff": "tariff_4",
+      "arpu_segment": "MID",
+      "target_tariff": "tariff_9",
+      "channel": "sms",
+      "n_customers": 200,
+      "observed_lift_ratio": 0.03506323859343751,
+      "posterior_reference_mean": 0.045504201828297335,
+      "posterior_reference_std": 0.03968284051550363,
+      "confirmation": true,
+      "estimated_information_value": 72639.85637604214,
+      "stratified_segment": null
+    }
+  ],
+  "reference_channel": "sms",
+  "preflight": {
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "campaign #4 overlaps previous campaigns by 299 customers",
+      "campaign #5 overlaps previous campaigns by 457 customers",
+      "756 contacts are duplicates across campaigns"
+    ],
+    "total_contacts": 3232,
+    "total_cost": 16632.0,
+    "unique_customers": 2476,
+    "campaigns": [
+      {
+        "index": 0,
+        "campaign_name": "tandem_01",
+        "segment_size": 457,
+        "cost_per_contact": 22.0,
+        "cost": 10054.0,
+        "overlap_with_previous": 0
+      },
+      {
+        "index": 1,
+        "campaign_name": "tandem_02",
+        "segment_size": 299,
+        "cost_per_contact": 22.0,
+        "cost": 6578.0,
+        "overlap_with_previous": 0
+      },
+      {
+        "index": 2,
+        "campaign_name": "tandem_03",
+        "segment_size": 1720,
+        "cost_per_contact": 0.0,
+        "cost": 0.0,
+        "overlap_with_previous": 0
+      },
+      {
+        "index": 3,
+        "campaign_name": "full_push_overlay_01",
+        "segment_size": 299,
+        "cost_per_contact": 0.0,
+        "cost": 0.0,
+        "overlap_with_previous": 299
+      },
+      {
+        "index": 4,
+        "campaign_name": "full_push_overlay_02",
+        "segment_size": 457,
+        "cost_per_contact": 0.0,
+        "cost": 0.0,
+        "overlap_with_previous": 457
+      }
+    ]
+  },
+  "overlay": {
+    "baseline_prefix_length": 3,
+    "anchors": [
+      {
+        "anchor_index": 0,
+        "source": "baseline_final",
+        "source_final_index": 0,
+        "audience_size": 457,
+        "coverage_evidence": "exact_original_final_audience",
+        "campaign": {
+          "campaign_name": "tandem_01",
+          "filter_arpu_segment": "LOW",
+          "filter_data_segment": null,
+          "filter_call_segment": null,
+          "filter_current_tariff": "tariff_8",
+          "target_tariff": "tariff_9",
+          "channel": "digital_ads"
+        }
+      },
+      {
+        "anchor_index": 1,
+        "source": "baseline_final",
+        "source_final_index": 1,
+        "audience_size": 299,
+        "coverage_evidence": "exact_original_final_audience",
+        "campaign": {
+          "campaign_name": "tandem_02",
+          "filter_arpu_segment": "LOW",
+          "filter_data_segment": null,
+          "filter_call_segment": null,
+          "filter_current_tariff": "tariff_4",
+          "target_tariff": "tariff_9",
+          "channel": "digital_ads"
+        }
+      },
+      {
+        "anchor_index": 2,
+        "source": "baseline_final",
+        "source_final_index": 2,
+        "audience_size": 1720,
+        "coverage_evidence": "exact_original_final_audience",
+        "campaign": {
+          "campaign_name": "tandem_03",
+          "filter_arpu_segment": "MID",
+          "filter_data_segment": null,
+          "filter_call_segment": null,
+          "filter_current_tariff": "tariff_8",
+          "target_tariff": "tariff_10",
+          "channel": "push"
+        }
+      }
+    ],
+    "overlays": [
+      {
+        "anchor_index": 1,
+        "source": "baseline_final",
+        "target_tariff": "tariff_9",
+        "contacts": 299,
+        "ranking_proxy": 2.1468524188763753,
+        "ranking_ratio_proxy": 2.5034335328075126e-06,
+        "campaign": {
+          "campaign_name": "full_push_overlay_01",
+          "filter_arpu_segment": "LOW",
+          "filter_data_segment": null,
+          "filter_call_segment": null,
+          "filter_current_tariff": "tariff_4",
+          "target_tariff": "tariff_9",
+          "channel": "push"
+        }
+      },
+      {
+        "anchor_index": 0,
+        "source": "baseline_final",
+        "target_tariff": "tariff_9",
+        "contacts": 457,
+        "ranking_proxy": 0.9586941321224396,
+        "ranking_ratio_proxy": 7.305682356342154e-07,
+        "campaign": {
+          "campaign_name": "full_push_overlay_02",
+          "filter_arpu_segment": "LOW",
+          "filter_data_segment": null,
+          "filter_call_segment": null,
+          "filter_current_tariff": "tariff_8",
+          "target_tariff": "tariff_9",
+          "channel": "push"
+        }
+      }
+    ],
+    "candidates": [
+      {
+        "anchor_index": 1,
+        "source": "baseline_final",
+        "target_tariff": "tariff_9",
+        "contacts": 299,
+        "ranking_proxy": 2.1468524188763753,
+        "ranking_ratio_proxy": 2.5034335328075126e-06,
+        "selected": true
+      },
+      {
+        "anchor_index": 0,
+        "source": "baseline_final",
+        "target_tariff": "tariff_9",
+        "contacts": 457,
+        "ranking_proxy": 0.9586941321224396,
+        "ranking_ratio_proxy": 7.305682356342154e-07,
+        "selected": true
+      }
+    ],
+    "final_contact_limit": 11500,
+    "ranking": "v1_mass_times_clipped_gaussian_positive_part; nonadditive heuristic",
+    "skip_reason": null
+  },
+  "overlay_validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "full plan: campaign #4 overlaps previous campaigns by 299 customers",
+      "full plan: campaign #5 overlaps previous campaigns by 457 customers",
+      "full plan: 756 contacts are duplicates across campaigns"
+    ],
+    "base_preflight": {
+      "valid": true,
+      "errors": [],
+      "warnings": [],
+      "total_contacts": 2476,
+      "total_cost": 16632.0,
+      "unique_customers": 2476,
+      "campaigns": [
+        {
+          "index": 0,
+          "campaign_name": "tandem_01",
+          "segment_size": 457,
+          "cost_per_contact": 22.0,
+          "cost": 10054.0,
+          "overlap_with_previous": 0
+        },
+        {
+          "index": 1,
+          "campaign_name": "tandem_02",
+          "segment_size": 299,
+          "cost_per_contact": 22.0,
+          "cost": 6578.0,
+          "overlap_with_previous": 0
+        },
+        {
+          "index": 2,
+          "campaign_name": "tandem_03",
+          "segment_size": 1720,
+          "cost_per_contact": 0.0,
+          "cost": 0.0,
+          "overlap_with_previous": 0
+        }
+      ]
+    },
+    "preflight": {
+      "valid": true,
+      "errors": [],
+      "warnings": [
+        "campaign #4 overlaps previous campaigns by 299 customers",
+        "campaign #5 overlaps previous campaigns by 457 customers",
+        "756 contacts are duplicates across campaigns"
+      ],
+      "total_contacts": 3232,
+      "total_cost": 16632.0,
+      "unique_customers": 2476,
+      "campaigns": [
+        {
+          "index": 0,
+          "campaign_name": "tandem_01",
+          "segment_size": 457,
+          "cost_per_contact": 22.0,
+          "cost": 10054.0,
+          "overlap_with_previous": 0
+        },
+        {
+          "index": 1,
+          "campaign_name": "tandem_02",
+          "segment_size": 299,
+          "cost_per_contact": 22.0,
+          "cost": 6578.0,
+          "overlap_with_previous": 0
+        },
+        {
+          "index": 2,
+          "campaign_name": "tandem_03",
+          "segment_size": 1720,
+          "cost_per_contact": 0.0,
+          "cost": 0.0,
+          "overlap_with_previous": 0
+        },
+        {
+          "index": 3,
+          "campaign_name": "full_push_overlay_01",
+          "segment_size": 299,
+          "cost_per_contact": 0.0,
+          "cost": 0.0,
+          "overlap_with_previous": 299
+        },
+        {
+          "index": 4,
+          "campaign_name": "full_push_overlay_02",
+          "segment_size": 457,
+          "cost_per_contact": 0.0,
+          "cost": 0.0,
+          "overlap_with_previous": 457
+        }
+      ]
+    },
+    "proofs": [
+      {
+        "campaign_index": 3,
+        "campaign_name": "full_push_overlay_01",
+        "kind": "baseline",
+        "source_index": 1,
+        "target_pilot_index": 6,
+        "contacts": 299,
+        "matched_size": 299
+      },
+      {
+        "campaign_index": 4,
+        "campaign_name": "full_push_overlay_02",
+        "kind": "baseline",
+        "source_index": 0,
+        "target_pilot_index": 3,
+        "contacts": 457,
+        "matched_size": 457
+      }
+    ],
+    "baseline_prefix_length": 3,
+    "recorded_pilot_contacts": 3500,
+    "pilot_contacts": 3500,
+    "total_contacts_including_pilots": 6732,
+    "assumption": "Pilots are authentic current tandem Agent whole-cell trace records; no hidden IDs are inspected."
+  },
+  "warnings": [],
+  "prior": "bounded historical prior from 14822 valid transitions",
+  "final": {
+    "campaigns": [
+      {
+        "campaign_name": "tandem_01",
+        "filter_arpu_segment": "LOW",
+        "filter_data_segment": null,
+        "filter_call_segment": null,
+        "filter_current_tariff": "tariff_8",
+        "target_tariff": "tariff_9",
+        "channel": "digital_ads",
+        "contacts": 457,
+        "cost": 10054.0,
+        "role": "baseline"
+      },
+      {
+        "campaign_name": "tandem_02",
+        "filter_arpu_segment": "LOW",
+        "filter_data_segment": null,
+        "filter_call_segment": null,
+        "filter_current_tariff": "tariff_4",
+        "target_tariff": "tariff_9",
+        "channel": "digital_ads",
+        "contacts": 299,
+        "cost": 6578.0,
+        "role": "baseline"
+      },
+      {
+        "campaign_name": "tandem_03",
+        "filter_arpu_segment": "MID",
+        "filter_data_segment": null,
+        "filter_call_segment": null,
+        "filter_current_tariff": "tariff_8",
+        "target_tariff": "tariff_10",
+        "channel": "push",
+        "contacts": 1720,
+        "cost": 0.0,
+        "role": "baseline"
+      },
+      {
+        "campaign_name": "full_push_overlay_01",
+        "filter_arpu_segment": "LOW",
+        "filter_data_segment": null,
+        "filter_call_segment": null,
+        "filter_current_tariff": "tariff_4",
+        "target_tariff": "tariff_9",
+        "channel": "push",
+        "contacts": 299,
+        "cost": 0.0,
+        "role": "overlay"
+      },
+      {
+        "campaign_name": "full_push_overlay_02",
+        "filter_arpu_segment": "LOW",
+        "filter_data_segment": null,
+        "filter_call_segment": null,
+        "filter_current_tariff": "tariff_8",
+        "target_tariff": "tariff_9",
+        "channel": "push",
+        "contacts": 457,
+        "cost": 0.0,
+        "role": "overlay"
+      }
+    ],
+    "contacts": 3232,
+    "cost": 16632.0,
+    "unique_customers": 2476,
+    "fallback": false,
+    "remaining_contacts_after_pilots": 11500,
+    "remaining_budget_after_pilots": 86000.0,
+    "total_contacts_including_pilots": 6732,
+    "total_cost_including_pilots": 30632.0,
+    "note": "Each overlay repeats a final audience or one completely sampled pilot cell; ranking proxies are nonadditive, not judged profit."
+  },
+  "submission_seed": 42,
+  "hash_format": "sha256-text-lf-v1",
+  "deterministic_submission": true,
+  "submission_sha256": "be16f35e89ef044fa7fb05a9436fc2422fe38b98a66afb2ba42b2d9eafca65e9",
+  "environment": "Organizer mock; observations do not predict judging effects",
+  "source_sha256": {
+    "agent.py": "35ae71030b768cd87fdeb5607712852af50b29d181295bf3d9d9e2c5c2209459",
+    "strategy/__init__.py": "d307ba7f3d80724bbfc3f1e97bdd171f1168f9a8deeb67ff97db863f25d33607",
+    "strategy/beliefs.py": "c9c326345bec6d7005931ba3da908d22347c720f78ab710f1ff22a56ceea7f84",
+    "strategy/full_coverage_push.py": "ed8dacbf17034ef8dc2c80ee2d1a5091e8fc3f05e195bde2e80d2e53088b1d1d",
+    "strategy/portfolio.py": "417b3b27da080f22e92fb16d964a8849592a9c464936763672cfd922f2e6bf40",
+    "validation/__init__.py": "62c1fc5f965bafe7fa7c17e6ef3b0630dfb1812e457b554cc40126cb20f4380b",
+    "validation/overlay.py": "bc7199f5742a683af26e0814174c42a69db4de19e274628be4cf8f1509512540",
+    "validation/plan.py": "bd13a612f6b93905c418b01fa1336ea040c0d10c88607764cfe2de7e790420b8",
+    "tools/export_strategy.py": "00aba12390834711df5cd14003940215facd7c89aa2f9016dc7cb37a54d85a0d",
+    "environment.py": "8003a305ea9a560270ee875b2c48a6b1fbf8198d9c6c680e4827542532bb3dd1",
+    "mock_environment.py": "e1e4a480126d2896e89a868194b3ed7f7ee48d7c5fc2c8a2491970d8e231f506",
+    "scoring_core.py": "ba68595daebb12418000fa4d59ffbbf156df045f589bdbb789f3531145c58327",
+    "make_submission.py": "25c82a71640814de613261a2684824db66c53c7f948af5aa8ba333ae263a9622",
+    "requirements.txt": "983cdc62971ed1127bfd018abe32e0360d7179049ea0b00ed76ac9e9739fa5d5"
+  },
+  "input_sha256": {
+    "customer_profile.csv": "a85e9badf4cb51b1ba8c43a868498b6fa8075509f3cd8e19ef72e1c25a6dc815",
+    "tariff_dictionary.csv": "d3e6588f5d8e8e51202b4a77b2d4c0243080965a82d8e1d9411149220dd9df1c",
+    "data/dict_tariff.csv": "a34d81dacffbb937ddd542e87d421afcea4842379acfbad55b8d59bdf710f4be",
+    "data/change_tariff.csv": "c52d7dad11fccc7425afe6d36a44a1fa03c8cc148be2039ce264d0c5c100f230"
+  },
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.5.3",
+    "pandas": "3.0.6"
+  }
+}

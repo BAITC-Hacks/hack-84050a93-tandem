@@ -1,0 +1,11 @@
+usage: verify_submission.py [-h] [--timeout TIMEOUT]
+
+Read-only acceptance check of the committed submission and its evidence.
+Regenerates artifacts in a temporary directory using a fresh Python process.
+Exit 0 means all listed checks passed; exit 1 means the report explains a
+failure. It does not submit anything to a platform or replace the committed
+CSV/trace.
+
+options:
+  -h, --help         show this help message and exit
+  --timeout TIMEOUT

@@ -1,0 +1,25 @@
+{
+  "rule": "Actual output retained; absolute repository/user-profile prefixes replaced with <REPO>/<USERPROFILE>; CRLF to LF and UTF-8 without BOM; no lines removed. Runtime installation captured combined stdout/stderr; other process logs separate. Artifact CSV/JSON/HTML and browser downloads are not transformed.",
+  "files": [
+    {
+      "path": "demo_stdout.txt",
+      "raw_sha256": "d7ffc158eb9f0bab6fa7c8f47d39253642019207721521744dd4e55981747830",
+      "published_sha256": "4ccab668aaaab6d975999044e3cc55f991022fd2df89a710365c20746167f1f5"
+    },
+    {
+      "path": "install_runtime_stdout_stderr.txt",
+      "raw_sha256": "24b2a2394e62501fbaa004db622bae5bfed6d1855fb8066ab0a74df20df1ade9",
+      "published_sha256": "512bb91148b792f80da24521e73c8da828a88e21ad8ca632457e6fa2c568c04a"
+    },
+    {
+      "path": "fresh_runs/run_20260923T115327Z_8kxp8qz9/export_stdout.txt",
+      "raw_sha256": "6a76cc47c87f1eb9d9d0b1cd430077fd10bc1e1d209e5f9a7a42f03544044113",
+      "published_sha256": "78d7369214812a97572d897ef064917b0b5aba6971aaa676ead7c811f8b676af"
+    },
+    {
+      "path": "fresh_runs/run_20260923T115327Z_8kxp8qz9/report_stdout.txt",
+      "raw_sha256": "8c7344ce95717e393f318c2830ad6008ac1cd28ec3f74ce2e9f2cc6c2b1321a1",
+      "published_sha256": "bf6a308cfe055b1aec1f10ed547766a59becef59f20136674a44591c54d3367f"
+    }
+  ]
+}

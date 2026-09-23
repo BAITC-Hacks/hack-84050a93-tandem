@@ -1,0 +1,35 @@
+{
+  "normalization": "CRLF -> LF only; no trimming, JSON parsing, or value rewriting",
+  "downloads": [
+    {
+      "name": "submission.csv",
+      "download_filename": "submission (1).csv",
+      "download_mtime_utc": "2026-09-23T11:55:57.648688+00:00",
+      "download_bytes": 350,
+      "run_bytes": 350,
+      "byte_identical": true,
+      "lf_identical": true,
+      "download_sha256": "be16f35e89ef044fa7fb05a9436fc2422fe38b98a66afb2ba42b2d9eafca65e9",
+      "run_sha256": "be16f35e89ef044fa7fb05a9436fc2422fe38b98a66afb2ba42b2d9eafca65e9",
+      "sha256_lf": "be16f35e89ef044fa7fb05a9436fc2422fe38b98a66afb2ba42b2d9eafca65e9"
+    },
+    {
+      "name": "decision_trace.json",
+      "download_filename": "decision_trace (1).json",
+      "download_mtime_utc": "2026-09-23T11:55:57.914252+00:00",
+      "download_bytes": 35052,
+      "run_bytes": 35052,
+      "byte_identical": true,
+      "lf_identical": true,
+      "download_sha256": "ed420810fd7cbc2109ae8444a80a15f5ea1889444dd6efc9bd7cebb836ead7a8",
+      "run_sha256": "ed420810fd7cbc2109ae8444a80a15f5ea1889444dd6efc9bd7cebb836ead7a8",
+      "sha256_lf": "ed420810fd7cbc2109ae8444a80a15f5ea1889444dd6efc9bd7cebb836ead7a8"
+    }
+  ],
+  "csv_rows": 5,
+  "fresh_equals_committed_csv_lf": true,
+  "root_artifacts_unchanged": {
+    "submission.csv": true,
+    "reports/decision_trace.json": true
+  }
+}

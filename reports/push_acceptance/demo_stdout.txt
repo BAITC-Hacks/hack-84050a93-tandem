@@ -1,0 +1,8 @@
+[1/2] Run Agent twice and check identical seed-42 submissions
+[2/2] Check saved evidence and create the interactive report
+
+Status: complete
+Run directory: <REPO>\reports\push_acceptance\fresh_runs\run_20260923T115327Z_8kxp8qz9
+5 campaigns | 20 pilots | 6732 total contacts | 30632 total cost
+Open in a browser: <REPO>\reports\push_acceptance\fresh_runs\run_20260923T115327Z_8kxp8qz9\decision_report.html
+Official mock only. Existing submission artifacts were not replaced.

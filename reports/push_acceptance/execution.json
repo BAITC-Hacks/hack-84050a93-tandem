@@ -1,0 +1,82 @@
+{
+  "base_sha": "3af29c7aa40bf8c4467adb6654910b1c6077c7ae",
+  "full_git_history": true,
+  "os": "Windows-11-10.0.26200-SP0",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "new_venv": true,
+  "system_site_packages": false,
+  "runtime_install_exit": 0,
+  "started_utc": "2026-09-23T11:53:23.005039+00:00",
+  "root_artifacts_before": {
+    "submission.csv": "be16f35e89ef044fa7fb05a9436fc2422fe38b98a66afb2ba42b2d9eafca65e9",
+    "reports/decision_trace.json": "b176604c75714d2caa6c40c0fe50e0cad19318918637df0914907fc200381492"
+  },
+  "commands": [
+    {
+      "name": "runtime_packages",
+      "command": [
+        ".venv/Scripts/python.exe",
+        "-m",
+        "pip",
+        "list",
+        "--format=json"
+      ],
+      "exit_code": 0,
+      "stdout": "runtime_packages_stdout.txt",
+      "stderr": "runtime_packages_stderr.txt"
+    },
+    {
+      "name": "verify_help",
+      "command": [
+        ".venv/Scripts/python.exe",
+        "tools/verify_submission.py",
+        "--help"
+      ],
+      "exit_code": 0,
+      "stdout": "verify_help_stdout.txt",
+      "stderr": "verify_help_stderr.txt"
+    },
+    {
+      "name": "verify",
+      "command": [
+        ".venv/Scripts/python.exe",
+        "tools/verify_submission.py"
+      ],
+      "exit_code": 0,
+      "stdout": "verify_stdout.txt",
+      "stderr": "verify_stderr.txt"
+    },
+    {
+      "name": "demo",
+      "command": [
+        ".venv/Scripts/python.exe",
+        "tools/run_demo.py",
+        "--output-root",
+        "reports/push_acceptance/fresh_runs"
+      ],
+      "exit_code": 0,
+      "stdout": "demo_stdout.txt",
+      "stderr": "demo_stderr.txt"
+    }
+  ],
+  "setup_commands": [
+    {
+      "command": "git clone https://github.com/BAITC-Hacks/hack-84050a93-tandem.git <NEW_CLONE>",
+      "exit_code": 0
+    },
+    {
+      "command": "git checkout -b codex/push-acceptance 3af29c7aa40bf8c4467adb6654910b1c6077c7ae",
+      "exit_code": 0
+    },
+    {
+      "command": "<CPython-3.12.14> -m venv .venv",
+      "exit_code": 0
+    },
+    {
+      "command": ".venv/Scripts/python.exe -m pip install -r requirements.txt",
+      "exit_code": 0,
+      "stdout_stderr": "install_runtime_stdout_stderr.txt"
+    }
+  ],
+  "log_transform_document": "log_transforms.json"
+}

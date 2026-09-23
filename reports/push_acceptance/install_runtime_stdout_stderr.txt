@@ -1,0 +1,20 @@
+Collecting numpy==2.5.3 (from -r requirements.txt (line 1))
+  Using cached numpy-2.5.3-cp312-cp312-win_amd64.whl.metadata (6.6 kB)
+Collecting pandas==3.0.6 (from -r requirements.txt (line 2))
+  Using cached pandas-3.0.6-cp312-cp312-win_amd64.whl.metadata (19 kB)
+Collecting python-dateutil>=2.8.2 (from pandas==3.0.6->-r requirements.txt (line 2))
+  Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+Collecting tzdata (from pandas==3.0.6->-r requirements.txt (line 2))
+  Using cached tzdata-2026.4-py2.py3-none-any.whl.metadata (1.4 kB)
+Collecting six>=1.5 (from python-dateutil>=2.8.2->pandas==3.0.6->-r requirements.txt (line 2))
+  Using cached six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Using cached numpy-2.5.3-cp312-cp312-win_amd64.whl (12.6 MB)
+Using cached pandas-3.0.6-cp312-cp312-win_amd64.whl (9.7 MB)
+Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+Using cached tzdata-2026.4-py2.py3-none-any.whl (347 kB)
+Using cached six-1.17.0-py2.py3-none-any.whl (11 kB)
+Installing collected packages: tzdata, six, numpy, python-dateutil, pandas
+Successfully installed numpy-2.5.3 pandas-3.0.6 python-dateutil-2.9.0.post0 six-1.17.0 tzdata-2026.4
+
+[notice] A new release of pip is available: 25.0.1 -> 26.2.1
+[notice] To update, run: <REPO>\.venv\Scripts\python.exe -m pip install --upgrade pip

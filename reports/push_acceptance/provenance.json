@@ -1,0 +1,41 @@
+[
+  {
+    "command": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "exit_code": 0,
+    "stdout": "3af29c7aa40bf8c4467adb6654910b1c6077c7ae\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "git",
+      "rev-parse",
+      "--is-shallow-repository"
+    ],
+    "exit_code": 0,
+    "stdout": "false\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "git",
+      "status",
+      "--short"
+    ],
+    "exit_code": 0,
+    "stdout": "?? reports/push_acceptance/\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      ".venv/Scripts/python.exe",
+      "--version"
+    ],
+    "exit_code": 0,
+    "stdout": "Python 3.12.14\n",
+    "stderr": ""
+  }
+]

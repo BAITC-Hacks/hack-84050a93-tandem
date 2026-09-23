@@ -1,0 +1,44 @@
+{
+  "status": "PASS",
+  "base_sha": "3af29c7aa40bf8c4467adb6654910b1c6077c7ae",
+  "branch": "codex/push-acceptance",
+  "completed_utc": "2026-09-23T11:58:08.125819+00:00",
+  "verify_successes": 37,
+  "verify": {
+    "environment": "Official mock; validates reproducibility, not hidden judging performance",
+    "result": {
+      "campaigns": 5,
+      "pilots": 20,
+      "total_contacts": 6732,
+      "total_cost": 30632.0,
+      "versions": {
+        "python": "3.12.14",
+        "numpy": "2.5.3",
+        "pandas": "3.0.6"
+      }
+    },
+    "passed": true,
+    "seconds": 3.889683800050989
+  },
+  "pytest": {
+    "passed": 122,
+    "skipped": 0,
+    "seconds": 11.39,
+    "exit_code": 0
+  },
+  "fresh_run": "fresh_runs/run_20260923T115327Z_8kxp8qz9",
+  "root_artifacts_unchanged": {
+    "submission.csv": true,
+    "reports/decision_trace.json": true
+  },
+  "browser_errors": 0,
+  "product_blockers": [],
+  "not_checked": [
+    "Direct file:// opening",
+    "Offline network-disconnection behavior",
+    "Linux/macOS or another physical computer",
+    "Hidden judging; real marketing lift; 160-pair research not rerun"
+  ],
+  "browser_entry": "Chrome via http://127.0.0.1:8765/decision_report.html; fresh file only; local server stopped after testing",
+  "source_tracked_diff": []
+}

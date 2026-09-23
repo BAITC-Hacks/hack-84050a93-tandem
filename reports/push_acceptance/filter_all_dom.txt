@@ -1,0 +1,349 @@
+- complementary:
+  - text: tandem
+  - generic: .
+  - tablist "Разделы отчёта":
+    - tab "01План кампаний"
+    - tab "02Пилоты" [active] [selected]
+    - tab "03Проверяемость"
+  - strong:
+    - text: Сначала измерить.
+    - text: Затем действовать.
+  - text: Адаптивный агент
+  - text: тарифных кампаний.
+  - text: Beeline case · tandem
+- main:
+  - generic: Тарифные кампании / разбор решения
+  - generic: Сохранённый план
+  - generic: Из наблюдений в действия
+  - heading "Каждая кампания начинается с пилота." [level=1]:
+    - text: Каждая кампания
+    - text: начинается с пилота.
+  - paragraph: Кому предложить тариф, через какой канал и на основании каких наблюдений. Весь путь решения — в одном отчёте.
+  - generic: Organizer mock · seed 42
+  - text: Синтетическая среда организатора. Наблюдения и оценки не предсказывают результат скрытого судейства.
+  - button "Скачать CSV ↓"
+  - button "Журнал JSON ↓"
+  - region "Расход ресурсов":
+    - generic: Кампаний в плане
+    - generic: 5 / 10
+    - paragraph: 2 476 клиентов в финале
+    - generic: Контакты · пилоты + финал
+    - generic: 6 732 / 15 000
+    - generic: Пилоты 3 500
+    - generic: Финал 3 232
+    - generic: Расход · условные единицы
+    - generic: 30 632 / 100 000
+    - generic: Пилоты 14 000
+    - generic: Финал 16 632
+  - tabpanel "02Пилоты":
+    - heading "20 шагов к решению" [level=2]
+    - paragraph: Шумное наблюдение меняет оценку гипотезы. Уточняющий пилот уменьшает неопределённость, но не доказывает прибыльность.
+    - generic: 20 / 20 пилотов
+    - generic: ARPU-сегмент
+    - combobox "ARPU-сегмент":
+      - option "Все сегменты" [selected]
+      - option "HIGH"
+      - option "MID"
+      - option "LOW"
+    - generic: Предложение
+    - combobox "Предложение":
+      - option "Все исследованные" [selected]
+      - option "tandem_01 · 08 → 09 / LOW"
+      - option "tandem_02 · 04 → 09 / LOW"
+      - option "tandem_03 · 08 → 10 / MID"
+      - option "full_push_overlay_01 · 04 → 09 / LOW"
+      - option "full_push_overlay_02 · 08 → 09 / LOW"
+    - generic: 20 из 20
+    - table:
+      - rowgroup:
+        - row "Шаг Тариф / ARPU Канал / контакты Наблюдение пилота Оценка после пилота Режим":
+          - columnheader "Шаг"
+          - columnheader "Тариф / ARPU"
+          - columnheader "Канал / контакты"
+          - columnheader "Наблюдение пилота"
+          - columnheader "Оценка после пилота"
+          - columnheader "Режим"
+      - rowgroup:
+        - row "01 08 → 12 HIGH SMS 200 контактов -5,68% -5,29% σ 5,51 п.п. Охват страт":
+          - cell "01"
+          - cell "08 → 12 HIGH":
+            - text: 08 → 12
+            - generic: HIGH
+          - cell "SMS 200 контактов":
+            - text: SMS
+            - generic: 200 контактов
+          - cell "-5,68%"
+          - cell "-5,29% σ 5,51 п.п.":
+            - text: "-5,29%"
+            - generic: σ 5,51 п.п.
+          - cell "Охват страт":
+            - generic: Охват страт
+        - row "02 04 → 09 MID SMS 200 контактов +5,32% +5,54% σ 5,54 п.п. Охват страт":
+          - cell "02"
+          - cell "04 → 09 MID":
+            - text: 04 → 09
+            - generic: MID
+          - cell "SMS 200 контактов":
+            - text: SMS
+            - generic: 200 контактов
+          - cell "+5,32%"
+          - cell "+5,54% σ 5,54 п.п.":
+            - text: +5,54%
+            - generic: σ 5,54 п.п.
+          - cell "Охват страт":
+            - generic: Охват страт
+        - row "03 08 → 09 LOW SMS 200 контактов +20,31% +20,49% σ 5,52 п.п. Охват страт":
+          - cell "03"
+          - cell "08 → 09 LOW":
+            - text: 08 → 09
+            - generic: LOW
+          - cell "SMS 200 контактов":
+            - text: SMS
+            - generic: 200 контактов
+          - cell "+20,31%"
+          - cell "+20,49% σ 5,52 п.п.":
+            - text: +20,49%
+            - generic: σ 5,52 п.п.
+          - cell "Охват страт":
+            - generic: Охват страт
+        - row "04 04 → 12 HIGH SMS 200 контактов -7,39% -6,95% σ 5,54 п.п. Охват страт":
+          - cell "04"
+          - cell "04 → 12 HIGH":
+            - text: 04 → 12
+            - generic: HIGH
+          - cell "SMS 200 контактов":
+            - text: SMS
+            - generic: 200 контактов
+          - cell "-7,39%"
+          - cell "-6,95% σ 5,54 п.п.":
+            - text: "-6,95%"
+            - generic: σ 5,54 п.п.
+          - cell "Охват страт":
+            - generic: Охват страт
+        - row "05 08 → 10 MID SMS 200 контактов +4,49% +4,59% σ 5,5 п.п. Охват страт":
+          - cell "05"
+          - cell "08 → 10 MID":
+            - text: 08 → 10
+            - generic: MID
+          - cell "SMS 200 контактов":
+            - text: SMS
+            - generic: 200 контактов
+          - cell "+4,49%"
+          - cell "+4,59% σ 5,5 п.п.":
+            - text: +4,59%
+            - generic: σ 5,5 п.п.
+          - cell "Охват страт":
+            - generic: Охват страт
+        - row "06 04 → 09 LOW SMS 100 контактов +27,05% +26,52% σ 7,6 п.п. Охват страт":
+          - cell "06"
+          - cell "04 → 09 LOW":
+            - text: 04 → 09
+            - generic: LOW
+          - cell "SMS 100 контактов":
+            - text: SMS
+            - generic: 100 контактов
+          - cell "+27,05%"
+          - cell "+26,52% σ 7,6 п.п.":
+            - text: +26,52%
+            - generic: σ 7,6 п.п.
+          - cell "Охват страт":
+            - generic: Охват страт
+        - row "07 08 → 09 HIGH SMS 200 контактов +4,37% +4,15% σ 5,55 п.п. Поиск":
+          - cell "07"
+          - cell "08 → 09 HIGH":
+            - text: 08 → 09
+            - generic: HIGH
+          - cell "SMS 200 контактов":
+            - text: SMS
+            - generic: 200 контактов
+          - cell "+4,37%"
+          - cell "+4,15% σ 5,55 п.п.":
+            - text: +4,15%
+            - generic: σ 5,55 п.п.
+          - cell "Поиск":
+            - generic: Поиск
+        - row "08 10 → 14 HIGH SMS 100 контактов +6,22% +5,53% σ 7,68 п.п. Поиск":
+          - cell "08"
+          - cell "10 → 14 HIGH":
+            - text: 10 → 14
+            - generic: HIGH
+          - cell "SMS 100 контактов":
+            - text: SMS
+            - generic: 100 контактов
+          - cell "+6,22%"
+          - cell "+5,53% σ 7,68 п.п.":
+            - text: +5,53%
+            - generic: σ 7,68 п.п.
+          - cell "Поиск":
+            - generic: Поиск
+        - row "09 08 → 14 HIGH SMS 100 контактов +9,66% +8,72% σ 7,68 п.п. Поиск":
+          - cell "09"
+          - cell "08 → 14 HIGH":
+            - text: 08 → 14
+            - generic: HIGH
+          - cell "SMS 100 контактов":
+            - text: SMS
+            - generic: 100 контактов
+          - cell "+9,66%"
+          - cell "+8,72% σ 7,68 п.п.":
+            - text: +8,72%
+            - generic: σ 7,68 п.п.
+          - cell "Поиск":
+            - generic: Поиск
+        - row "10 08 → 14 HIGH SMS 200 контактов +3,25% +5,19% σ 4,57 п.п. Поиск":
+          - cell "10"
+          - cell "08 → 14 HIGH":
+            - text: 08 → 14
+            - generic: HIGH
+          - cell "SMS 200 контактов":
+            - text: SMS
+            - generic: 200 контактов
+          - cell "+3,25%"
+          - cell "+5,19% σ 4,57 п.п.":
+            - text: +5,19%
+            - generic: σ 4,57 п.п.
+          - cell "Поиск":
+            - generic: Поиск
+        - row "11 10 → 19 HIGH SMS 100 контактов +2,72% +2,33% σ 7,68 п.п. Поиск":
+          - cell "11"
+          - cell "10 → 19 HIGH":
+            - text: 10 → 19
+            - generic: HIGH
+          - cell "SMS 100 контактов":
+            - text: SMS
+            - generic: 100 контактов
+          - cell "+2,72%"
+          - cell "+2,33% σ 7,68 п.п.":
+            - text: +2,33%
+            - generic: σ 7,68 п.п.
+          - cell "Поиск":
+            - generic: Поиск
+        - row "12 10 → 19 HIGH SMS 200 контактов -5,69% -2,85% σ 4,57 п.п. Поиск":
+          - cell "12"
+          - cell "10 → 19 HIGH":
+            - text: 10 → 19
+            - generic: HIGH
+          - cell "SMS 200 контактов":
+            - text: SMS
+            - generic: 200 контактов
+          - cell "-5,69%"
+          - cell "-2,85% σ 4,57 п.п.":
+            - text: "-2,85%"
+            - generic: σ 4,57 п.п.
+          - cell "Поиск":
+            - generic: Поиск
+        - row "13 11 → 12 HIGH SMS 200 контактов +0,8% +0,83% σ 5,51 п.п. Поиск":
+          - cell "13"
+          - cell "11 → 12 HIGH":
+            - text: 11 → 12
+            - generic: HIGH
+          - cell "SMS 200 контактов":
+            - text: SMS
+            - generic: 200 контактов
+          - cell "+0,8%"
+          - cell "+0,83% σ 5,51 п.п.":
+            - text: +0,83%
+            - generic: σ 5,51 п.п.
+          - cell "Поиск":
+            - generic: Поиск
+        - row "14 10 → 14 HIGH SMS 200 контактов -1,09% +1,25% σ 4,57 п.п. Поиск":
+          - cell "14"
+          - cell "10 → 14 HIGH":
+            - text: 10 → 14
+            - generic: HIGH
+          - cell "SMS 200 контактов":
+            - text: SMS
+            - generic: 200 контактов
+          - cell "-1,09%"
+          - cell "+1,25% σ 4,57 п.п.":
+            - text: +1,25%
+            - generic: σ 4,57 п.п.
+          - cell "Поиск":
+            - generic: Поиск
+        - row "15 08 → 19 HIGH SMS 100 контактов +10,22% +9,22% σ 7,68 п.п. Поиск":
+          - cell "15"
+          - cell "08 → 19 HIGH":
+            - text: 08 → 19
+            - generic: HIGH
+          - cell "SMS 100 контактов":
+            - text: SMS
+            - generic: 100 контактов
+          - cell "+10,22%"
+          - cell "+9,22% σ 7,68 п.п.":
+            - text: +9,22%
+            - generic: σ 7,68 п.п.
+          - cell "Поиск":
+            - generic: Поиск
+        - row "16 08 → 19 HIGH SMS 200 контактов -0,49% +2,95% σ 4,57 п.п. Уточнение":
+          - cell "16"
+          - cell "08 → 19 HIGH":
+            - text: 08 → 19
+            - generic: HIGH
+          - cell "SMS 200 контактов":
+            - text: SMS
+            - generic: 200 контактов
+          - cell "-0,49%"
+          - cell "+2,95% σ 4,57 п.п.":
+            - text: +2,95%
+            - generic: σ 4,57 п.п.
+          - cell "Уточнение":
+            - generic: Уточнение
+        - row "17 08 → 09 HIGH SMS 200 контактов -2,64% +0,84% σ 3,97 п.п. Уточнение":
+          - cell "17"
+          - cell "08 → 09 HIGH":
+            - text: 08 → 09
+            - generic: HIGH
+          - cell "SMS 200 контактов":
+            - text: SMS
+            - generic: 200 контактов
+          - cell "-2,64%"
+          - cell "+0,84% σ 3,97 п.п.":
+            - text: +0,84%
+            - generic: σ 3,97 п.п.
+          - cell "Уточнение":
+            - generic: Уточнение
+        - row "18 08 → 14 HIGH SMS 200 контактов +3,62% +4,57% σ 3,56 п.п. Уточнение":
+          - cell "18"
+          - cell "08 → 14 HIGH":
+            - text: 08 → 14
+            - generic: HIGH
+          - cell "SMS 200 контактов":
+            - text: SMS
+            - generic: 200 контактов
+          - cell "+3,62%"
+          - cell "+4,57% σ 3,56 п.п.":
+            - text: +4,57%
+            - generic: σ 3,56 п.п.
+          - cell "Уточнение":
+            - generic: Уточнение
+        - row "19 08 → 10 MID SMS 200 контактов +8,63% +6,54% σ 3,95 п.п. Уточнение":
+          - cell "19"
+          - cell "08 → 10 MID":
+            - text: 08 → 10
+            - generic: MID
+          - cell "SMS 200 контактов":
+            - text: SMS
+            - generic: 200 контактов
+          - cell "+8,63%"
+          - cell "+6,54% σ 3,95 п.п.":
+            - text: +6,54%
+            - generic: σ 3,95 п.п.
+          - cell "Уточнение":
+            - generic: Уточнение
+        - row "20 04 → 09 MID SMS 200 контактов +3,51% +4,55% σ 3,97 п.п. Уточнение":
+          - cell "20"
+          - cell "04 → 09 MID":
+            - text: 04 → 09
+            - generic: MID
+          - cell "SMS 200 контактов":
+            - text: SMS
+            - generic: 200 контактов
+          - cell "+3,51%"
+          - cell "+4,55% σ 3,97 п.п.":
+            - text: +4,55%
+            - generic: σ 3,97 п.п.
+          - cell "Уточнение":
+            - generic: Уточнение
+    - paragraph: Оценки после пилота приведены к референсному каналу SMS. Полоса показывает μ ± σ (шкала −37,5…+37,5%; выходы обрезаны), не доверительный интервал; точные значения указаны числами. Зелёная отметка слева связывает предложение с финальным планом.
+  - generic: tandem · адаптивная разведка → оценка риска → план кампаний
+  - generic: seed 42 · CSV be16f35e89ef
