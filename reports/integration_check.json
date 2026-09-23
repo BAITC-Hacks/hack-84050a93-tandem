@@ -1,0 +1,38 @@
+{
+  "checked_revision": "b386cf8dc7c6da78221abbd4498f0c0f49c057fc",
+  "working_tree_changes_at_execution": ["README.md"],
+  "environment": "Local official mock and synthetic fixtures; not hidden judging performance",
+  "python": "3.12.13",
+  "numpy": "2.5.3",
+  "pandas": "3.0.6",
+  "unit_checks": {
+    "command": "python -m pytest -q",
+    "exit_code": 0,
+    "passed": 44,
+    "seconds": 7.09,
+    "stdout_summary": "44 passed in 7.09s"
+  },
+  "submission_check": {
+    "command": "python tools/verify_submission.py",
+    "exit_code": 0,
+    "passed": true,
+    "checks_passed": 32,
+    "seconds": 2.7212841999989905,
+    "csv_reproduced": true,
+    "committed_artifacts_unchanged": true,
+    "result": {
+      "campaigns": 3,
+      "pilots": 20,
+      "total_contacts": 5976,
+      "total_cost": 30632.0
+    }
+  },
+  "research_integration": {
+    "branch": "codex/adaptivity-ablation",
+    "reviewed_tip": "ae89521",
+    "production_policy_changed": false,
+    "attempts": 140,
+    "pairs": 70,
+    "decision": "Mixed outcomes; no general superiority established; preserve the current production policy"
+  }
+}
