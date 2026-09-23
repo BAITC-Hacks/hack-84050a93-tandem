@@ -67,3 +67,22 @@ def test_failures_remain_in_summary_denominator():
     assert summary["runs"] == 3
     assert summary["valid_positive"] == 1
     assert summary["timeouts"] == summary["invalid"] == 1
+
+
+def test_paired_comparison_rejects_different_seed_sets():
+    from experiments.pilot_research.summarize import paired
+    with pytest.raises(ValueError, match="unpaired"):
+        paired([{"scenario": "x", "seed": 0, "net": 1}],
+               [{"scenario": "x", "seed": 1, "net": 2}])
+
+
+def test_paired_comparison_retains_failed_attempts():
+    from experiments.pilot_research.summarize import paired
+    base = [{"scenario": "x", "seed": 0, "net": -10},
+            {"scenario": "x", "seed": 1, "net": 20}]
+    candidate = [{"scenario": "x", "seed": 0, "net": -5},
+                 {"scenario": "x", "seed": 1, "net": None}]
+    result = paired(base, candidate)["x"]
+    assert result["runs"] == 2
+    assert result["paired_scored"] == result["wins"] == 1
+    assert result["mean_delta"] == 5

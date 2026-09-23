@@ -1,0 +1,50 @@
+{
+  "agent": "experiments.pilot_research.agent:StopAgent",
+  "seeds": "30:50",
+  "source_sha256": {
+    "agent.py": "5a046a450ea2f3d7c423651d60762cab43129699eaa109e8cd9efc18da3a6e53",
+    "experiments/pilot_research/agent.py": "7327c6e0e5441b1e2f3fa85bc49763a62994886857be7601f54658471050ef86",
+    "experiments/pilot_research/measure.py": "216a6314c905e9c3c1bc2d281950a4c205152f0e22fd55edad986eb47e374b77"
+  },
+  "commands": [
+    {
+      "command": [
+        "tools/benchmark.py",
+        "--agent",
+        "experiments.pilot_research.agent:StopAgent",
+        "--seeds",
+        "30:50",
+        "--out",
+        "reports\\pilot_research\\holdout_stop_mock.json"
+      ],
+      "returncode": 0,
+      "error": null
+    },
+    {
+      "command": [
+        "tools/stress_benchmark.py",
+        "--agent",
+        "experiments.pilot_research.agent:StopAgent",
+        "--seeds",
+        "30:50",
+        "--out",
+        "reports\\pilot_research\\holdout_stop_stress.json"
+      ],
+      "returncode": 0,
+      "error": null
+    },
+    {
+      "command": [
+        "experiments/pilot_research/measure.py",
+        "--agent",
+        "experiments.pilot_research.agent:StopAgent",
+        "--seeds",
+        "30:50",
+        "--out",
+        "reports\\pilot_research\\holdout_stop_diagnostics.json"
+      ],
+      "returncode": 0,
+      "error": null
+    }
+  ]
+}

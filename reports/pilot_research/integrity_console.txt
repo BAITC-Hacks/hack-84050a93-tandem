@@ -1,0 +1,24 @@
+{
+  "frozen_policy_matches": true,
+  "outside_scope": [],
+  "diagnostic_attempts": 840,
+  "primary_harness_attempts": 420,
+  "diagnostic_status_counts": {
+    "ok": 840
+  },
+  "model_stable_across_agents_and_seeds": {
+    "mock": true,
+    "devin_all_bad": true,
+    "devin_rare_good": true,
+    "negative_1": true,
+    "negative_2": true,
+    "mixed_1": true,
+    "mixed_2": true,
+    "rare_1": true,
+    "rare_2": true,
+    "devin_mixed": true,
+    "devin_unlucky_noisy_pilots": true,
+    "devin_small_and_empty": true
+  },
+  "all_checks_pass": true
+}
