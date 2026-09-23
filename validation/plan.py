@@ -50,6 +50,8 @@ def validate_plan(campaigns, profile, tariffs, channels, remaining_budget, remai
     details: list[dict] = []
     budget = _resource(remaining_budget, 'remaining_budget', errors)
     contacts = _resource(remaining_contacts, 'remaining_contacts', errors)
+    if contacts is not None and not contacts.is_integer():
+        errors.append('remaining_contacts must be an integer')
     known_tariffs = _known_tariffs(tariffs, errors)
 
     if not isinstance(profile, pd.DataFrame):
@@ -75,6 +77,8 @@ def validate_plan(campaigns, profile, tariffs, channels, remaining_budget, remai
     has_ids = 'ID_NUMBER' in profile.columns
     if not has_ids:
         errors.append("profile must contain column 'ID_NUMBER'")
+    elif profile['ID_NUMBER'].isna().any() or profile['ID_NUMBER'].duplicated().any():
+        errors.append('profile ID_NUMBER values must be present and unique')
 
     for index, original in enumerate(campaigns):
         prefix = f'campaign #{index + 1}'
@@ -86,19 +90,23 @@ def validate_plan(campaigns, profile, tariffs, channels, remaining_budget, remai
         campaign = deepcopy(original)
         segment = profile
         usable = True
+        allowed_keys = {'campaign_name', 'target_tariff', 'channel', 'filter_current_tariff', *FILTERS}
+        if set(campaign) - allowed_keys:
+            errors.append(f'{prefix} has unsupported fields: {sorted(map(str, set(campaign) - allowed_keys))}')
+            usable = False
         target = campaign.get('target_tariff')
         channel = campaign.get('channel')
-        if target not in known_tariffs:
+        if not isinstance(target, str) or target not in known_tariffs:
             errors.append(f'{prefix} has unknown target_tariff {target!r}')
             usable = False
-        if channel not in channels:
+        if not isinstance(channel, str) or channel not in channels:
             errors.append(f'{prefix} has unknown channel {channel!r}')
             usable = False
 
         for field, (column, allowed) in FILTERS.items():
             value = campaign.get(field)
             if _present(value):
-                if value not in allowed:
+                if not isinstance(value, str) or value not in allowed:
                     errors.append(f'{prefix} has invalid {field} {value!r}')
                     usable = False
                 elif column not in profile.columns:
@@ -130,7 +138,7 @@ def validate_plan(campaigns, profile, tariffs, channels, remaining_budget, remai
             errors.append(f'{prefix} selects {size} customers; maximum is {MAX_CUSTOMERS_PER_CAMPAIGN}')
 
         unit_cost = 0.0
-        if channel in channels:
+        if isinstance(channel, str) and channel in channels:
             raw_cost = channels[channel].get('cost_per_contact') if isinstance(channels[channel], dict) else None
             if isinstance(raw_cost, bool) or not isinstance(raw_cost, Real) or not math.isfinite(float(raw_cost)) or raw_cost < 0:
                 errors.append(f'{prefix} channel {channel!r} has invalid cost_per_contact')

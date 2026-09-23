@@ -13,7 +13,9 @@ import io
 import json
 import math
 import multiprocessing
+import os
 from pathlib import Path
+from queue import Empty
 import re
 import statistics
 import subprocess
@@ -55,6 +57,7 @@ def _worker(queue, action: str, agent_spec: str, seed: int) -> None:
     started = time.perf_counter()
     captured = io.StringIO()
     try:
+        os.chdir(ROOT)  # Official CSV loaders use paths relative to the repository.
         agent_class = _load_agent(agent_spec)
         with contextlib.redirect_stdout(captured), contextlib.redirect_stderr(captured):
             if action == 'evaluate':
@@ -69,8 +72,18 @@ def _worker(queue, action: str, agent_spec: str, seed: int) -> None:
                     return valid
 
                 local_eval.sanitize_campaigns = tracking_sanitize
-                result = local_eval.evaluate_agent(agent_class(), seed=seed, verbose=False)
-                payload = {'result': result, 'dropped_campaigns': discard['count']}
+                from validation.plan import validate_plan
+                preflight = {}
+
+                class CheckedAgent:
+                    def act(self, env):
+                        campaigns = agent_class().act(env)
+                        preflight.update(validate_plan(campaigns, env.customer_profile,
+                            env.tariffs, env.channels, env.remaining_budget, env.remaining_contacts))
+                        return campaigns
+
+                result = local_eval.evaluate_agent(CheckedAgent(), seed=seed, verbose=False)
+                payload = {'result': result, 'dropped_campaigns': discard['count'], 'preflight': preflight}
             elif action == 'submission':
                 from make_submission import build_submission
                 payload = build_submission(agent_class(), seed=seed).to_csv(index=False, lineterminator='\n')
@@ -89,22 +102,29 @@ def _run_worker(action: str, agent_spec: str, seed: int, timeout: float) -> dict
     process = context.Process(target=_worker, args=(queue, action, agent_spec, seed))
     started = time.perf_counter()
     process.start()
-    process.join(timeout)
-    elapsed = time.perf_counter() - started
-    if process.is_alive():
-        process.terminate()
-        process.join()
-        queue.close()
-        return {'ok': False, 'timeout': True, 'exception': f'timeout after {timeout:g}s',
-                'output': '', 'seconds': elapsed}
+    deadline = started + timeout
     try:
-        message = queue.get(timeout=1)
-    except Exception:
-        message = {'ok': False, 'exception': f'worker exited with code {process.exitcode} without a result',
-                   'output': '', 'seconds': elapsed}
+        # Drain BEFORE joining: Queue's feeder thread can block child exit when
+        # a large result fills the pipe while the parent waits for that exit.
+        while True:
+            remaining = deadline - time.perf_counter()
+            if remaining <= 0:
+                message = {'ok': False, 'timeout': True, 'exception': f'timeout after {timeout:g}s', 'output': ''}
+                break
+            try:
+                message = queue.get(timeout=min(0.1, remaining))
+                break
+            except Empty:
+                if not process.is_alive():
+                    message = {'ok': False, 'exception': f'worker exited with code {process.exitcode} without a result', 'output': ''}
+                    break
+        process.join(max(0.0, deadline - time.perf_counter()) if message.get('ok') else 0)
     finally:
+        if process.is_alive():
+            process.terminate()
+            process.join(2)
         queue.close()
-    message['seconds'] = elapsed
+    message['seconds'] = time.perf_counter() - started
     return message
 
 
@@ -130,6 +150,7 @@ def _run_row(agent_spec: str, seed: int, timeout: float) -> dict:
         'net_arpu_gain': None, 'total_cost': None, 'total_contacts': None,
         'unique_customers': None, 'n_final_campaigns': None, 'n_pilots': None,
         'dropped_campaigns': detected_drops, 'exception': message.get('exception'), 'output': output,
+        'preflight_valid': None, 'preflight_errors': [], 'capped_campaigns': None,
     }
     if message.get('timeout'):
         row['status'] = 'timeout'
@@ -147,6 +168,14 @@ def _run_row(agent_spec: str, seed: int, timeout: float) -> dict:
     if caught:
         row['status'] = 'agent_error'
         row['exception'] = caught.group(1)
+    preflight = payload.get('preflight') or {}
+    row['preflight_valid'] = preflight.get('valid')
+    row['preflight_errors'] = preflight.get('errors', [])
+    row['capped_campaigns'] = sum(any(c.get(k, False) for k in (
+        'capped_at_campaign_limit', 'capped_at_reach_budget', 'capped_at_money_budget'))
+        for c in result.get('campaigns_detail', []))
+    if row['status'] == 'ok' and (row['preflight_valid'] is not True or row['dropped_campaigns'] or row['capped_campaigns']):
+        row['status'] = 'invalid_plan'
     row.update({
         'net_arpu_gain': result['net_arpu_gain'],
         'total_cost': result['total_cost'],
@@ -166,6 +195,8 @@ def _summary(rows: list[dict], deterministic: bool | None) -> dict:
         'successful_runs': sum(row['status'] == 'ok' for row in rows),
         'failed_runs': sum(row['status'] != 'ok' for row in rows),
         'timeouts': sum(row['status'] == 'timeout' for row in rows),
+        'invalid_plan_runs': sum(row['status'] == 'invalid_plan' for row in rows),
+        'valid_positive_runs': sum(row['status'] == 'ok' and row['net_arpu_gain'] is not None and row['net_arpu_gain'] > 0 for row in rows),
         'positive_runs': sum(value > 0 for value in nets),
         'positive_rate_all_runs': sum(value > 0 for value in nets) / len(rows),
         'median_net': statistics.median(nets) if nets else None,

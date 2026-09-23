@@ -110,3 +110,18 @@ def test_inputs_are_not_mutated(profile, tariffs, channels):
     assert channels == original_channels
     pd.testing.assert_frame_equal(profile, original_profile)
     pd.testing.assert_frame_equal(tariffs, original_tariffs)
+
+
+@pytest.mark.parametrize('field,value', [
+    ('target_tariff', []), ('channel', {}), ('filter_arpu_segment', ['LOW']),
+    ('explicit_ids', [1, 2]), ('filter_typo', 'LOW'),
+])
+def test_malformed_and_unsupported_fields(profile, tariffs, channels, field, value):
+    result = check([campaign(**{field: value})], profile, tariffs, channels)
+    assert not result['valid']
+
+
+def test_fractional_contacts_and_duplicate_ids(profile, tariffs, channels):
+    assert not check([campaign()], profile, tariffs, channels, contacts=2.5)['valid']
+    profile.loc[1, 'ID_NUMBER'] = profile.loc[0, 'ID_NUMBER']
+    assert not check([campaign()], profile, tariffs, channels)['valid']
