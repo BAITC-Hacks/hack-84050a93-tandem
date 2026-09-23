@@ -1,0 +1,49 @@
+{
+  "decision": "KEEP_ACCEPTED_MAIN",
+  "accepted_commit": "b13f9974f12411418088e40d22bca2e060fed96a",
+  "frozen_policy_commit": "5781670",
+  "frozen_measurement_commit": "a87690d",
+  "reason": "Prespecified holdout minimum of eight strict wins was not met. No retuning or deployment.",
+  "development": {
+    "attempts": 48,
+    "policy_runs": 96,
+    "wins": 7,
+    "ties": 41,
+    "losses": 0,
+    "failures": 0,
+    "median_delta": 0.0,
+    "mean_delta": 710.8124536017773,
+    "minimum_delta": 0.0,
+    "maximum_delta": 7911.669945201313,
+    "new_effect_pairs": 22,
+    "winning_scenarios": [
+      "devin_all_bad",
+      "devin_mixed",
+      "devin_rare_good",
+      "devin_unlucky_noisy_pilots",
+      "overlay_dev_negative",
+      "rare_1"
+    ],
+    "source_unchanged": true
+  },
+  "holdout": {
+    "attempts": 80,
+    "policy_runs": 160,
+    "wins": 7,
+    "ties": 73,
+    "losses": 0,
+    "failures": 0,
+    "median_delta": 0.0,
+    "mean_delta": 143.92228368880478,
+    "minimum_delta": 0.0,
+    "maximum_delta": 8494.799999999988,
+    "new_effect_pairs": 32,
+    "winning_scenarios": [
+      "devin_all_bad",
+      "devin_rare_good",
+      "devin_unlucky_noisy_pilots",
+      "packing_holdout_mixed"
+    ],
+    "source_unchanged": true
+  }
+}
