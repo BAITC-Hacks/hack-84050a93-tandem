@@ -35,6 +35,14 @@ def main():
     output, trace_path = args.out.resolve(), args.trace.resolve()
     if output == trace_path:
         parser.error("Submission and trace must be different files")
+    for path, suffix, default in ((output, '.csv', ROOT / 'submission.csv'),
+                                  (trace_path, '.json', ROOT / 'reports' / 'decision_trace.json')):
+        if path.suffix.lower() != suffix:
+            parser.error(f'Output must have {suffix} extension')
+        # Custom artifacts may live outside the repository or inside reports/.
+        # A resolved path handles ../ and symlinks before checking containment.
+        if path.is_relative_to(ROOT) and path != default and not path.is_relative_to(ROOT / 'reports'):
+            parser.error('Custom repository outputs must be inside reports/; source/input locations are protected')
     os.chdir(ROOT)
     from agent import Agent
     from make_submission import SUBMISSION_SEED, build_submission

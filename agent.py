@@ -20,8 +20,12 @@ class Agent:
     def __init__(self):
         self.last_trace = {}
 
+    def plan_portfolio(self, options, budget, contacts):
+        """Separate planning from exploration for controlled algorithm comparisons."""
+        return choose_portfolio(options, budget, contacts)
+
     def act(self, env):
-        self.last_trace = {"pilots": [], "warnings": [], "version": "adaptive-portfolio-v1.2"}
+        self.last_trace = {"pilots": [], "warnings": [], "version": "adaptive-portfolio-v1.3"}
         profile = env.customer_profile.copy().reset_index(drop=True)
         required = {"ID_NUMBER", "current_tariff", "arpu_segment", "predicted_arpu", "data_segment", "call_segment"}
         if required - set(profile.columns):
@@ -203,7 +207,7 @@ class Agent:
             })
 
         options = make_options(profile, beliefs, channels, reference_multiplier, risk_weight=1.65)
-        chosen = choose_portfolio(options, float(env.remaining_budget), int(env.remaining_contacts))
+        chosen = self.plan_portfolio(options, float(env.remaining_budget), int(env.remaining_contacts))
         if not chosen:
             raise RuntimeError("No feasible final campaign after pilots")
         campaigns = []
