@@ -1,0 +1,565 @@
+{
+  "phase": "holdout",
+  "source": {
+    "sha": "ce20a91ddb04b0e89a44f5b59ed2471f7056d07e",
+    "dirty": false,
+    "status_porcelain": []
+  },
+  "versions": {
+    "python": "3.12.13",
+    "numpy": "2.5.3",
+    "pandas": "3.0.6"
+  },
+  "policies": {
+    "baseline": "agent:Agent",
+    "candidate": "experiments.push_overlay.full_coverage_agent:FullCoveragePushAgent"
+  },
+  "scenarios": [
+    "mock",
+    "devin_all_bad",
+    "devin_mixed",
+    "devin_rare_good",
+    "devin_unlucky_noisy_pilots",
+    "devin_small_and_empty",
+    "negative_1",
+    "negative_2",
+    "mixed_1",
+    "mixed_2",
+    "rare_1",
+    "rare_2",
+    "overlay_holdout_mixed",
+    "overlay_holdout_negative",
+    "overlay_holdout_rare",
+    "overlay_holdout_high_conversion"
+  ],
+  "seeds": [
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79
+  ],
+  "source_sha256": {
+    "agent.py": "0ee4d0a4d448b40229887da4983bbf67a4c00a6dc8e907ed28f80b63adc098f2",
+    "customer_profile.csv": "a85e9badf4cb51b1ba8c43a868498b6fa8075509f3cd8e19ef72e1c25a6dc815",
+    "data/change_tariff.csv": "c52d7dad11fccc7425afe6d36a44a1fa03c8cc148be2039ce264d0c5c100f230",
+    "data/dict_tariff.csv": "a34d81dacffbb937ddd542e87d421afcea4842379acfbad55b8d59bdf710f4be",
+    "environment.py": "8003a305ea9a560270ee875b2c48a6b1fbf8198d9c6c680e4827542532bb3dd1",
+    "experiments/pilot_research/measure.py": "216a6314c905e9c3c1bc2d281950a4c205152f0e22fd55edad986eb47e374b77",
+    "experiments/push_overlay/__init__.py": "f016c5697ba1ff9141291e1604b9916d8ab8de52a610bcb71c4883db3d6968a0",
+    "experiments/push_overlay/agent.py": "321e8096b880e356c0c229a48305a9648f89e6d9662aa62777fa2b1a1ff38770",
+    "experiments/push_overlay/full_coverage_agent.py": "ec0be1c416e0bd9132d45cf0c5be9eae690a687fc238a9c993b4d4ab5756fe5f",
+    "experiments/push_overlay/full_coverage_protocol.md": "baccbedd5d845665e402ab86a2f6545e80611ff88d4857b1696096ee1a4f6ce8",
+    "experiments/push_overlay/measure.py": "9c851264b4b50703c7e0a393eaff9da0f1b7ebd6e57573e2bac3ea29fed7096a",
+    "experiments/push_overlay/protocol.md": "163e148a4a66a21b9b5e5c3ddcad2d9fe1578b6f6da825187538297efed097d7",
+    "experiments/push_overlay/scenarios.py": "41666f240897b1d12e643a83520563b8cb66780130d268e7c6729585981f3d3e",
+    "experiments/push_overlay/test_full_coverage.py": "98bb8641757d9be0170fcad51152edb6a9350280062b12c26a9d8245765ec582",
+    "experiments/push_overlay/test_overlay.py": "ff367a81e629fe6a7a6955f5fe7f2a8cceebae0c8c78b2cf7c290e4f977084ea",
+    "make_submission.py": "25c82a71640814de613261a2684824db66c53c7f948af5aa8ba333ae263a9622",
+    "mock_environment.py": "e1e4a480126d2896e89a868194b3ed7f7ee48d7c5fc2c8a2491970d8e231f506",
+    "requirements.txt": "983cdc62971ed1127bfd018abe32e0360d7179049ea0b00ed76ac9e9739fa5d5",
+    "scoring_core.py": "ba68595daebb12418000fa4d59ffbbf156df045f589bdbb789f3531145c58327",
+    "strategy/__init__.py": "d307ba7f3d80724bbfc3f1e97bdd171f1168f9a8deeb67ff97db863f25d33607",
+    "strategy/beliefs.py": "c9c326345bec6d7005931ba3da908d22347c720f78ab710f1ff22a56ceea7f84",
+    "strategy/portfolio.py": "417b3b27da080f22e92fb16d964a8849592a9c464936763672cfd922f2e6bf40",
+    "tariff_dictionary.csv": "d3e6588f5d8e8e51202b4a77b2d4c0243080965a82d8e1d9411149220dd9df1c",
+    "tools/benchmark.py": "8585fe9752ef483d2e942ed3e542720b0b18856402bb62e747770ced15481443",
+    "tools/export_strategy.py": "00aba12390834711df5cd14003940215facd7c89aa2f9016dc7cb37a54d85a0d",
+    "tools/stress_benchmark.py": "a2c884c1a0fd0ac185de5503cd66516379d43e2a1ebbf1f7bf68238f18eafdad",
+    "validation/__init__.py": "62c1fc5f965bafe7fa7c17e6ef3b0630dfb1812e457b554cc40126cb20f4380b",
+    "validation/plan.py": "bd13a612f6b93905c418b01fa1336ea040c0d10c88607764cfe2de7e790420b8"
+  },
+  "scope": "Synthetic public models; no claim about hidden judging or real-world effects",
+  "source_unchanged": true,
+  "seconds": 330.22318650000125,
+  "summary": {
+    "mock": {
+      "attempts": 10,
+      "valid_pairs": 10,
+      "failures": 0,
+      "baseline": {
+        "median": 1565652.214413112,
+        "q10": 1077417.1139848863,
+        "minimum": 1055972.5689197008,
+        "positive": 10,
+        "mean_contacts": 7395.2
+      },
+      "candidate": {
+        "median": 1573414.1281645568,
+        "q10": 1077417.1139848863,
+        "minimum": 1055972.5689197008,
+        "positive": 10,
+        "mean_contacts": 9117.7
+      },
+      "paired": {
+        "median": 0.0,
+        "q10": 0.0,
+        "minimum": 0.0,
+        "maximum": 15523.827502889559,
+        "wins": 1,
+        "losses": 0,
+        "ties": 9,
+        "mean_additions": 2.4,
+        "mean_extra_contacts": 1722.5
+      }
+    },
+    "devin_all_bad": {
+      "attempts": 10,
+      "valid_pairs": 10,
+      "failures": 0,
+      "baseline": {
+        "median": -325269.59,
+        "q10": -325845.59,
+        "minimum": -326709.59,
+        "positive": 0,
+        "mean_contacts": 1122.0
+      },
+      "candidate": {
+        "median": -252525.99,
+        "q10": -260334.8,
+        "minimum": -260622.8,
+        "positive": 0,
+        "mean_contacts": 1842.0
+      },
+      "paired": {
+        "median": 72423.60000000003,
+        "q10": 65126.79000000004,
+        "minimum": 65126.79000000004,
+        "maximum": 73621.59000000003,
+        "wins": 10,
+        "losses": 0,
+        "ties": 0,
+        "mean_additions": 9.0,
+        "mean_extra_contacts": 720.0
+      }
+    },
+    "devin_mixed": {
+      "attempts": 10,
+      "valid_pairs": 10,
+      "failures": 0,
+      "baseline": {
+        "median": 360899.19999999995,
+        "q10": 360419.19999999995,
+        "minimum": 360419.19999999995,
+        "positive": 10,
+        "mean_contacts": 1210.0
+      },
+      "candidate": {
+        "median": 382207.6,
+        "q10": 381621.11199999996,
+        "minimum": 380662.72,
+        "positive": 10,
+        "mean_contacts": 1930.0
+      },
+      "paired": {
+        "median": 21308.400000000023,
+        "q10": 19048.320000000018,
+        "minimum": 8291.520000000019,
+        "maximum": 21308.400000000023,
+        "wins": 10,
+        "losses": 0,
+        "ties": 0,
+        "mean_additions": 9.0,
+        "mean_extra_contacts": 720.0
+      }
+    },
+    "devin_rare_good": {
+      "attempts": 10,
+      "valid_pairs": 10,
+      "failures": 0,
+      "baseline": {
+        "median": -232709.22000000003,
+        "q10": -239450.73,
+        "minimum": -240026.73,
+        "positive": 0,
+        "mean_contacts": 987.8
+      },
+      "candidate": {
+        "median": -181181.76625,
+        "q10": -185433.261,
+        "minimum": -185709.03,
+        "positive": 0,
+        "mean_contacts": 1660.2
+      },
+      "paired": {
+        "median": 54317.700000000026,
+        "q10": 47946.600000000035,
+        "minimum": 47946.600000000035,
+        "maximum": 54317.70000000004,
+        "wins": 10,
+        "losses": 0,
+        "ties": 0,
+        "mean_additions": 9.0,
+        "mean_extra_contacts": 672.4
+      }
+    },
+    "devin_unlucky_noisy_pilots": {
+      "attempts": 10,
+      "valid_pairs": 10,
+      "failures": 0,
+      "baseline": {
+        "median": 92385.01,
+        "q10": 72240.40825000001,
+        "minimum": 71327.70249999998,
+        "positive": 10,
+        "mean_contacts": 1202.0
+      },
+      "candidate": {
+        "median": 94370.56,
+        "q10": 79289.80825000002,
+        "minimum": 73895.1025,
+        "positive": 10,
+        "mean_contacts": 1916.6
+      },
+      "paired": {
+        "median": 2345.550000000003,
+        "q10": 843.0299999999959,
+        "minimum": 443.70000000001164,
+        "maximum": 7547.400000000009,
+        "wins": 10,
+        "losses": 0,
+        "ties": 0,
+        "mean_additions": 9.0,
+        "mean_extra_contacts": 714.6
+      }
+    },
+    "devin_small_and_empty": {
+      "attempts": 10,
+      "valid_pairs": 10,
+      "failures": 0,
+      "baseline": {
+        "median": 274180.7,
+        "q10": 184121.77850000001,
+        "minimum": 181675.97,
+        "positive": 10,
+        "mean_contacts": 204.0
+      },
+      "candidate": {
+        "median": 274180.7,
+        "q10": 184121.77850000001,
+        "minimum": 181675.97,
+        "positive": 10,
+        "mean_contacts": 288.0
+      },
+      "paired": {
+        "median": 0.0,
+        "q10": 0.0,
+        "minimum": 0.0,
+        "maximum": 0.0,
+        "wins": 0,
+        "losses": 0,
+        "ties": 10,
+        "mean_additions": 0.7,
+        "mean_extra_contacts": 84.0
+      }
+    },
+    "negative_1": {
+      "attempts": 10,
+      "valid_pairs": 10,
+      "failures": 0,
+      "baseline": {
+        "median": -1061489.0841030222,
+        "q10": -1148735.1422576732,
+        "minimum": -1179259.2920277975,
+        "positive": 0,
+        "mean_contacts": 2418.0
+      },
+      "candidate": {
+        "median": -1050367.1499215376,
+        "q10": -1147622.9488395248,
+        "minimum": -1168137.3578463132,
+        "positive": 0,
+        "mean_contacts": 2690.0
+      },
+      "paired": {
+        "median": 11121.934181484394,
+        "q10": 5028.412314445619,
+        "minimum": 0.0,
+        "maximum": 11121.934181484627,
+        "wins": 9,
+        "losses": 0,
+        "ties": 1,
+        "mean_additions": 3.3,
+        "mean_extra_contacts": 272.0
+      }
+    },
+    "negative_2": {
+      "attempts": 10,
+      "valid_pairs": 10,
+      "failures": 0,
+      "baseline": {
+        "median": -459900.2752424834,
+        "q10": -480967.7790942109,
+        "minimum": -509608.88599215297,
+        "positive": 0,
+        "mean_contacts": 2556.0
+      },
+      "candidate": {
+        "median": -455940.8784451736,
+        "q10": -479721.0548388737,
+        "minimum": -502485.9497282462,
+        "positive": 0,
+        "mean_contacts": 2766.0
+      },
+      "paired": {
+        "median": 2576.6956374074216,
+        "q10": 453.2418109049264,
+        "minimum": 453.241810904874,
+        "maximum": 7122.936263906769,
+        "wins": 10,
+        "losses": 0,
+        "ties": 0,
+        "mean_additions": 3.2,
+        "mean_extra_contacts": 210.0
+      }
+    },
+    "mixed_1": {
+      "attempts": 10,
+      "valid_pairs": 10,
+      "failures": 0,
+      "baseline": {
+        "median": 1119404.4770878288,
+        "q10": 860160.3770833492,
+        "minimum": 860072.4486252561,
+        "positive": 10,
+        "mean_contacts": 2686.0
+      },
+      "candidate": {
+        "median": 1133226.6137999292,
+        "q10": 879423.2524222352,
+        "minimum": 873894.5853373564,
+        "positive": 10,
+        "mean_contacts": 3722.0
+      },
+      "paired": {
+        "median": 13822.136712100357,
+        "q10": 13822.136712100333,
+        "minimum": 13822.136712100124,
+        "maximum": 19867.40185297327,
+        "wins": 10,
+        "losses": 0,
+        "ties": 0,
+        "mean_additions": 6.8,
+        "mean_extra_contacts": 1036.0
+      }
+    },
+    "mixed_2": {
+      "attempts": 10,
+      "valid_pairs": 10,
+      "failures": 0,
+      "baseline": {
+        "median": 266673.9341694953,
+        "q10": 122813.85154349799,
+        "minimum": 53325.98641355771,
+        "positive": 10,
+        "mean_contacts": 3248.0
+      },
+      "candidate": {
+        "median": 276360.21412300714,
+        "q10": 123782.47953884918,
+        "minimum": 63012.26636706955,
+        "positive": 10,
+        "mean_contacts": 4576.0
+      },
+      "paired": {
+        "median": 9686.27995351184,
+        "q10": 0.0,
+        "minimum": 0.0,
+        "maximum": 10031.983671603724,
+        "wins": 7,
+        "losses": 0,
+        "ties": 3,
+        "mean_additions": 6.9,
+        "mean_extra_contacts": 1328.0
+      }
+    },
+    "rare_1": {
+      "attempts": 10,
+      "valid_pairs": 10,
+      "failures": 0,
+      "baseline": {
+        "median": -288734.19410652143,
+        "q10": -291961.7759394246,
+        "minimum": -292421.5600798734,
+        "positive": 0,
+        "mean_contacts": 1875.6
+      },
+      "candidate": {
+        "median": -244802.81796571938,
+        "q10": -246753.6330357638,
+        "minimum": -249257.7653264723,
+        "positive": 0,
+        "mean_contacts": 2403.0
+      },
+      "paired": {
+        "median": 43163.79475340113,
+        "q10": 40928.75655933206,
+        "minimum": 32781.56652477273,
+        "maximum": 45435.29269813403,
+        "wins": 10,
+        "losses": 0,
+        "ties": 0,
+        "mean_additions": 8.0,
+        "mean_extra_contacts": 527.4
+      }
+    },
+    "rare_2": {
+      "attempts": 10,
+      "valid_pairs": 10,
+      "failures": 0,
+      "baseline": {
+        "median": -264745.7921811448,
+        "q10": -289473.74668556545,
+        "minimum": -306591.12405742053,
+        "positive": 0,
+        "mean_contacts": 2797.3
+      },
+      "candidate": {
+        "median": -262733.9147119478,
+        "q10": -286607.8145379565,
+        "minimum": -305085.24001734564,
+        "positive": 0,
+        "mean_contacts": 2958.6
+      },
+      "paired": {
+        "median": 1505.8840400748595,
+        "q10": 1006.706334392482,
+        "minimum": 1006.706334392482,
+        "maximum": 3017.0486040016403,
+        "wins": 10,
+        "losses": 0,
+        "ties": 0,
+        "mean_additions": 2.5,
+        "mean_extra_contacts": 161.3
+      }
+    },
+    "overlay_holdout_mixed": {
+      "attempts": 10,
+      "valid_pairs": 10,
+      "failures": 0,
+      "baseline": {
+        "median": 444984.4832395518,
+        "q10": 285936.84633228125,
+        "minimum": 213477.27179101633,
+        "positive": 10,
+        "mean_contacts": 2365.6
+      },
+      "candidate": {
+        "median": 447232.9704347807,
+        "q10": 300952.9645349262,
+        "minimum": 289746.46670098515,
+        "positive": 10,
+        "mean_contacts": 3297.2
+      },
+      "paired": {
+        "median": 2223.9869600396196,
+        "q10": 0.0,
+        "minimum": 0.0,
+        "maximum": 76269.19490996882,
+        "wins": 8,
+        "losses": 0,
+        "ties": 2,
+        "mean_additions": 6.5,
+        "mean_extra_contacts": 931.6
+      }
+    },
+    "overlay_holdout_negative": {
+      "attempts": 10,
+      "valid_pairs": 10,
+      "failures": 0,
+      "baseline": {
+        "median": -524780.2347277557,
+        "q10": -550128.0788708915,
+        "minimum": -558218.3095433969,
+        "positive": 0,
+        "mean_contacts": 2568.1
+      },
+      "candidate": {
+        "median": -462480.68102938915,
+        "q10": -486264.5016583056,
+        "minimum": -498268.22825297643,
+        "positive": 0,
+        "mean_contacts": 3031.3
+      },
+      "paired": {
+        "median": 61045.07427406756,
+        "q10": 59950.081290420494,
+        "minimum": 59950.081290420494,
+        "maximum": 65808.68453385175,
+        "wins": 10,
+        "losses": 0,
+        "ties": 0,
+        "mean_additions": 3.5,
+        "mean_extra_contacts": 463.2
+      }
+    },
+    "overlay_holdout_rare": {
+      "attempts": 10,
+      "valid_pairs": 10,
+      "failures": 0,
+      "baseline": {
+        "median": 290210.0899624118,
+        "q10": 230992.253914996,
+        "minimum": 127099.06788752342,
+        "positive": 10,
+        "mean_contacts": 2705.4
+      },
+      "candidate": {
+        "median": 310824.6802390587,
+        "q10": 251459.8610675605,
+        "minimum": 144463.35998823697,
+        "positive": 10,
+        "mean_contacts": 3798.2
+      },
+      "paired": {
+        "median": 20436.089040959167,
+        "q10": 11525.707411930081,
+        "minimum": 10606.670130747545,
+        "maximum": 22772.238509021874,
+        "wins": 10,
+        "losses": 0,
+        "ties": 0,
+        "mean_additions": 5.6,
+        "mean_extra_contacts": 1092.8
+      }
+    },
+    "overlay_holdout_high_conversion": {
+      "attempts": 10,
+      "valid_pairs": 10,
+      "failures": 0,
+      "baseline": {
+        "median": 269236.64274010836,
+        "q10": 106859.6085005675,
+        "minimum": 101051.87585497423,
+        "positive": 10,
+        "mean_contacts": 2514.6
+      },
+      "candidate": {
+        "median": 334599.8976594823,
+        "q10": 171504.25018853333,
+        "minimum": 146288.32854695225,
+        "positive": 10,
+        "mean_contacts": 3334.4
+      },
+      "paired": {
+        "median": 48169.051918938465,
+        "q10": 20775.56438972829,
+        "minimum": 0.0,
+        "maximum": 73254.14340484588,
+        "wins": 9,
+        "losses": 0,
+        "ties": 1,
+        "mean_additions": 6.1,
+        "mean_extra_contacts": 819.8
+      }
+    }
+  },
+  "attempts": 160,
+  "failed_pairs": 0,
+  "all_observed_deltas_nondecreasing": true
+}
