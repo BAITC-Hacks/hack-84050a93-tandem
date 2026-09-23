@@ -105,9 +105,9 @@ def run_scenario(agent_class, scenario: str, seed: int) -> dict:
     except Exception as exc:
         final = []
         exception = f'{type(exc).__name__}: {exc}'
-    final = sanitize_campaigns(final, tariffs)[:10]
     preflight = validate_plan(final, profile, tariffs, CHANNELS,
                               env.remaining_budget, env.remaining_contacts)
+    final = sanitize_campaigns(final, tariffs)[:10]
     pilots = internals.executed_pilot_campaigns()
     all_campaigns = pd.DataFrame(pilots + final)
     if all_campaigns.empty:
@@ -120,7 +120,8 @@ def run_scenario(agent_class, scenario: str, seed: int) -> dict:
         result = score_campaigns(all_campaigns, profile, model, tariffs,
                                  float(profile['predicted_arpu'].sum()), _fallback, team_id='stress')
     return {
-        'scenario': scenario, 'seed': seed, 'status': 'ok' if result is not None and exception is None else 'error',
+        'scenario': scenario, 'seed': seed, 'status': ('error' if result is None or exception is not None
+            else 'ok' if preflight['valid'] else 'invalid_plan'),
         'net_arpu_gain': result['net_arpu_gain'] if result else None,
         'total_cost': result['total_cost'] if result else None,
         'total_contacts': result['total_contacts'] if result else None,

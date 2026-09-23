@@ -48,7 +48,7 @@ python tools/analyze_data.py
 ## 6. Воспроизводимый запуск
 
 ```bash
-python -m pip install -r requirements.txt
+python -m pip install -r requirements-dev.txt
 python tools/analyze_data.py
 python -m pytest -q
 python tools/benchmark.py --agent agent_template:Agent --seeds 0:10 --out reports/benchmark_template.json
