@@ -1,0 +1,42 @@
+=== Результат команды: local ===
+Статус: PASS
+Baseline ARPU (без кампаний):      150,641,084
+Прирост ARPU (gross):                1,307,749
+Затраты на коммуникацию:                30,632
+ЧИСТЫЙ РЕЗУЛЬТАТ (net):              1,277,117   (+0.848% к baseline)
+ARPU после кампаний:               151,918,202
+
+Кампаний: 23  |  контактов: 5,976  |  уникальных абонентов: 5,040 (21.5%)
+Средний чистый прирост на абонента: 253.4
+ROI (gross lift / затраты): 42.69
+Risk score (% абонентов с отрицательным эффектом): 17.5%
+Бюджет: 30,632 из 100,000 у.е. (30.6%)
+
+По кампаниям (gross, до дедупликации между кампаниями):
+  - pilot_1 [sms]: контактов=200  cost=800  gross_lift=3,805  negative=0
+  - pilot_2 [sms]: контактов=200  cost=800  gross_lift=10,054  negative=0
+  - pilot_3 [sms]: контактов=200  cost=800  gross_lift=173,767  negative=0
+  - pilot_4 [sms]: контактов=200  cost=800  gross_lift=236  negative=0
+  - pilot_5 [sms]: контактов=200  cost=800  gross_lift=59,199  negative=0
+  - pilot_6 [sms]: контактов=100  cost=400  gross_lift=79,122  negative=0
+  - pilot_7 [sms]: контактов=200  cost=800  gross_lift=-10,374  negative=200
+  - pilot_8 [sms]: контактов=100  cost=400  gross_lift=-304  negative=100
+  - pilot_9 [sms]: контактов=100  cost=400  gross_lift=4,690  negative=0
+  - pilot_10 [sms]: контактов=200  cost=800  gross_lift=9,113  negative=0
+  - pilot_11 [sms]: контактов=100  cost=400  gross_lift=-1,959  negative=100
+  - pilot_12 [sms]: контактов=200  cost=800  gross_lift=-3,855  negative=200
+  - pilot_13 [sms]: контактов=200  cost=800  gross_lift=18,972  negative=0
+  - pilot_14 [sms]: контактов=200  cost=800  gross_lift=-615  negative=200
+  - pilot_15 [sms]: контактов=100  cost=400  gross_lift=3,186  negative=0
+  - pilot_16 [sms]: контактов=200  cost=800  gross_lift=6,160  negative=0
+  - pilot_17 [sms]: контактов=200  cost=800  gross_lift=-10,036  negative=200
+  - pilot_18 [sms]: контактов=200  cost=800  gross_lift=9,329  negative=0
+  - pilot_19 [sms]: контактов=200  cost=800  gross_lift=57,725  negative=0
+  - pilot_20 [sms]: контактов=200  cost=800  gross_lift=10,454  negative=0
+  - tandem_01 [digital_ads]: контактов=457  cost=10,054  gross_lift=538,782  negative=0
+  - tandem_02 [digital_ads]: контактов=299  cost=6,578  gross_lift=304,887  negative=0
+  - tandem_03 [push]: контактов=1,720  cost=0  gross_lift=388,095  negative=0
+
+Пилотов проведено: 20 из 20
+Осталось бюджета: 86,000 из 100,000
+Осталось охвата:  11,500 из 15,000

@@ -1,0 +1,7 @@
+Кампаний в стратегии: 3
+campaign_name filter_arpu_segment filter_data_segment filter_call_segment filter_current_tariff target_tariff     channel
+    tandem_01                 LOW                None                None              tariff_8      tariff_9 digital_ads
+    tandem_02                 LOW                None                None              tariff_4      tariff_9 digital_ads
+    tandem_03                 MID                None                None              tariff_8     tariff_10        push
+
+Сохранено: submission.csv  (сдавайте вместе с agent.py)

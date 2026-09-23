@@ -1,0 +1,210 @@
+{
+  "base_sha": "571cb7581e60db84614a8610a7c74e13bdd589be",
+  "started_at_utc": "2026-09-23T10:55:38.322254+00:00",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "os": {
+    "system": "Windows",
+    "release": "11",
+    "version": "10.0.26200",
+    "machine": "AMD64"
+  },
+  "isolation": "New network clone and new venv; no old workspace files or environments copied. Wheel cache may be reused by pip.",
+  "another_physical_computer_verified": false,
+  "original_artifacts": {
+    "submission.csv": {
+      "raw": "58b9328d66fa2532a8df2bb13cfbe5d15ea295cb49fbbe1c88c40333d209abf8",
+      "lf": "58b9328d66fa2532a8df2bb13cfbe5d15ea295cb49fbbe1c88c40333d209abf8"
+    },
+    "reports/decision_trace.json": {
+      "raw": "29239f6d8d4a0c2dc3ff35acf9789c013c9a032e20d5a79d1aa84165c22fd404",
+      "lf": "29239f6d8d4a0c2dc3ff35acf9789c013c9a032e20d5a79d1aa84165c22fd404"
+    }
+  },
+  "commands": {
+    "install_runtime": {
+      "command": [
+        ".venv/Scripts/python.exe",
+        "-m",
+        "pip",
+        "install",
+        "-r",
+        "requirements.txt"
+      ],
+      "exit_code": 0,
+      "seconds": 24.9706391999498,
+      "stdout": "install_runtime_stdout.txt",
+      "stderr": "install_runtime_stderr.txt"
+    },
+    "runtime_versions": {
+      "command": [
+        ".venv/Scripts/python.exe",
+        "-m",
+        "pip",
+        "freeze"
+      ],
+      "exit_code": 0,
+      "seconds": 0.5167558999964967,
+      "stdout": "runtime_versions_stdout.txt",
+      "stderr": "runtime_versions_stderr.txt"
+    },
+    "local_eval_seed42": {
+      "command": [
+        ".venv/Scripts/python.exe",
+        "local_eval.py"
+      ],
+      "exit_code": 0,
+      "seconds": 2.757390800048597,
+      "stdout": "local_eval_seed42_stdout.txt",
+      "stderr": "local_eval_seed42_stderr.txt",
+      "no_swallowed_error_or_drop_or_nan": true
+    },
+    "local_eval_ten": {
+      "command": [
+        ".venv/Scripts/python.exe",
+        "local_eval.py",
+        "--runs",
+        "10"
+      ],
+      "exit_code": 0,
+      "seconds": 10.086424399982207,
+      "stdout": "local_eval_ten_stdout.txt",
+      "stderr": "local_eval_ten_stderr.txt",
+      "no_swallowed_error_or_drop_or_nan": true
+    },
+    "verify_help": {
+      "command": [
+        ".venv/Scripts/python.exe",
+        "tools/verify_submission.py",
+        "--help"
+      ],
+      "exit_code": 0,
+      "seconds": 0.12145910004619509,
+      "stdout": "verify_help_stdout.txt",
+      "stderr": "verify_help_stderr.txt"
+    },
+    "verify_before": {
+      "command": [
+        ".venv/Scripts/python.exe",
+        "tools/verify_submission.py"
+      ],
+      "exit_code": 0,
+      "seconds": 2.0841088000452146,
+      "stdout": "verify_before_stdout.txt",
+      "stderr": "verify_before_stderr.txt",
+      "root_artifacts_byte_unchanged": true
+    },
+    "run_demo": {
+      "command": [
+        ".venv/Scripts/python.exe",
+        "tools/run_demo.py",
+        "--output-root",
+        "reports/final_acceptance/demo_runs"
+      ],
+      "exit_code": 0,
+      "seconds": 2.5888137000147253,
+      "stdout": "run_demo_stdout.txt",
+      "stderr": "run_demo_stderr.txt",
+      "root_artifacts_byte_unchanged": true
+    },
+    "official_submission": {
+      "command": [
+        ".venv/Scripts/python.exe",
+        "make_submission.py"
+      ],
+      "exit_code": 0,
+      "seconds": 1.3060950000071898,
+      "stdout": "official_submission_stdout.txt",
+      "stderr": "official_submission_stderr.txt"
+    },
+    "verify_after": {
+      "command": [
+        ".venv/Scripts/python.exe",
+        "tools/verify_submission.py"
+      ],
+      "exit_code": 0,
+      "seconds": 2.406963000074029,
+      "stdout": "verify_after_stdout.txt",
+      "stderr": "verify_after_stderr.txt",
+      "root_artifacts_byte_unchanged": true
+    },
+    "install_dev": {
+      "command": [
+        ".venv/Scripts/python.exe",
+        "-m",
+        "pip",
+        "install",
+        "-r",
+        "requirements-dev.txt"
+      ],
+      "exit_code": 0,
+      "seconds": 7.120348500087857,
+      "stdout": "install_dev_stdout.txt",
+      "stderr": "install_dev_stderr.txt"
+    },
+    "all_tests": {
+      "command": [
+        ".venv/Scripts/python.exe",
+        "-m",
+        "pytest",
+        "-q"
+      ],
+      "exit_code": 0,
+      "seconds": 6.06488660001196,
+      "stdout": "all_tests_stdout.txt",
+      "stderr": "all_tests_stderr.txt"
+    },
+    "dev_versions": {
+      "command": [
+        ".venv/Scripts/python.exe",
+        "-m",
+        "pip",
+        "freeze"
+      ],
+      "exit_code": 0,
+      "seconds": 0.5557457999093458,
+      "stdout": "dev_versions_stdout.txt",
+      "stderr": "dev_versions_stderr.txt"
+    }
+  },
+  "fresh_html": "reports/final_acceptance/demo_runs/run_20260923T105619Z_7ljnlft5/decision_report.html",
+  "demo_result": {
+    "campaigns": 3,
+    "pilots": 20,
+    "total_contacts": 5976,
+    "total_cost": 30632.0,
+    "preflight_valid": true,
+    "deterministic_submission": true
+  },
+  "demo_sha256_lf": {
+    "submission.csv": "58b9328d66fa2532a8df2bb13cfbe5d15ea295cb49fbbe1c88c40333d209abf8",
+    "decision_trace.json": "ed5c5cc5c94c44a8f4ddaba7102112335c926e3211391ba77874688bdd6a4d23",
+    "decision_report.html": "fe60ffec8138126fe153e79b15b69276f19fd3ead43aadebde234134f002d04d"
+  },
+  "must_have_seed42": {
+    "act_without_error": true,
+    "campaigns_1_to_10": true,
+    "real_pilots_observed": true,
+    "pilot_counts_sizes": true,
+    "final_size_limit": true,
+    "total_contacts_limit": true,
+    "total_budget_limit": true,
+    "independent_preflight": true,
+    "deterministic": true,
+    "expected_csv_hash": true
+  },
+  "official_csv": {
+    "produced_hashes": {
+      "raw": "107682c55f5f632af3dfc47f4bdf32e2b1aac9c41321e1cc82e16f9da1f79b4e",
+      "lf": "58b9328d66fa2532a8df2bb13cfbe5d15ea295cb49fbbe1c88c40333d209abf8"
+    },
+    "identical_after_crlf_to_lf": true,
+    "raw_identical": false
+  },
+  "trace_unchanged": true,
+  "root_csv_after_commands": {
+    "raw": "107682c55f5f632af3dfc47f4bdf32e2b1aac9c41321e1cc82e16f9da1f79b4e",
+    "lf": "58b9328d66fa2532a8df2bb13cfbe5d15ea295cb49fbbe1c88c40333d209abf8"
+  },
+  "root_csv_original_bytes_restored": true,
+  "finished_at_utc": "2026-09-23T10:56:39.089808+00:00"
+}
