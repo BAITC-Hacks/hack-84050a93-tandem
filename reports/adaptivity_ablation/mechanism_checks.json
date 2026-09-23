@@ -1,0 +1,12 @@
+{
+  "tests_passed": 4,
+  "command": "python -m pytest -q experiments/adaptivity_ablation/test_ablation.py",
+  "before_comparison": true,
+  "initial_test_failure": "An initial test incorrectly assumed an 80-contact budget could fit a 240-person indivisible final cell. Both baseline and candidate explicitly reject it. Test assertion corrected; policy unchanged.",
+  "checks": [
+    "generated copy only documented changes; final block identical",
+    "complete fixed schedule before first real call; identical actions under opposite replies; HIGH/MID/LOW and tariff diversity",
+    "final beliefs contain real observations only, no fantasy precision",
+    "resource limits preserved even when unchanged final planner has no feasible plan"
+  ]
+}

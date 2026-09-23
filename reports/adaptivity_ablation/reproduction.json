@@ -1,0 +1,144 @@
+{
+  "git": {
+    "sha": "26864b1760e794134af0b7ebf69c109891e7f71d",
+    "dirty": true,
+    "status_porcelain": [
+      "?? experiments/adaptivity_ablation/"
+    ]
+  },
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "scenarios": [
+    "mock"
+  ],
+  "agents": {
+    "adaptive": "agent:Agent",
+    "fixed": "experiments.adaptivity_ablation.fixed_agent:FixedSurveyAgent"
+  },
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.5.3",
+    "pandas": "3.0.6"
+  },
+  "summary": {
+    "mock": {
+      "policies": {
+        "adaptive": {
+          "attempts": 5,
+          "scored": 5,
+          "median_net": 1540051.442359779,
+          "q10_net": 1430652.3274687212,
+          "min_net": 1415933.02024861,
+          "valid_positive": 5,
+          "positive_discovery": 5,
+          "positive_deployment": 5,
+          "positive_observation": 5,
+          "statuses": {
+            "ok": 5,
+            "error": 0,
+            "invalid_plan": 0,
+            "timeout": 0
+          },
+          "valid_positive_rate_all_attempts": 1.0,
+          "mean_pilot_cost": 13920.0,
+          "mean_pilot_contacts": 3480.0,
+          "mean_total_cost": 73284.0,
+          "mean_total_contacts": 7223.8,
+          "mean_n_pilots": 19.6,
+          "mean_agent_seconds": 0.5730772400042042,
+          "mean_wall_seconds": 1.760713559994474,
+          "mean_dropped_campaigns": 0.0,
+          "mean_capped_campaigns": 0.0
+        }
+      },
+      "pairs": [],
+      "paired": {
+        "complete_valid_pairs": 0,
+        "median_adaptive_minus_fixed": null,
+        "q10_adaptive_minus_fixed": null,
+        "min_adaptive_minus_fixed": null,
+        "max_adaptive_minus_fixed": null,
+        "adaptive_wins": 0,
+        "fixed_wins": 0,
+        "ties": 0
+      }
+    }
+  },
+  "journal": "reproduction.jsonl",
+  "disclaimer": "Known synthetic models with new noise seeds, not hidden judging or real revenue. Same seed does not imply identical client samples.",
+  "reproduction": {
+    "passed": true,
+    "checks": [
+      {
+        "seed": 0,
+        "checks": {
+          "net": true,
+          "total_cost": true,
+          "total_contacts": true,
+          "n_pilots": true,
+          "preflight": true,
+          "status": true,
+          "pilot_cost": true,
+          "pilot_contacts": true
+        }
+      },
+      {
+        "seed": 1,
+        "checks": {
+          "net": true,
+          "total_cost": true,
+          "total_contacts": true,
+          "n_pilots": true,
+          "preflight": true,
+          "status": true,
+          "pilot_cost": true,
+          "pilot_contacts": true
+        }
+      },
+      {
+        "seed": 2,
+        "checks": {
+          "net": true,
+          "total_cost": true,
+          "total_contacts": true,
+          "n_pilots": true,
+          "preflight": true,
+          "status": true,
+          "pilot_cost": true,
+          "pilot_contacts": true
+        }
+      },
+      {
+        "seed": 3,
+        "checks": {
+          "net": true,
+          "total_cost": true,
+          "total_contacts": true,
+          "n_pilots": true,
+          "preflight": true,
+          "status": true,
+          "pilot_cost": true,
+          "pilot_contacts": true
+        }
+      },
+      {
+        "seed": 4,
+        "checks": {
+          "net": true,
+          "total_cost": true,
+          "total_contacts": true,
+          "n_pilots": true,
+          "preflight": true,
+          "status": true,
+          "pilot_cost": true,
+          "pilot_contacts": true
+        }
+      }
+    ]
+  }
+}
