@@ -1,0 +1,231 @@
+{
+  "reviewed_commit": "2c3a2da4c5b8b75fd23df98492c610317548c2a4",
+  "tested_product_commit": "3af29c7aa40bf8c4467adb6654910b1c6077c7ae",
+  "checks": [
+    {
+      "name": "only_acceptance_evidence_changed",
+      "passed": true
+    },
+    {
+      "name": "source_sha256:agent.py",
+      "passed": true
+    },
+    {
+      "name": "source_sha256:strategy/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "source_sha256:strategy/beliefs.py",
+      "passed": true
+    },
+    {
+      "name": "source_sha256:strategy/full_coverage_push.py",
+      "passed": true
+    },
+    {
+      "name": "source_sha256:strategy/portfolio.py",
+      "passed": true
+    },
+    {
+      "name": "source_sha256:validation/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "source_sha256:validation/overlay.py",
+      "passed": true
+    },
+    {
+      "name": "source_sha256:validation/plan.py",
+      "passed": true
+    },
+    {
+      "name": "source_sha256:tools/export_strategy.py",
+      "passed": true
+    },
+    {
+      "name": "source_sha256:environment.py",
+      "passed": true
+    },
+    {
+      "name": "source_sha256:mock_environment.py",
+      "passed": true
+    },
+    {
+      "name": "source_sha256:scoring_core.py",
+      "passed": true
+    },
+    {
+      "name": "source_sha256:make_submission.py",
+      "passed": true
+    },
+    {
+      "name": "source_sha256:requirements.txt",
+      "passed": true
+    },
+    {
+      "name": "input_sha256:customer_profile.csv",
+      "passed": true
+    },
+    {
+      "name": "input_sha256:tariff_dictionary.csv",
+      "passed": true
+    },
+    {
+      "name": "input_sha256:data/dict_tariff.csv",
+      "passed": true
+    },
+    {
+      "name": "input_sha256:data/change_tariff.csv",
+      "passed": true
+    },
+    {
+      "name": "download_equals_fresh:submission.csv",
+      "passed": true
+    },
+    {
+      "name": "download_hash:submission.csv",
+      "passed": true
+    },
+    {
+      "name": "download_size:submission.csv",
+      "passed": true
+    },
+    {
+      "name": "download_equals_fresh:decision_trace.json",
+      "passed": true
+    },
+    {
+      "name": "download_hash:decision_trace.json",
+      "passed": true
+    },
+    {
+      "name": "download_size:decision_trace.json",
+      "passed": true
+    },
+    {
+      "name": "csv_equals_main_lf",
+      "passed": true
+    },
+    {
+      "name": "fresh_artifact_hash:submission.csv",
+      "passed": true
+    },
+    {
+      "name": "fresh_artifact_hash:decision_trace.json",
+      "passed": true
+    },
+    {
+      "name": "fresh_artifact_hash:decision_report.html",
+      "passed": true
+    },
+    {
+      "name": "pipeline_input:agent.py",
+      "passed": true
+    },
+    {
+      "name": "pipeline_input:customer_profile.csv",
+      "passed": true
+    },
+    {
+      "name": "pipeline_input:data/change_tariff.csv",
+      "passed": true
+    },
+    {
+      "name": "pipeline_input:data/dict_tariff.csv",
+      "passed": true
+    },
+    {
+      "name": "pipeline_input:environment.py",
+      "passed": true
+    },
+    {
+      "name": "pipeline_input:make_submission.py",
+      "passed": true
+    },
+    {
+      "name": "pipeline_input:mock_environment.py",
+      "passed": true
+    },
+    {
+      "name": "pipeline_input:reporting/decision_report.template.html",
+      "passed": true
+    },
+    {
+      "name": "pipeline_input:requirements.txt",
+      "passed": true
+    },
+    {
+      "name": "pipeline_input:scoring_core.py",
+      "passed": true
+    },
+    {
+      "name": "pipeline_input:strategy/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "pipeline_input:strategy/beliefs.py",
+      "passed": true
+    },
+    {
+      "name": "pipeline_input:strategy/full_coverage_push.py",
+      "passed": true
+    },
+    {
+      "name": "pipeline_input:strategy/portfolio.py",
+      "passed": true
+    },
+    {
+      "name": "pipeline_input:tariff_dictionary.csv",
+      "passed": true
+    },
+    {
+      "name": "pipeline_input:tools/channel_explanations.py",
+      "passed": true
+    },
+    {
+      "name": "pipeline_input:tools/export_strategy.py",
+      "passed": true
+    },
+    {
+      "name": "pipeline_input:tools/render_decision_report.py",
+      "passed": true
+    },
+    {
+      "name": "pipeline_input:tools/run_demo.py",
+      "passed": true
+    },
+    {
+      "name": "pipeline_input:validation/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "pipeline_input:validation/overlay.py",
+      "passed": true
+    },
+    {
+      "name": "pipeline_input:validation/plan.py",
+      "passed": true
+    },
+    {
+      "name": "html_payload_found",
+      "passed": true
+    },
+    {
+      "name": "embedded_trace_equals_fresh",
+      "passed": true
+    },
+    {
+      "name": "html_template_same_as_tested_product",
+      "passed": true
+    },
+    {
+      "name": "embedded_csv_equals_fresh",
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "scope": "Git object and saved-artifact consistency review; no rerun of the friend browser session",
+  "review_notes": [
+    "An initial CSV-payload-only check used a wrong script-attribute order and failed to parse; corrected to accept the actual HTML. This was an audit script error, not a product failure."
+  ]
+}
