@@ -46,7 +46,8 @@ def source_snapshot():
     trace = json.loads((ROOT / "reports/decision_trace.json").read_text(encoding="utf-8"))
     names = set(trace["source_sha256"]) | set(trace["input_sha256"])
     names |= {p.relative_to(ROOT).as_posix() for p in (ROOT / "experiments/push_overlay").glob("*.py")}
-    names |= {"experiments/push_overlay/protocol.md", "experiments/pilot_research/measure.py",
+    names |= {p.relative_to(ROOT).as_posix() for p in (ROOT / "experiments/push_overlay").glob("*.md")}
+    names |= {"experiments/pilot_research/measure.py",
               "tools/stress_benchmark.py", "tools/benchmark.py"}
     return {name: hashlib.sha256((ROOT / name).read_bytes().replace(b"\r\n", b"\n")).hexdigest()
             for name in sorted(names)}
@@ -82,16 +83,20 @@ def evaluate(spec, scenario, seed):
                    executed_pilots_sha256=fingerprint(pilots),
                    model_sha256=hashlib.sha256(model.to_csv(index=False).encode()).hexdigest(),
                    profile_sha256=hashlib.sha256(env.customer_profile.to_csv(index=False).encode()).hexdigest())
-    return details, audiences, env.channels
+    pilot_audiences = [set(apply_filters(env.customer_profile, row).ID_NUMBER.tolist()) for row in pilots]
+    already_reached = set().union(*audiences, *pilot_audiences)
+    return details, audiences, env.channels, already_reached
 
 
-def pair(scenario, seed):
+def pair(scenario, seed, candidate_spec=POLICIES["candidate"]):
     details = {}
     audiences = {}
     channels = {}
-    for policy, spec in POLICIES.items():
+    reached = {}
+    policies = {**POLICIES, "candidate": candidate_spec}
+    for policy, spec in policies.items():
         try:
-            details[policy], audiences[policy], channels[policy] = evaluate(spec, scenario, seed)
+            details[policy], audiences[policy], channels[policy], reached[policy] = evaluate(spec, scenario, seed)
         except Exception as exc:
             details[policy] = {"status": "error", "exception": f"{type(exc).__name__}: {exc}"}
     row = dict(scenario=scenario, seed=seed, policies=details, status="error", assertions={})
@@ -100,7 +105,7 @@ def pair(scenario, seed):
     base, candidate = details["baseline"], details["candidate"]
     prefix_length = len(base["raw_final"])
     additions = candidate["raw_final"][prefix_length:]
-    base_audience = set().union(*audiences["baseline"])
+    base_audience = reached["baseline"]
     tests = {
         "same_model": base["model_sha256"] == candidate["model_sha256"],
         "same_profile": base["profile_sha256"] == candidate["profile_sha256"],
@@ -108,7 +113,8 @@ def pair(scenario, seed):
         "same_executed_pilots": base["executed_pilots_sha256"] == candidate["executed_pilots_sha256"],
         "base_prefix_unchanged": candidate["raw_final"][:prefix_length] == base["raw_final"],
         "additions_zero_cost": all(channels["candidate"][c["channel"]]["cost_per_contact"] == 0 for c in additions),
-        "additions_subset_of_base": all(ids <= base_audience for ids in audiences["candidate"][prefix_length:]),
+        "additions_subset_of_preexisting_coverage": all(ids <= base_audience for ids in audiences["candidate"][prefix_length:]),
+        "same_reached_customer_ids": reached["baseline"] == reached["candidate"],
         "same_total_cost": math.isclose(candidate["total_cost"], base["total_cost"], rel_tol=0, abs_tol=1e-8),
         "same_unique_audience": candidate["unique_customers"] == base["unique_customers"],
         "within_contacts": candidate["total_contacts"] <= 15000,
@@ -121,22 +127,22 @@ def pair(scenario, seed):
     return row
 
 
-def worker(queue, scenario, seed):
+def worker(queue, scenario, seed, candidate_spec):
     os.chdir(ROOT)
     output = io.StringIO()
     try:
         with contextlib.redirect_stdout(output), contextlib.redirect_stderr(output):
-            row = pair(scenario, seed)
+            row = pair(scenario, seed, candidate_spec)
     except BaseException as exc:
         row = dict(scenario=scenario, seed=seed, status="error", exception=f"{type(exc).__name__}: {exc}")
     row["output"] = output.getvalue()
     queue.put(row)
 
 
-def bounded_pair(scenario, seed, timeout):
+def bounded_pair(scenario, seed, timeout, candidate_spec):
     ctx = mp.get_context("spawn")
     queue = ctx.Queue()
-    process = ctx.Process(target=worker, args=(queue, scenario, seed))
+    process = ctx.Process(target=worker, args=(queue, scenario, seed, candidate_spec))
     started = time.perf_counter()
     process.start()
     deadline = started + timeout
@@ -186,6 +192,7 @@ def summarize(rows):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--phase", choices=("development", "holdout"), required=True)
+    parser.add_argument("--candidate", default=POLICIES["candidate"], help="Isolated module:Class policy")
     parser.add_argument("--seeds", type=parse_seeds, required=True)
     parser.add_argument("--scenarios", help="Optional comma-separated subset for a mechanism check")
     parser.add_argument("--timeout", type=float, default=60)
@@ -207,7 +214,7 @@ def main():
     out.parent.mkdir(parents=True, exist_ok=True)
     before = source_snapshot()
     report = dict(phase=args.phase, source=_git_metadata(), versions={"python":sys.version.split()[0],
-                  "numpy":np.__version__, "pandas":pd.__version__}, policies=POLICIES,
+                  "numpy":np.__version__, "pandas":pd.__version__}, policies={**POLICIES, "candidate":args.candidate},
                   scenarios=chosen, seeds=args.seeds, source_sha256=before,
                   scope="Synthetic public models; no claim about hidden judging or real-world effects")
     started = time.perf_counter()
@@ -215,7 +222,7 @@ def main():
     with raw.open("x", encoding="utf-8", newline="\n") as stream:
         for scenario in chosen:
             for seed in args.seeds:
-                row = bounded_pair(scenario, seed, args.timeout)
+                row = bounded_pair(scenario, seed, args.timeout, args.candidate)
                 rows.append(row)
                 stream.write(encoded(row).decode("utf-8") + "\n")
                 stream.flush()
