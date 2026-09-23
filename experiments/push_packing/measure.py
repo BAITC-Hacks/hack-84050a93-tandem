@@ -181,8 +181,13 @@ def bounded_pair(scenario, seed, timeout, candidate_spec):
 
 
 def summarize(rows):
-    valid = [r for r in rows if r["status"] == "ok"]
-    result = dict(attempts=len(rows), valid_pairs=len(valid), failures=len(rows)-len(valid))
+    # Include every scored pair, even a regression or failed invariant. Filtering
+    # on status==ok would make paired losses zero by construction.
+    valid = [r for r in rows if "delta" in r and all(
+        r.get("policies", {}).get(key, {}).get("status") == "ok" for key in POLICIES)]
+    accepted = sum(r["status"] == "ok" for r in rows)
+    result = dict(attempts=len(rows), valid_pairs=accepted, scored_pairs=len(valid),
+                  failures=len(rows)-accepted)
     if not valid:
         return result
     for policy in POLICIES:
