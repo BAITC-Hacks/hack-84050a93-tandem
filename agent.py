@@ -20,7 +20,7 @@ class Agent:
         self.last_trace = {}
 
     def act(self, env):
-        self.last_trace = {"pilots": [], "warnings": [], "version": "adaptive-portfolio-v1"}
+        self.last_trace = {"pilots": [], "warnings": [], "version": "adaptive-portfolio-v1.1"}
         profile = env.customer_profile.copy().reset_index(drop=True)
         required = {"ID_NUMBER", "current_tariff", "arpu_segment", "predicted_arpu", "data_segment", "call_segment"}
         if required - set(profile.columns):
@@ -39,10 +39,11 @@ class Agent:
         }
         if not channels:
             raise ValueError("No valid public communication channels")
-        reference_channel = "sms" if "sms" in channels else min(channels, key=lambda c: (channels[c]["cost_per_contact"], c))
-        reference_multiplier = float(channels[reference_channel]["conversion_multiplier"])
-        if reference_multiplier > 1:
+        reference_channels = [c for c in channels if channels[c]["conversion_multiplier"] <= 1]
+        if not reference_channels:
             raise ValueError("Need an unsaturated reference channel with multiplier <= 1")
+        reference_channel = "sms" if "sms" in reference_channels else min(reference_channels, key=lambda c: (channels[c]["cost_per_contact"], c))
+        reference_multiplier = float(channels[reference_channel]["conversion_multiplier"])
         initial_budget = float(env.remaining_budget)
         initial_contacts = int(env.remaining_contacts)
         if not isfinite(initial_budget) or initial_budget < 0 or initial_contacts < 1:
@@ -129,6 +130,11 @@ class Agent:
                 fresh_cells = [b for b in pool if probes_by_cell.get(b.key, 0) == 0]
                 if fresh_cells:
                     pool = fresh_cells
+                if not pool:
+                    # A stratum with only one available offer can exhaust its
+                    # warm-up candidates. Continue learning in the other strata.
+                    coverage_segment = None
+                    pool = confirm or beliefs
             best_action, best_value = None, -float("inf")
             for belief in pool:
                 cell = cells[belief.key]

@@ -262,7 +262,7 @@
     }
   ],
   "warnings": [],
-  "version": "adaptive-portfolio-v1",
+  "version": "adaptive-portfolio-v1.1",
   "prior": "bounded historical prior from 14822 valid transitions",
   "reference_channel": "sms",
   "final": {
@@ -323,9 +323,9 @@
   "submission_seed": 42,
   "environment": "Organizer mock; observations do not predict judging effects",
   "source_sha256": {
-    "agent.py": "a2442105267fc640c4fc6b879601c289cc2d8a785a074d02b33e5824a3ec2035",
+    "agent.py": "5a046a450ea2f3d7c423651d60762cab43129699eaa109e8cd9efc18da3a6e53",
     "strategy/__init__.py": "d307ba7f3d80724bbfc3f1e97bdd171f1168f9a8deeb67ff97db863f25d33607",
     "strategy/beliefs.py": "c9c326345bec6d7005931ba3da908d22347c720f78ab710f1ff22a56ceea7f84",
-    "strategy/portfolio.py": "88e583adaaa40fd29d4df84b9978424d9d302158e480471b50e3f713763f5bc3"
+    "strategy/portfolio.py": "417b3b27da080f22e92fb16d964a8849592a9c464936763672cfd922f2e6bf40"
   }
 }

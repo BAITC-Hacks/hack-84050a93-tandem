@@ -157,8 +157,11 @@ def choose_portfolio(options, budget, contacts):
         improved = False
         for remove in range(len(best)):
             fixed = best[:remove] + best[remove + 1:]
+            # Re-adding the removed whole audience would reproduce the old plan
+            # before smaller pieces can compete. Force an alternative partition.
+            alternatives = [o for o in positive if o.mask != best[remove].mask]
             for money_shadow, contact_shadow in (best_prices, (0.0, 0.0)):
-                plan = _greedy(positive, budget, contacts, money_shadow, contact_shadow, fixed)
+                plan = _greedy(alternatives, budget, contacts, money_shadow, contact_shadow, fixed)
                 score = sum(o.gain for o in plan)
                 if score > best_score + 1e-8:
                     best, best_score = plan, score
