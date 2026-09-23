@@ -12,6 +12,11 @@ from experiments.pilot_research.summarize import load
 OUT = ROOT / "reports/pilot_research"
 
 
+def source_digest(raw):
+    """Git attributes normalize Python files to LF on checkout/commit."""
+    return hashlib.sha256(raw.replace(b"\r\n", b"\n")).hexdigest()
+
+
 def main():
     checks = []
     total_diagnostics = 0
@@ -45,12 +50,18 @@ def main():
                                    "matches": report["submission_reproducibility"]["deterministic"]})
     selection = json.loads((OUT / "selection.json").read_text(encoding="utf-8"))
     source = ROOT / "experiments/pilot_research/agent.py"
-    frozen_matches = hashlib.sha256(source.read_bytes()).hexdigest() == selection["source_sha256"]
+    frozen_blob = subprocess.check_output(["git", "show", selection["implementation_commit"]
+                                          + ":experiments/pilot_research/agent.py"], cwd=ROOT)
+    frozen_matches = source_digest(source.read_bytes()) == source_digest(frozen_blob)
+    raw_matches = hashlib.sha256(source.read_bytes()).hexdigest() == selection["source_sha256"]
     changed = subprocess.check_output(["git", "diff", selection["base_sha"], "--name-only"], cwd=ROOT, text=True).splitlines()
     untracked = subprocess.check_output(["git", "ls-files", "--others", "--exclude-standard"], cwd=ROOT, text=True).splitlines()
     outside_scope = [p for p in changed + untracked if not (p.startswith("experiments/pilot_research/")
                       or p.startswith("reports/pilot_research/") or p == "docs/pilot_research.md")]
-    report = {"frozen_policy_matches": frozen_matches, "outside_scope": outside_scope,
+    report = {"frozen_policy_matches": frozen_matches,
+              "frozen_lf_sha256": source_digest(frozen_blob),
+              "original_working_copy_raw_sha256_matches": raw_matches,
+              "outside_scope": outside_scope,
               "diagnostic_attempts": total_diagnostics, "primary_harness_attempts": total_primary,
               "diagnostic_status_counts": status_counts,
               "model_stable_across_agents_and_seeds": {k: len(v) == 1 for k, v in model_by_scenario.items()},

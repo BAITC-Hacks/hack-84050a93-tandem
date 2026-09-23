@@ -1,5 +1,7 @@
 {
   "frozen_policy_matches": true,
+  "frozen_lf_sha256": "c3bc1248c04f0755f2e2e59287585723f8ab945a82ccb7f2f20dcf1cba32d8a0",
+  "original_working_copy_raw_sha256_matches": true,
   "outside_scope": [],
   "diagnostic_attempts": 840,
   "primary_harness_attempts": 420,

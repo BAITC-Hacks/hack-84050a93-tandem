@@ -86,3 +86,9 @@ def test_paired_comparison_retains_failed_attempts():
     assert result["runs"] == 2
     assert result["paired_scored"] == result["wins"] == 1
     assert result["mean_delta"] == 5
+
+
+def test_policy_digest_accepts_line_endings_but_detects_source_changes():
+    from experiments.pilot_research.audit import source_digest
+    assert source_digest(b"a\r\nb\r\n") == source_digest(b"a\nb\n")
+    assert source_digest(b"a\nb\n") != source_digest(b"a\nc\n")
