@@ -23,6 +23,20 @@ Beeline Tariff Marketing Campaigns Case.
 Отчёт `reports/baseline.json` относится только к исходному `agent_template`:
 у него 0 положительных результатов на seed=0..9.
 
+## Разбор плана для аналитика
+
+Скачайте и откройте [`reports/decision_report.html`](reports/decision_report.html)
+в браузере: три кампании, расход ресурсов, связанные пилоты и происхождение
+каждой оценки. Можно фильтровать журнал и скачать исходные CSV/JSON.
+Все данные встроены в HTML; сервер, сеть и API-ключи для просмотра не нужны.
+GitHub показывает исходник HTML, поэтому файл нужно открыть локально.
+
+Обновить отчёт из сохранённого CSV и журнала:
+`.venv\Scripts\python.exe tools/render_decision_report.py` (Windows) или
+`.venv/bin/python tools/render_decision_report.py` (Linux/macOS).
+Генератор проверяет хеши и согласованность входов, не запускает агента заново.
+[Устройство отчёта и сценарий просмотра](docs/decision_report.md).
+
 ## Установка и запуск
 
 Требуется Python 3.12. Проверено на CPython 3.12.13, pandas 3.0.6, numpy 2.5.3.
