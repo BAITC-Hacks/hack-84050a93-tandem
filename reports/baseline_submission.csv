@@ -1,0 +1,3 @@
+campaign_name,filter_arpu_segment,filter_data_segment,filter_call_segment,filter_current_tariff,target_tariff,channel
+main_tariff_10_tariff_8,HIGH,,,tariff_10,tariff_8,sms
+main_tariff_8_tariff_9,MID,,,tariff_8,tariff_9,sms

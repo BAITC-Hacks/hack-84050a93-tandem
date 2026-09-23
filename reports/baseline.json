@@ -1,0 +1,129 @@
+{
+  "agent": "Unmodified organizer agent_template.Agent",
+  "environment": "Official MOCK environment; not a prediction of judging results",
+  "versions": {
+    "python": "3.12.13",
+    "pandas": "3.0.6",
+    "numpy": "2.5.3"
+  },
+  "summary": {
+    "runs": 10,
+    "positive_runs": 0,
+    "median_net": -357947.7963826433,
+    "min_net": -1019431.0606441048,
+    "max_net": -76493.45195450934,
+    "deterministic_submission_seed42": true
+  },
+  "runs": [
+    {
+      "seed": 0,
+      "net_arpu_gain": -1019431.0606441048,
+      "total_cost": 23832.0,
+      "total_contacts": 5958,
+      "unique_customers": 5358,
+      "n_pilots": 6,
+      "n_final_campaigns": 2,
+      "seconds": 0.3989277000000584,
+      "warnings": ""
+    },
+    {
+      "seed": 1,
+      "net_arpu_gain": -576203.7790105487,
+      "total_cost": 49616.0,
+      "total_contacts": 12404,
+      "unique_customers": 11504,
+      "n_pilots": 6,
+      "n_final_campaigns": 4,
+      "seconds": 0.3965920999999071,
+      "warnings": ""
+    },
+    {
+      "seed": 2,
+      "net_arpu_gain": -338970.97459386534,
+      "total_cost": 39144.0,
+      "total_contacts": 9786,
+      "unique_customers": 6928,
+      "n_pilots": 6,
+      "n_final_campaigns": 4,
+      "seconds": 0.3816089000001739,
+      "warnings": ""
+    },
+    {
+      "seed": 3,
+      "net_arpu_gain": -140280.93497766246,
+      "total_cost": 3600.0,
+      "total_contacts": 900,
+      "unique_customers": 886,
+      "n_pilots": 6,
+      "n_final_campaigns": 0,
+      "seconds": 0.37731999999959953,
+      "warnings": ""
+    },
+    {
+      "seed": 4,
+      "net_arpu_gain": -1019236.6714434463,
+      "total_cost": 23832.0,
+      "total_contacts": 5958,
+      "unique_customers": 5358,
+      "n_pilots": 6,
+      "n_final_campaigns": 2,
+      "seconds": 0.3550579000002472,
+      "warnings": ""
+    },
+    {
+      "seed": 5,
+      "net_arpu_gain": -366963.8866435362,
+      "total_cost": 22280.0,
+      "total_contacts": 5570,
+      "unique_customers": 5109,
+      "n_pilots": 6,
+      "n_final_campaigns": 2,
+      "seconds": 0.3530375999998796,
+      "warnings": ""
+    },
+    {
+      "seed": 6,
+      "net_arpu_gain": -320311.84019152867,
+      "total_cost": 37816.0,
+      "total_contacts": 9454,
+      "unique_customers": 8845,
+      "n_pilots": 6,
+      "n_final_campaigns": 3,
+      "seconds": 0.4165024000003541,
+      "warnings": ""
+    },
+    {
+      "seed": 7,
+      "net_arpu_gain": -348931.70612175035,
+      "total_cost": 30936.0,
+      "total_contacts": 7734,
+      "unique_customers": 7276,
+      "n_pilots": 6,
+      "n_final_campaigns": 2,
+      "seconds": 0.36021729999993113,
+      "warnings": ""
+    },
+    {
+      "seed": 8,
+      "net_arpu_gain": -76493.45195450934,
+      "total_cost": 18912.0,
+      "total_contacts": 4728,
+      "unique_customers": 4275,
+      "n_pilots": 6,
+      "n_final_campaigns": 2,
+      "seconds": 0.40362069999991945,
+      "warnings": ""
+    },
+    {
+      "seed": 9,
+      "net_arpu_gain": -601537.532706727,
+      "total_cost": 42736.0,
+      "total_contacts": 10684,
+      "unique_customers": 9934,
+      "n_pilots": 6,
+      "n_final_campaigns": 3,
+      "seconds": 0.42679880000014236,
+      "warnings": ""
+    }
+  ]
+}
