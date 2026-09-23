@@ -1,0 +1,141 @@
+{
+  "frozen_inputs_match": true,
+  "attempts": 140,
+  "per_scenario": {
+    "mock": {
+      "fixed_runs": 10,
+      "unique_schedule_hashes": 1,
+      "all_fixed_actions_match_schedule": true,
+      "planned_pilots": 20,
+      "planned_strata": [
+        "HIGH",
+        "LOW",
+        "MID"
+      ],
+      "planned_current_tariffs": [
+        "tariff_10",
+        "tariff_11",
+        "tariff_13",
+        "tariff_4",
+        "tariff_8"
+      ],
+      "same_model_each_pair": true
+    },
+    "mixed_1": {
+      "fixed_runs": 10,
+      "unique_schedule_hashes": 1,
+      "all_fixed_actions_match_schedule": true,
+      "planned_pilots": 18,
+      "planned_strata": [
+        "HIGH",
+        "LOW",
+        "MID"
+      ],
+      "planned_current_tariffs": [
+        "tariff_1",
+        "tariff_10",
+        "tariff_4",
+        "tariff_8"
+      ],
+      "same_model_each_pair": true
+    },
+    "negative_1": {
+      "fixed_runs": 10,
+      "unique_schedule_hashes": 1,
+      "all_fixed_actions_match_schedule": true,
+      "planned_pilots": 20,
+      "planned_strata": [
+        "HIGH",
+        "LOW",
+        "MID"
+      ],
+      "planned_current_tariffs": [
+        "tariff_1",
+        "tariff_10",
+        "tariff_4",
+        "tariff_8"
+      ],
+      "same_model_each_pair": true
+    },
+    "rare_1": {
+      "fixed_runs": 10,
+      "unique_schedule_hashes": 1,
+      "all_fixed_actions_match_schedule": true,
+      "planned_pilots": 19,
+      "planned_strata": [
+        "HIGH",
+        "LOW",
+        "MID"
+      ],
+      "planned_current_tariffs": [
+        "tariff_1",
+        "tariff_10",
+        "tariff_4",
+        "tariff_8"
+      ],
+      "same_model_each_pair": true
+    },
+    "mixed_2": {
+      "fixed_runs": 10,
+      "unique_schedule_hashes": 1,
+      "all_fixed_actions_match_schedule": true,
+      "planned_pilots": 17,
+      "planned_strata": [
+        "HIGH",
+        "LOW",
+        "MID"
+      ],
+      "planned_current_tariffs": [
+        "tariff_1",
+        "tariff_10",
+        "tariff_4",
+        "tariff_8"
+      ],
+      "same_model_each_pair": true
+    },
+    "negative_2": {
+      "fixed_runs": 10,
+      "unique_schedule_hashes": 1,
+      "all_fixed_actions_match_schedule": true,
+      "planned_pilots": 19,
+      "planned_strata": [
+        "HIGH",
+        "LOW",
+        "MID"
+      ],
+      "planned_current_tariffs": [
+        "tariff_1",
+        "tariff_10",
+        "tariff_4",
+        "tariff_8"
+      ],
+      "same_model_each_pair": true
+    },
+    "rare_2": {
+      "fixed_runs": 10,
+      "unique_schedule_hashes": 1,
+      "all_fixed_actions_match_schedule": true,
+      "planned_pilots": 20,
+      "planned_strata": [
+        "HIGH",
+        "LOW",
+        "MID"
+      ],
+      "planned_current_tariffs": [
+        "tariff_1",
+        "tariff_4",
+        "tariff_8"
+      ],
+      "same_model_each_pair": true
+    }
+  },
+  "all_valid": true,
+  "no_drops_or_caps": true,
+  "fixed_schedule_invariance": true,
+  "expected_attempts_present": true,
+  "decision_gates": {
+    "fixed_dominates": false,
+    "adaptive_dominates": false,
+    "decision": "данных недостаточно для общего превосходства; результаты смешанные"
+  }
+}

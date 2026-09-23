@@ -1,0 +1,1091 @@
+{
+  "git": {
+    "sha": "b55ed6d6338c5d54f00f36549389aa74c0d4d7f4",
+    "dirty": false,
+    "status_porcelain": []
+  },
+  "seeds": [
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59
+  ],
+  "scenarios": [
+    "mock",
+    "mixed_1",
+    "negative_1",
+    "rare_1",
+    "mixed_2",
+    "negative_2",
+    "rare_2"
+  ],
+  "agents": {
+    "adaptive": "agent:Agent",
+    "fixed": "experiments.adaptivity_ablation.fixed_agent:FixedSurveyAgent"
+  },
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.5.3",
+    "pandas": "3.0.6"
+  },
+  "summary": {
+    "mixed_1": {
+      "policies": {
+        "adaptive": {
+          "attempts": 10,
+          "scored": 10,
+          "median_net": 905425.6210715272,
+          "q10_net": 749595.7764302144,
+          "min_net": 120005.88957405048,
+          "valid_positive": 10,
+          "positive_discovery": 10,
+          "positive_deployment": 10,
+          "positive_observation": 10,
+          "statuses": {
+            "ok": 10,
+            "error": 0,
+            "invalid_plan": 0,
+            "timeout": 0
+          },
+          "valid_positive_rate_all_attempts": 1.0,
+          "mean_pilot_cost": 7312.0,
+          "mean_pilot_contacts": 1828.0,
+          "mean_total_cost": 29152.0,
+          "mean_total_contacts": 2668.0,
+          "mean_n_pilots": 16.9,
+          "mean_agent_seconds": 0.2512910699821077,
+          "mean_wall_seconds": 1.1966452300315722,
+          "mean_dropped_campaigns": 0.0,
+          "mean_capped_campaigns": 0.0
+        },
+        "fixed": {
+          "attempts": 10,
+          "scored": 10,
+          "median_net": 905860.5904949124,
+          "q10_net": 222560.0879993341,
+          "min_net": 222143.28499549648,
+          "valid_positive": 10,
+          "positive_discovery": 10,
+          "positive_deployment": 10,
+          "positive_observation": 10,
+          "statuses": {
+            "ok": 10,
+            "error": 0,
+            "invalid_plan": 0,
+            "timeout": 0
+          },
+          "valid_positive_rate_all_attempts": 1.0,
+          "mean_pilot_cost": 7680.0,
+          "mean_pilot_contacts": 1920.0,
+          "mean_total_cost": 19056.0,
+          "mean_total_contacts": 2440.0,
+          "mean_n_pilots": 18.0,
+          "mean_agent_seconds": 0.2776250700117089,
+          "mean_wall_seconds": 1.2774702099850401,
+          "mean_dropped_campaigns": 0.0,
+          "mean_capped_campaigns": 0.0
+        }
+      },
+      "pairs": [
+        {
+          "seed": 50,
+          "comparable": true,
+          "adaptive_net": 903047.131089233,
+          "fixed_net": 598880.9975943993,
+          "adaptive_minus_fixed": 304166.1334948337,
+          "same_model": true
+        },
+        {
+          "seed": 51,
+          "comparable": true,
+          "adaptive_net": 963662.8403941913,
+          "fixed_net": 222143.28499549648,
+          "adaptive_minus_fixed": 741519.5553986948,
+          "same_model": true
+        },
+        {
+          "seed": 52,
+          "comparable": true,
+          "adaptive_net": 998157.9182659257,
+          "fixed_net": 905885.1577516147,
+          "adaptive_minus_fixed": 92272.76051431103,
+          "same_model": true
+        },
+        {
+          "seed": 53,
+          "comparable": true,
+          "adaptive_net": 869479.9068062672,
+          "fixed_net": 222735.84081258037,
+          "adaptive_minus_fixed": 646744.0659936869,
+          "same_model": true
+        },
+        {
+          "seed": 54,
+          "comparable": true,
+          "adaptive_net": 819550.2083031215,
+          "fixed_net": 906864.580405284,
+          "adaptive_minus_fixed": -87314.37210216245,
+          "same_model": true
+        },
+        {
+          "seed": 55,
+          "comparable": true,
+          "adaptive_net": 120005.88957405048,
+          "fixed_net": 222606.39944420493,
+          "adaptive_minus_fixed": -102600.50987015445,
+          "same_model": true
+        },
+        {
+          "seed": 56,
+          "comparable": true,
+          "adaptive_net": 1155190.5983724133,
+          "fixed_net": 906336.8546314177,
+          "adaptive_minus_fixed": 248853.74374099565,
+          "same_model": true
+        },
+        {
+          "seed": 57,
+          "comparable": true,
+          "adaptive_net": 907804.1110538215,
+          "fixed_net": 907303.2552969339,
+          "adaptive_minus_fixed": 500.855756887584,
+          "same_model": true
+        },
+        {
+          "seed": 58,
+          "comparable": true,
+          "adaptive_net": 864418.124496054,
+          "fixed_net": 905836.02323821,
+          "adaptive_minus_fixed": -41417.89874215599,
+          "same_model": true
+        },
+        {
+          "seed": 59,
+          "comparable": true,
+          "adaptive_net": 1161638.937705349,
+          "fixed_net": 1205197.0051787738,
+          "adaptive_minus_fixed": -43558.06747342483,
+          "same_model": true
+        }
+      ],
+      "paired": {
+        "complete_valid_pairs": 10,
+        "median_adaptive_minus_fixed": 46386.808135599305,
+        "q10_adaptive_minus_fixed": -88842.98587896166,
+        "min_adaptive_minus_fixed": -102600.50987015445,
+        "max_adaptive_minus_fixed": 741519.5553986948,
+        "adaptive_wins": 6,
+        "fixed_wins": 4,
+        "ties": 0
+      }
+    },
+    "mixed_2": {
+      "policies": {
+        "adaptive": {
+          "attempts": 10,
+          "scored": 10,
+          "median_net": 329933.3513881549,
+          "q10_net": 237519.41322893873,
+          "min_net": 225549.86004858214,
+          "valid_positive": 10,
+          "positive_discovery": 10,
+          "positive_deployment": 10,
+          "positive_observation": 10,
+          "statuses": {
+            "ok": 10,
+            "error": 0,
+            "invalid_plan": 0,
+            "timeout": 0
+          },
+          "valid_positive_rate_all_attempts": 1.0,
+          "mean_pilot_cost": 8720.0,
+          "mean_pilot_contacts": 2180.0,
+          "mean_total_cost": 22160.0,
+          "mean_total_contacts": 3148.0,
+          "mean_n_pilots": 17.7,
+          "mean_agent_seconds": 0.26871176999993623,
+          "mean_wall_seconds": 1.2417344199959188,
+          "mean_dropped_campaigns": 0.0,
+          "mean_capped_campaigns": 0.0
+        },
+        "fixed": {
+          "attempts": 10,
+          "scored": 10,
+          "median_net": -79128.48411565181,
+          "q10_net": -112293.52616444186,
+          "min_net": -124157.67227103826,
+          "valid_positive": 2,
+          "positive_discovery": 10,
+          "positive_deployment": 10,
+          "positive_observation": 10,
+          "statuses": {
+            "ok": 10,
+            "error": 0,
+            "invalid_plan": 0,
+            "timeout": 0
+          },
+          "valid_positive_rate_all_attempts": 0.2,
+          "mean_pilot_cost": 9280.0,
+          "mean_pilot_contacts": 2320.0,
+          "mean_total_cost": 16720.0,
+          "mean_total_contacts": 2985.3,
+          "mean_n_pilots": 17.0,
+          "mean_agent_seconds": 0.25976900997338814,
+          "mean_wall_seconds": 1.2200640699942595,
+          "mean_dropped_campaigns": 0.0,
+          "mean_capped_campaigns": 0.0
+        }
+      },
+      "pairs": [
+        {
+          "seed": 50,
+          "comparable": true,
+          "adaptive_net": 327300.2846636477,
+          "fixed_net": -83243.05202744063,
+          "adaptive_minus_fixed": 410543.33669108833,
+          "same_model": true
+        },
+        {
+          "seed": 51,
+          "comparable": true,
+          "adaptive_net": 225549.86004858214,
+          "fixed_net": -70802.28378799427,
+          "adaptive_minus_fixed": 296352.1438365764,
+          "same_model": true
+        },
+        {
+          "seed": 52,
+          "comparable": true,
+          "adaptive_net": 332566.4181126621,
+          "fixed_net": -110975.28770815338,
+          "adaptive_minus_fixed": 443541.70582081546,
+          "same_model": true
+        },
+        {
+          "seed": 53,
+          "comparable": true,
+          "adaptive_net": 574279.1381732526,
+          "fixed_net": -45618.87942557781,
+          "adaptive_minus_fixed": 619898.0175988304,
+          "same_model": true
+        },
+        {
+          "seed": 54,
+          "comparable": true,
+          "adaptive_net": 415653.73373574216,
+          "fixed_net": 268438.7211107272,
+          "adaptive_minus_fixed": 147215.012625015,
+          "same_model": true
+        },
+        {
+          "seed": 55,
+          "comparable": true,
+          "adaptive_net": 349520.0142619908,
+          "fixed_net": -124157.67227103826,
+          "adaptive_minus_fixed": 473677.6865330291,
+          "same_model": true
+        },
+        {
+          "seed": 56,
+          "comparable": true,
+          "adaptive_net": 538641.5427287151,
+          "fixed_net": 297152.1005035521,
+          "adaptive_minus_fixed": 241489.442225163,
+          "same_model": true
+        },
+        {
+          "seed": 57,
+          "comparable": true,
+          "adaptive_net": 323026.8847293057,
+          "fixed_net": -75013.91620386299,
+          "adaptive_minus_fixed": 398040.8009331687,
+          "same_model": true
+        },
+        {
+          "seed": 58,
+          "comparable": true,
+          "adaptive_net": 297008.3840242137,
+          "fixed_net": -98962.3428269465,
+          "adaptive_minus_fixed": 395970.7268511602,
+          "same_model": true
+        },
+        {
+          "seed": 59,
+          "comparable": true,
+          "adaptive_net": 238849.3635823117,
+          "fixed_net": -97611.94694417316,
+          "adaptive_minus_fixed": 336461.31052648486,
+          "same_model": true
+        }
+      ],
+      "paired": {
+        "complete_valid_pairs": 10,
+        "median_adaptive_minus_fixed": 397005.76389216445,
+        "q10_adaptive_minus_fixed": 232061.9992651482,
+        "min_adaptive_minus_fixed": 147215.012625015,
+        "max_adaptive_minus_fixed": 619898.0175988304,
+        "adaptive_wins": 10,
+        "fixed_wins": 0,
+        "ties": 0
+      }
+    },
+    "mock": {
+      "policies": {
+        "adaptive": {
+          "attempts": 10,
+          "scored": 10,
+          "median_net": 1330064.3114166334,
+          "q10_net": 1048694.992446782,
+          "min_net": 685689.4335558818,
+          "valid_positive": 10,
+          "positive_discovery": 10,
+          "positive_deployment": 10,
+          "positive_observation": 10,
+          "statuses": {
+            "ok": 10,
+            "error": 0,
+            "invalid_plan": 0,
+            "timeout": 0
+          },
+          "valid_positive_rate_all_attempts": 1.0,
+          "mean_pilot_cost": 13840.0,
+          "mean_pilot_contacts": 3460.0,
+          "mean_total_cost": 70494.4,
+          "mean_total_contacts": 6409.2,
+          "mean_n_pilots": 19.4,
+          "mean_agent_seconds": 0.5699827599921263,
+          "mean_wall_seconds": 1.7627608600072562,
+          "mean_dropped_campaigns": 0.0,
+          "mean_capped_campaigns": 0.0
+        },
+        "fixed": {
+          "attempts": 10,
+          "scored": 10,
+          "median_net": 1270155.1376668485,
+          "q10_net": 1052801.9826199806,
+          "min_net": 1027410.5614621167,
+          "valid_positive": 10,
+          "positive_discovery": 10,
+          "positive_deployment": 10,
+          "positive_observation": 10,
+          "statuses": {
+            "ok": 10,
+            "error": 0,
+            "invalid_plan": 0,
+            "timeout": 0
+          },
+          "valid_positive_rate_all_attempts": 1.0,
+          "mean_pilot_cost": 14000.0,
+          "mean_pilot_contacts": 3500.0,
+          "mean_total_cost": 76817.4,
+          "mean_total_contacts": 6782.0,
+          "mean_n_pilots": 20.0,
+          "mean_agent_seconds": 0.5705216200090945,
+          "mean_wall_seconds": 1.7473216100013815,
+          "mean_dropped_campaigns": 0.0,
+          "mean_capped_campaigns": 0.0
+        }
+      },
+      "pairs": [
+        {
+          "seed": 50,
+          "comparable": true,
+          "adaptive_net": 1288690.2555595175,
+          "fixed_net": 1181290.0631847424,
+          "adaptive_minus_fixed": 107400.19237477519,
+          "same_model": true
+        },
+        {
+          "seed": 51,
+          "comparable": true,
+          "adaptive_net": 1684893.1844205202,
+          "fixed_net": 1639626.0687000356,
+          "adaptive_minus_fixed": 45267.11572048464,
+          "same_model": true
+        },
+        {
+          "seed": 52,
+          "comparable": true,
+          "adaptive_net": 1427889.9315842541,
+          "fixed_net": 1172336.9652332817,
+          "adaptive_minus_fixed": 255552.96635097242,
+          "same_model": true
+        },
+        {
+          "seed": 53,
+          "comparable": true,
+          "adaptive_net": 1386684.223297663,
+          "fixed_net": 1670928.6896438785,
+          "adaptive_minus_fixed": -284244.46634621546,
+          "same_model": true
+        },
+        {
+          "seed": 54,
+          "comparable": true,
+          "adaptive_net": 685689.4335558818,
+          "fixed_net": 1055623.251637521,
+          "adaptive_minus_fixed": -369933.8180816391,
+          "same_model": true
+        },
+        {
+          "seed": 55,
+          "comparable": true,
+          "adaptive_net": 1094549.9395512843,
+          "fixed_net": 1027410.5614621167,
+          "adaptive_minus_fixed": 67139.37808916764,
+          "same_model": true
+        },
+        {
+          "seed": 56,
+          "comparable": true,
+          "adaptive_net": 1509351.9417376663,
+          "fixed_net": 1595941.4172573509,
+          "adaptive_minus_fixed": -86589.47551968461,
+          "same_model": true
+        },
+        {
+          "seed": 57,
+          "comparable": true,
+          "adaptive_net": 1371438.3672737496,
+          "fixed_net": 1359020.2121489549,
+          "adaptive_minus_fixed": 12418.155124794692,
+          "same_model": true
+        },
+        {
+          "seed": 58,
+          "comparable": true,
+          "adaptive_net": 1089028.9434346599,
+          "fixed_net": 1525072.40895153,
+          "adaptive_minus_fixed": -436043.46551687014,
+          "same_model": true
+        },
+        {
+          "seed": 59,
+          "comparable": true,
+          "adaptive_net": 1106058.4381611745,
+          "fixed_net": 1145103.622566421,
+          "adaptive_minus_fixed": -39045.18440524652,
+          "same_model": true
+        }
+      ],
+      "paired": {
+        "complete_valid_pairs": 10,
+        "median_adaptive_minus_fixed": -13313.514640225912,
+        "q10_adaptive_minus_fixed": -376544.7828251622,
+        "min_adaptive_minus_fixed": -436043.46551687014,
+        "max_adaptive_minus_fixed": 255552.96635097242,
+        "adaptive_wins": 5,
+        "fixed_wins": 5,
+        "ties": 0
+      }
+    },
+    "negative_1": {
+      "policies": {
+        "adaptive": {
+          "attempts": 10,
+          "scored": 10,
+          "median_net": -1026424.2819707769,
+          "q10_net": -1149556.3842295937,
+          "min_net": -1155770.9926044005,
+          "valid_positive": 0,
+          "positive_discovery": 10,
+          "positive_deployment": 10,
+          "positive_observation": 10,
+          "statuses": {
+            "ok": 10,
+            "error": 0,
+            "invalid_plan": 0,
+            "timeout": 0
+          },
+          "valid_positive_rate_all_attempts": 0.0,
+          "mean_pilot_cost": 9128.0,
+          "mean_pilot_contacts": 2282.0,
+          "mean_total_cost": 9128.0,
+          "mean_total_contacts": 2412.0,
+          "mean_n_pilots": 16.6,
+          "mean_agent_seconds": 0.25154621998080984,
+          "mean_wall_seconds": 1.1922468000091613,
+          "mean_dropped_campaigns": 0.0,
+          "mean_capped_campaigns": 0.0
+        },
+        "fixed": {
+          "attempts": 10,
+          "scored": 10,
+          "median_net": -1152204.4773345897,
+          "q10_net": -1157247.7036818913,
+          "min_net": -1172366.3738686768,
+          "valid_positive": 0,
+          "positive_discovery": 10,
+          "positive_deployment": 9,
+          "positive_observation": 8,
+          "statuses": {
+            "ok": 10,
+            "error": 0,
+            "invalid_plan": 0,
+            "timeout": 0
+          },
+          "valid_positive_rate_all_attempts": 0.0,
+          "mean_pilot_cost": 12640.0,
+          "mean_pilot_contacts": 3160.0,
+          "mean_total_cost": 12800.0,
+          "mean_total_contacts": 3218.0,
+          "mean_n_pilots": 20.0,
+          "mean_agent_seconds": 0.25919512000400574,
+          "mean_wall_seconds": 1.2554819600190967,
+          "mean_dropped_campaigns": 0.0,
+          "mean_capped_campaigns": 0.0
+        }
+      },
+      "pairs": [
+        {
+          "seed": 50,
+          "comparable": true,
+          "adaptive_net": -1014845.0375128768,
+          "fixed_net": -1140778.0566956445,
+          "adaptive_minus_fixed": 125933.01918276772,
+          "same_model": true
+        },
+        {
+          "seed": 51,
+          "comparable": true,
+          "adaptive_net": -1155770.9926044005,
+          "fixed_net": -1151790.37718953,
+          "adaptive_minus_fixed": -3980.6154148704372,
+          "same_model": true
+        },
+        {
+          "seed": 52,
+          "comparable": true,
+          "adaptive_net": -1024145.4525730815,
+          "fixed_net": -1152618.5774796493,
+          "adaptive_minus_fixed": 128473.12490656786,
+          "same_model": true
+        },
+        {
+          "seed": 53,
+          "comparable": true,
+          "adaptive_net": -1028731.7735859278,
+          "fixed_net": -1172366.3738686768,
+          "adaptive_minus_fixed": 143634.60028274904,
+          "same_model": true
+        },
+        {
+          "seed": 54,
+          "comparable": true,
+          "adaptive_net": -1018641.7703213389,
+          "fixed_net": -1154189.1064309548,
+          "adaptive_minus_fixed": 135547.33610961586,
+          "same_model": true
+        },
+        {
+          "seed": 55,
+          "comparable": true,
+          "adaptive_net": -995990.1924068781,
+          "fixed_net": -1148173.2203306209,
+          "adaptive_minus_fixed": 152183.02792374277,
+          "same_model": true
+        },
+        {
+          "seed": 56,
+          "comparable": true,
+          "adaptive_net": -1148865.8721879486,
+          "fixed_net": -1154540.9333622004,
+          "adaptive_minus_fixed": 5675.061174251838,
+          "same_model": true
+        },
+        {
+          "seed": 57,
+          "comparable": true,
+          "adaptive_net": -1028703.1113684721,
+          "fixed_net": -1148013.3127518976,
+          "adaptive_minus_fixed": 119310.2013834255,
+          "same_model": true
+        },
+        {
+          "seed": 58,
+          "comparable": true,
+          "adaptive_net": -1095268.9603794282,
+          "fixed_net": -1147586.5760735653,
+          "adaptive_minus_fixed": 52317.61569413706,
+          "same_model": true
+        },
+        {
+          "seed": 59,
+          "comparable": true,
+          "adaptive_net": -1019982.6451771944,
+          "fixed_net": -1155567.8514389151,
+          "adaptive_minus_fixed": 135585.20626172074,
+          "same_model": true
+        }
+      ],
+      "paired": {
+        "complete_valid_pairs": 10,
+        "median_adaptive_minus_fixed": 127203.07204466779,
+        "q10_adaptive_minus_fixed": 4709.49351533961,
+        "min_adaptive_minus_fixed": -3980.6154148704372,
+        "max_adaptive_minus_fixed": 152183.02792374277,
+        "adaptive_wins": 9,
+        "fixed_wins": 1,
+        "ties": 0
+      }
+    },
+    "negative_2": {
+      "policies": {
+        "adaptive": {
+          "attempts": 10,
+          "scored": 10,
+          "median_net": -459244.432576256,
+          "q10_net": -517635.76926521916,
+          "min_net": -534272.4810657783,
+          "valid_positive": 0,
+          "positive_discovery": 4,
+          "positive_deployment": 2,
+          "positive_observation": 2,
+          "statuses": {
+            "ok": 10,
+            "error": 0,
+            "invalid_plan": 0,
+            "timeout": 0
+          },
+          "valid_positive_rate_all_attempts": 0.0,
+          "mean_pilot_cost": 10152.0,
+          "mean_pilot_contacts": 2538.0,
+          "mean_total_cost": 10152.0,
+          "mean_total_contacts": 2560.0,
+          "mean_n_pilots": 18.0,
+          "mean_agent_seconds": 0.2533643500180915,
+          "mean_wall_seconds": 1.1940823699813337,
+          "mean_dropped_campaigns": 0.0,
+          "mean_capped_campaigns": 0.0
+        },
+        "fixed": {
+          "attempts": 10,
+          "scored": 10,
+          "median_net": -493317.5527141136,
+          "q10_net": -503476.6529140487,
+          "min_net": -577655.0251957758,
+          "valid_positive": 0,
+          "positive_discovery": 0,
+          "positive_deployment": 0,
+          "positive_observation": 0,
+          "statuses": {
+            "ok": 10,
+            "error": 0,
+            "invalid_plan": 0,
+            "timeout": 0
+          },
+          "valid_positive_rate_all_attempts": 0.0,
+          "mean_pilot_cost": 12240.0,
+          "mean_pilot_contacts": 3060.0,
+          "mean_total_cost": 12240.0,
+          "mean_total_contacts": 3122.0,
+          "mean_n_pilots": 19.0,
+          "mean_agent_seconds": 0.25869938001269477,
+          "mean_wall_seconds": 1.2166249100118876,
+          "mean_dropped_campaigns": 0.0,
+          "mean_capped_campaigns": 0.0
+        }
+      },
+      "pairs": [
+        {
+          "seed": 50,
+          "comparable": true,
+          "adaptive_net": -394968.69577632705,
+          "fixed_net": -493612.70649324637,
+          "adaptive_minus_fixed": 98644.01071691932,
+          "same_model": true
+        },
+        {
+          "seed": 51,
+          "comparable": true,
+          "adaptive_net": -441564.5929328313,
+          "fixed_net": -494217.77017470007,
+          "adaptive_minus_fixed": 52653.17724186875,
+          "same_model": true
+        },
+        {
+          "seed": 52,
+          "comparable": true,
+          "adaptive_net": -534272.4810657783,
+          "fixed_net": -492932.1024133932,
+          "adaptive_minus_fixed": -41340.37865238509,
+          "same_model": true
+        },
+        {
+          "seed": 53,
+          "comparable": true,
+          "adaptive_net": -452143.3892912816,
+          "fixed_net": -491061.043395608,
+          "adaptive_minus_fixed": 38917.654104326444,
+          "same_model": true
+        },
+        {
+          "seed": 54,
+          "comparable": true,
+          "adaptive_net": -508864.21911069524,
+          "fixed_net": -577655.0251957758,
+          "adaptive_minus_fixed": 68790.80608508055,
+          "same_model": true
+        },
+        {
+          "seed": 55,
+          "comparable": true,
+          "adaptive_net": -515787.2457318237,
+          "fixed_net": -495234.61154941237,
+          "adaptive_minus_fixed": -20552.634182411362,
+          "same_model": true
+        },
+        {
+          "seed": 56,
+          "comparable": true,
+          "adaptive_net": -465088.44062752894,
+          "fixed_net": -494869.8687015467,
+          "adaptive_minus_fixed": 29781.42807401775,
+          "same_model": true
+        },
+        {
+          "seed": 57,
+          "comparable": true,
+          "adaptive_net": -456444.57859027304,
+          "fixed_net": -493022.3989349808,
+          "adaptive_minus_fixed": 36577.820344707754,
+          "same_model": true
+        },
+        {
+          "seed": 58,
+          "comparable": true,
+          "adaptive_net": -395425.25315347,
+          "fixed_net": -491592.6027336047,
+          "adaptive_minus_fixed": 96167.34958013473,
+          "same_model": true
+        },
+        {
+          "seed": 59,
+          "comparable": true,
+          "adaptive_net": -462044.28656223894,
+          "fixed_net": -489895.8302926558,
+          "adaptive_minus_fixed": 27851.54373041686,
+          "same_model": true
+        }
+      ],
+      "paired": {
+        "complete_valid_pairs": 10,
+        "median_adaptive_minus_fixed": 37747.7372245171,
+        "q10_adaptive_minus_fixed": -22631.408629408736,
+        "min_adaptive_minus_fixed": -41340.37865238509,
+        "max_adaptive_minus_fixed": 98644.01071691932,
+        "adaptive_wins": 8,
+        "fixed_wins": 2,
+        "ties": 0
+      }
+    },
+    "rare_1": {
+      "policies": {
+        "adaptive": {
+          "attempts": 10,
+          "scored": 10,
+          "median_net": -284798.2674307357,
+          "q10_net": -294273.9534693848,
+          "min_net": -294311.4519803479,
+          "valid_positive": 0,
+          "positive_discovery": 0,
+          "positive_deployment": 0,
+          "positive_observation": 0,
+          "statuses": {
+            "ok": 10,
+            "error": 0,
+            "invalid_plan": 0,
+            "timeout": 0
+          },
+          "valid_positive_rate_all_attempts": 0.0,
+          "mean_pilot_cost": 7069.6,
+          "mean_pilot_contacts": 1767.4,
+          "mean_total_cost": 7069.6,
+          "mean_total_contacts": 1813.4,
+          "mean_n_pilots": 18.6,
+          "mean_agent_seconds": 0.2608795400126837,
+          "mean_wall_seconds": 1.220855560002383,
+          "mean_dropped_campaigns": 0.0,
+          "mean_capped_campaigns": 0.0
+        },
+        "fixed": {
+          "attempts": 10,
+          "scored": 10,
+          "median_net": -234786.02339882258,
+          "q10_net": -235968.5376531875,
+          "min_net": -236725.39910074597,
+          "valid_positive": 0,
+          "positive_discovery": 0,
+          "positive_deployment": 0,
+          "positive_observation": 0,
+          "statuses": {
+            "ok": 10,
+            "error": 0,
+            "invalid_plan": 0,
+            "timeout": 0
+          },
+          "valid_positive_rate_all_attempts": 0.0,
+          "mean_pilot_cost": 6400.0,
+          "mean_pilot_contacts": 1600.0,
+          "mean_total_cost": 6400.0,
+          "mean_total_contacts": 1624.0,
+          "mean_n_pilots": 19.0,
+          "mean_agent_seconds": 0.2561378300073557,
+          "mean_wall_seconds": 1.2155365599901415,
+          "mean_dropped_campaigns": 0.0,
+          "mean_capped_campaigns": 0.0
+        }
+      },
+      "pairs": [
+        {
+          "seed": 50,
+          "comparable": true,
+          "adaptive_net": -294311.4519803479,
+          "fixed_net": -233507.82547164496,
+          "adaptive_minus_fixed": -60803.62650870296,
+          "same_model": true
+        },
+        {
+          "seed": 51,
+          "comparable": true,
+          "adaptive_net": -284019.66028717346,
+          "fixed_net": -236725.39910074597,
+          "adaptive_minus_fixed": -47294.261186427495,
+          "same_model": true
+        },
+        {
+          "seed": 52,
+          "comparable": true,
+          "adaptive_net": -238641.88312119362,
+          "fixed_net": -235769.42624474136,
+          "adaptive_minus_fixed": -2872.4568764522555,
+          "same_model": true
+        },
+        {
+          "seed": 53,
+          "comparable": true,
+          "adaptive_net": -282657.82003303117,
+          "fixed_net": -233063.14605231714,
+          "adaptive_minus_fixed": -49594.673980714026,
+          "same_model": true
+        },
+        {
+          "seed": 54,
+          "comparable": true,
+          "adaptive_net": -287142.88159542973,
+          "fixed_net": -235884.4419367921,
+          "adaptive_minus_fixed": -51258.439658637624,
+          "same_model": true
+        },
+        {
+          "seed": 55,
+          "comparable": true,
+          "adaptive_net": -294269.7869681667,
+          "fixed_net": -234504.29190904796,
+          "adaptive_minus_fixed": -59765.49505911875,
+          "same_model": true
+        },
+        {
+          "seed": 56,
+          "comparable": true,
+          "adaptive_net": -285576.8745742979,
+          "fixed_net": -233849.4099638491,
+          "adaptive_minus_fixed": -51727.464610448835,
+          "same_model": true
+        },
+        {
+          "seed": 57,
+          "comparable": true,
+          "adaptive_net": -293546.6344253426,
+          "fixed_net": -234439.8668872717,
+          "adaptive_minus_fixed": -59106.76753807091,
+          "same_model": true
+        },
+        {
+          "seed": 58,
+          "comparable": true,
+          "adaptive_net": -281555.10150056006,
+          "fixed_net": -235067.75488859724,
+          "adaptive_minus_fixed": -46487.34661196283,
+          "same_model": true
+        },
+        {
+          "seed": 59,
+          "comparable": true,
+          "adaptive_net": -238722.1368411699,
+          "fixed_net": -235783.51177530532,
+          "adaptive_minus_fixed": -2938.6250658645877,
+          "same_model": true
+        }
+      ],
+      "paired": {
+        "complete_valid_pairs": 10,
+        "median_adaptive_minus_fixed": -50426.556819675825,
+        "q10_adaptive_minus_fixed": -59869.30820407717,
+        "min_adaptive_minus_fixed": -60803.62650870296,
+        "max_adaptive_minus_fixed": -2872.4568764522555,
+        "adaptive_wins": 0,
+        "fixed_wins": 10,
+        "ties": 0
+      }
+    },
+    "rare_2": {
+      "policies": {
+        "adaptive": {
+          "attempts": 10,
+          "scored": 10,
+          "median_net": -266968.8093821665,
+          "q10_net": -294338.021688433,
+          "min_net": -300088.3367320113,
+          "valid_positive": 0,
+          "positive_discovery": 0,
+          "positive_deployment": 0,
+          "positive_observation": 0,
+          "statuses": {
+            "ok": 10,
+            "error": 0,
+            "invalid_plan": 0,
+            "timeout": 0
+          },
+          "valid_positive_rate_all_attempts": 0.0,
+          "mean_pilot_cost": 10368.0,
+          "mean_pilot_contacts": 2592.0,
+          "mean_total_cost": 10368.0,
+          "mean_total_contacts": 2750.6,
+          "mean_n_pilots": 18.7,
+          "mean_agent_seconds": 0.24934324000496416,
+          "mean_wall_seconds": 1.191593360027764,
+          "mean_dropped_campaigns": 0.0,
+          "mean_capped_campaigns": 0.0
+        },
+        "fixed": {
+          "attempts": 10,
+          "scored": 10,
+          "median_net": -268844.76531820634,
+          "q10_net": -271008.2221546658,
+          "min_net": -271810.4090810567,
+          "valid_positive": 0,
+          "positive_discovery": 0,
+          "positive_deployment": 0,
+          "positive_observation": 0,
+          "statuses": {
+            "ok": 10,
+            "error": 0,
+            "invalid_plan": 0,
+            "timeout": 0
+          },
+          "valid_positive_rate_all_attempts": 0.0,
+          "mean_pilot_cost": 12640.0,
+          "mean_pilot_contacts": 3160.0,
+          "mean_total_cost": 12800.0,
+          "mean_total_contacts": 3308.5,
+          "mean_n_pilots": 20.0,
+          "mean_agent_seconds": 0.25269859000109135,
+          "mean_wall_seconds": 1.2121614299947396,
+          "mean_dropped_campaigns": 0.0,
+          "mean_capped_campaigns": 0.0
+        }
+      },
+      "pairs": [
+        {
+          "seed": 50,
+          "comparable": true,
+          "adaptive_net": -260468.3767334723,
+          "fixed_net": -270919.0902739557,
+          "adaptive_minus_fixed": 10450.713540483412,
+          "same_model": true
+        },
+        {
+          "seed": 51,
+          "comparable": true,
+          "adaptive_net": -258641.826648887,
+          "fixed_net": -261296.78373927652,
+          "adaptive_minus_fixed": 2654.9570903895074,
+          "same_model": true
+        },
+        {
+          "seed": 52,
+          "comparable": true,
+          "adaptive_net": -293699.0977947021,
+          "fixed_net": -268528.02341736364,
+          "adaptive_minus_fixed": -25171.07437733846,
+          "same_model": true
+        },
+        {
+          "seed": 53,
+          "comparable": true,
+          "adaptive_net": -300088.3367320113,
+          "fixed_net": -271810.4090810567,
+          "adaptive_minus_fixed": -28277.927650954574,
+          "same_model": true
+        },
+        {
+          "seed": 54,
+          "comparable": true,
+          "adaptive_net": -290176.3914183435,
+          "fixed_net": -268861.5886729941,
+          "adaptive_minus_fixed": -21314.802745349414,
+          "same_model": true
+        },
+        {
+          "seed": 55,
+          "comparable": true,
+          "adaptive_net": -264303.1782781861,
+          "fixed_net": -266210.8257581315,
+          "adaptive_minus_fixed": 1907.6474799453863,
+          "same_model": true
+        },
+        {
+          "seed": 56,
+          "comparable": true,
+          "adaptive_net": -283290.5583683136,
+          "fixed_net": -266613.0301815698,
+          "adaptive_minus_fixed": -16677.528186743788,
+          "same_model": true
+        },
+        {
+          "seed": 57,
+          "comparable": true,
+          "adaptive_net": -264628.78780623735,
+          "fixed_net": -268827.94196341856,
+          "adaptive_minus_fixed": 4199.154157181212,
+          "same_model": true
+        },
+        {
+          "seed": 58,
+          "comparable": true,
+          "adaptive_net": -249621.14151230693,
+          "fixed_net": -268982.0416444422,
+          "adaptive_minus_fixed": 19360.900132135255,
+          "same_model": true
+        },
+        {
+          "seed": 59,
+          "comparable": true,
+          "adaptive_net": -269308.8309580956,
+          "fixed_net": -269148.6739217245,
+          "adaptive_minus_fixed": -160.15703637112165,
+          "same_model": true
+        }
+      ],
+      "paired": {
+        "complete_valid_pairs": 10,
+        "median_adaptive_minus_fixed": 873.7452217871323,
+        "q10_adaptive_minus_fixed": -25481.75970470007,
+        "min_adaptive_minus_fixed": -28277.927650954574,
+        "max_adaptive_minus_fixed": 19360.900132135255,
+        "adaptive_wins": 5,
+        "fixed_wins": 5,
+        "ties": 0
+      }
+    }
+  },
+  "journal": "comparison.jsonl",
+  "disclaimer": "Known synthetic models with new noise seeds, not hidden judging or real revenue. Same seed does not imply identical client samples."
+}
