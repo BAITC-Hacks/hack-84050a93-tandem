@@ -40,7 +40,7 @@ python tools/analyze_data.py
 ## 5. Ограничения и честная интерпретация
 
 - Хороший результат на mock не гарантирует положительного результата на скрытой модели.
-- Синтетический stress-test сохранил слабые результаты: агент ожидаемо отрицателен 5/5 при всех отрицательных эффектах и не находит редкий хороший сегмент из 12 клиентов 5/5. Это ограничение breadth exploration, а не скрытый тест организатора.
+- Синтетический stress-test сохранил слабые результаты: агент отрицателен 5/5 при всех отрицательных эффектах и 5/5 в сценарии с редким хорошим сегментом из 12 клиентов. Отрицательный итог сам по себе не доказывает, что сегмент не найден: для этого нужен журнал действий. Это искусственные сценарии, не скрытые тесты организатора.
 - При слабом сигнале и шумных пилотах результат меняется: в пяти искусственных запусках минимум net 46 814.80 против максимума 94 244.52, хотя все остались положительными.
 - Финальный preflight seed42 после 20 пилотов валиден: 3 кампании, 2 476 финальных контактов, 16 632 стоимости и без пересечений. Пилоты уже потратили 3 500 контактов и 14 000 бюджета.
 - Эффекты реального бизнеса, проценты экономии и место в рейтинге из этих экспериментов не выводятся.
@@ -51,9 +51,9 @@ python tools/analyze_data.py
 python -m pip install -r requirements-dev.txt
 python tools/analyze_data.py
 python -m pytest -q
-python tools/benchmark.py --agent agent_template:Agent --seeds 0:10 --out reports/benchmark_template.json
-python tools/benchmark.py --agent agent:Agent --seeds 0:10 --out reports/benchmark_agent.json
-python tools/stress_benchmark.py --agent agent:Agent --seeds 0:5 --out reports/benchmark_stress.json
+python tools/benchmark.py --agent agent_template:Agent --seeds 0:10 --out reports/reproduced_template.json
+python tools/benchmark.py --agent agent:Agent --seeds 0:10 --out reports/reproduced_agent.json
+python tools/stress_benchmark.py --agent agent:Agent --seeds 0:5 --out reports/reproduced_stress.json
 python local_eval.py --runs 10
 python make_submission.py
 ```

@@ -33,24 +33,39 @@ Beeline Tariff Marketing Campaigns Case.
 python -m venv .venv
 # Windows PowerShell:
 .venv\Scripts\python.exe -m pip install -r requirements.txt
-.venv\Scripts\python.exe tools/export_strategy.py
+.venv\Scripts\python.exe tools/verify_submission.py
 ```
 
 Linux/macOS после создания окружения:
 
 ```bash
 .venv/bin/python -m pip install -r requirements.txt
-.venv/bin/python tools/export_strategy.py
+.venv/bin/python tools/verify_submission.py
 ```
 
-Результат: `submission.csv` и `reports/decision_trace.json`. Скрипт экспорта
+Ожидаемый результат проверки: строки `OK`, итоговое `"passed": true` и код
+выхода 0. Проверяется уже сохранённый CSV: исходники и данные сверяются с
+контрольными суммами, затем отдельный процесс дважды генерирует результат
+временной папки. Исходный `submission.csv` и журнал не перезаписываются.
+`FAIL` и ненулевой код выхода означают, что причину нужно устранить.
+
+После изменения алгоритма обновите артефакты командой
+`.venv\Scripts\python.exe tools/export_strategy.py` (Windows) или
+`.venv/bin/python tools/export_strategy.py` (Linux/macOS), затем повторите проверку.
+Результат экспорта: `submission.csv` и `reports/decision_trace.json`. Скрипт экспорта
 вызывает официальный `build_submission`; журнал дополнительно содержит
 пилоты, оценки, расходы и SHA-256 исходников, входных данных и итогового CSV.
 Перед записью экспорт дважды формирует CSV с seed 42 и требует полного совпадения.
 Агент проверяет допустимость и отсутствие пересечений финального плана перед
 возвратом результата; отчёт сохраняет `preflight` и полный расход вместе с пилотами.
 При ошибке генерации существующие артефакты не заменяются. Стандартная команда
-`python make_submission.py` формирует тот же формат CSV без журнала.
+`.venv\Scripts\python.exe make_submission.py` (Windows) формирует тот же формат
+CSV без журнала; Linux/macOS используют `.venv/bin/python`.
+
+Запускайте проект целиком из репозитория. Одних `agent.py` и `submission.csv`
+недостаточно: агент импортирует `strategy/` и `validation/`, использует историю
+`data/change_tariff.csv`; локальной среде также нужны `customer_profile.csv` и
+`data/dict_tariff.csv`. Организаторские файлы включены в репозиторий.
 
 В среде организатора достаточно `from agent import Agent; Agent().act(env)`.
 Состояние создаётся заново на каждый вызов; собственной случайности и внешних
@@ -83,6 +98,7 @@ make_submission.py → воспроизводимая таблица финал�
 | `strategy/beliefs.py` | Робастная история и обновление оценок по наблюдениям |
 | `strategy/portfolio.py` | Аудитории, выбор каналов, бюджет и отсутствие пересечений |
 | `tools/export_strategy.py` | Воспроизводимый экспорт и объяснение решений |
+| `tools/verify_submission.py` | Проверка сохранённого CSV, контрольных сумм и запуска из отдельного процесса |
 
 ## Как принимаются решения
 
@@ -161,8 +177,10 @@ Devin подготовил независимый валидатор и инст
 
 ## Проверка и экспорт кампаний
 
-Официальные команды локальной оценки: `python local_eval.py` и
-`python local_eval.py --runs 10`. Они оценивают локальную модель, не скрытую
-среду судейства. Для исходного шаблона: `python tools/run_baseline.py --runs 10`.
+Windows: `.venv\Scripts\python.exe local_eval.py --runs 10`.
+Linux/macOS: `.venv/bin/python local_eval.py --runs 10`.
+Команды оценивают локальную модель, не скрытую среду судейства.
+Для исходного шаблона используйте тем же интерпретатором
+`tools/run_baseline.py --runs 10`.
 Образец `reports/baseline_submission.csv` относится к шаблону;
 актуальные кампании нашего агента находятся в корневом `submission.csv`.
