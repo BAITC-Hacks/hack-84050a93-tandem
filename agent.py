@@ -13,6 +13,7 @@ import pandas as pd
 
 from strategy.beliefs import ARPU_SEGMENTS, NOISE_STD, HistoricalPrior, positive_normal
 from strategy.portfolio import choose_portfolio, make_options
+from validation.plan import validate_plan
 
 
 class Agent:
@@ -20,7 +21,7 @@ class Agent:
         self.last_trace = {}
 
     def act(self, env):
-        self.last_trace = {"pilots": [], "warnings": [], "version": "adaptive-portfolio-v1.1"}
+        self.last_trace = {"pilots": [], "warnings": [], "version": "adaptive-portfolio-v1.2"}
         profile = env.customer_profile.copy().reset_index(drop=True)
         required = {"ID_NUMBER", "current_tariff", "arpu_segment", "predicted_arpu", "data_segment", "call_segment"}
         if required - set(profile.columns):
@@ -208,6 +209,13 @@ class Agent:
         campaigns = []
         for index, option in enumerate(chosen, start=1):
             campaigns.append({"campaign_name": f"tandem_{index:02d}", **option.campaign})
+        preflight = validate_plan(campaigns, env.customer_profile, env.tariffs,
+                                  env.channels, env.remaining_budget, env.remaining_contacts)
+        self.last_trace["preflight"] = preflight
+        if not preflight["valid"]:
+            raise RuntimeError("Final plan rejected: " + "; ".join(preflight["errors"]))
+        if preflight["unique_customers"] != preflight["total_contacts"]:
+            raise RuntimeError("Final plan contains overlapping audiences")
         self.last_trace["final"] = {
             "campaigns": [{**campaign, "contacts": option.contacts, "cost": option.cost,
                            "estimated_mean_gain": option.mean_gain, "risk_adjusted_gain": option.gain,
@@ -216,6 +224,8 @@ class Agent:
             "contacts": sum(o.contacts for o in chosen), "cost": sum(o.cost for o in chosen),
             "remaining_contacts_after_pilots": int(env.remaining_contacts),
             "remaining_budget_after_pilots": float(env.remaining_budget),
+            "total_contacts_including_pilots": initial_contacts - int(env.remaining_contacts) + preflight["total_contacts"],
+            "total_cost_including_pilots": initial_budget - float(env.remaining_budget) + preflight["total_cost"],
             "fallback": not any(o.gain > 0 for o in chosen),
             "note": "Planning estimates, not measured judging profit; final audiences are disjoint.",
         }
