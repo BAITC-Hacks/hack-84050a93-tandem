@@ -1,0 +1,49 @@
+--- a/agent.py
++++ b/experiments/signed_pilot_coverage/agent.py
+@@ -12,7 +12,7 @@
+ import pandas as pd
+ 
+ from strategy.beliefs import ARPU_SEGMENTS, NOISE_STD, HistoricalPrior, positive_normal
+-from strategy.portfolio import choose_portfolio, make_options
++from experiments.signed_pilot_coverage.portfolio import choose_portfolio, make_options
+ from validation.plan import validate_plan
+ 
+ 
+@@ -55,7 +55,7 @@
+             raise ValueError("Invalid available budget or contact limit")
+ 
+         tariffs = sorted(str(t) for t in env.tariffs.tariff_plan_code.dropna().unique())
+-        prior = HistoricalPrior(env.tariffs, Path(__file__).resolve().parent / "data" / "change_tariff.csv", reference_multiplier)
++        prior = HistoricalPrior(env.tariffs, Path(__file__).resolve().parents[2] / "data" / "change_tariff.csv", reference_multiplier)
+         self.last_trace["prior"] = prior.status
+         self.last_trace["reference_channel"] = reference_channel
+         cells = {}
+--- a/strategy/portfolio.py
++++ b/experiments/signed_pilot_coverage/portfolio.py
+@@ -66,18 +66,19 @@
+             if sampled.key == key and sampled.pilots:
+                 pilot_mean, _ = sampled.posterior()
+                 for n, scale in sampled.samples:
+-                    pilot_effects.append((max(0.0, pilot_mean * scale), min(1.0, n / len(cell))))
++                    pilot_effects.append((pilot_mean * scale, min(1.0, n / len(cell))))
+         pilot_effects.sort(reverse=True)
+ 
+         def incremental_ratio(ratio):
+-            # Individual pilot IDs are deliberately unknown. Under the public
+-            # uniform sampling rule, estimate prior coverage probabilistically.
+-            # Never count a pilot's gain again as incremental final-campaign gain.
+-            uncovered, sunk = 1.0, 0.0
++            # Individual pilot IDs are unknown; retain independent uniform coverage.
++            # Descending signed effects assign each best prior contact its weight.
++            # Uncontacted customers receive ratio; contacted customers can recover
++            # a negative prior effect as well as improve a positive prior effect.
++            uncovered, increment = 1.0, 0.0
+             for pilot_ratio, probability in pilot_effects:
+-                sunk += uncovered * probability * min(max(0.0, ratio), pilot_ratio)
++                increment += uncovered * probability * max(0.0, ratio - pilot_ratio)
+                 uncovered *= 1.0 - probability
+-            return ratio - sunk
++            return uncovered * ratio + increment
+ 
+         for part, data, calls, mask in audience_parts(cell):
+             mass = float(part["_value"].sum())
