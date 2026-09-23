@@ -12,3 +12,4 @@ __pycache__/
 *.zip
 .DS_Store
 Thumbs.db
+reports/demo_runs/
