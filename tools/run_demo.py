@@ -53,8 +53,8 @@ def input_snapshot():
 
 def run_pipeline(output_root=DEFAULT_OUTPUT, timeout=300):
     """Return (new run directory, status); a failed run is never marked complete."""
-    if not math.isfinite(timeout) or timeout <= 0 or timeout > 600:
-        raise ValueError("Timeout must be greater than zero and at most 600 seconds")
+    if not math.isfinite(timeout) or timeout <= 0 or timeout > 300:
+        raise ValueError("Timeout must be greater than zero and at most 300 seconds")
     output_root = Path(output_root).resolve()
     if output_root.is_relative_to(ROOT) and not output_root.is_relative_to(ROOT / "reports"):
         raise ValueError("Repository demo output must be inside reports/")
@@ -170,7 +170,7 @@ def main():
     parser.add_argument("--output-root", type=Path, default=DEFAULT_OUTPUT,
                         help="Parent directory for a new unique run folder (default: reports/demo_runs)")
     parser.add_argument("--timeout", type=float, default=300,
-                        help="Total seconds for export and rendering; maximum 600 (default: 300)")
+                        help="Total seconds for export and rendering; maximum 300 (default: 300)")
     args = parser.parse_args()
     try:
         directory, status = run_pipeline(args.output_root, args.timeout)
