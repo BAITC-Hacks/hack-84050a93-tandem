@@ -1,0 +1,643 @@
+{
+  "incumbent_commit": "b13f9974f12411418088e40d22bca2e060fed96a",
+  "policies": {
+    "baseline": "agent:Agent",
+    "candidate": "experiments.push_packing.agent:PackedPushAgent"
+  },
+  "known_scenarios": [
+    "mock",
+    "devin_all_bad",
+    "devin_mixed",
+    "devin_rare_good",
+    "devin_unlucky_noisy_pilots",
+    "devin_small_and_empty",
+    "negative_1",
+    "negative_2",
+    "mixed_1",
+    "mixed_2",
+    "rare_1",
+    "rare_2"
+  ],
+  "development_seeds": [
+    60,
+    61,
+    62
+  ],
+  "holdout_seeds": [
+    90,
+    91,
+    92,
+    93,
+    94
+  ],
+  "new_holdout": {
+    "packing_holdout_mixed": {
+      "name": "packing_holdout_mixed",
+      "config": {
+        "split": "packing_holdout",
+        "family": "mixed",
+        "model_seed": 2026100101,
+        "tariffs": [
+          "tariff_1",
+          "tariff_6",
+          "tariff_10",
+          "tariff_13",
+          "tariff_18",
+          "tariff_20"
+        ],
+        "customers": 2700,
+        "positive_count": 36,
+        "positive_effect_range": [
+          0.04,
+          0.55
+        ],
+        "negative_effect_range": [
+          -0.3,
+          -0.01
+        ],
+        "conversion_range": [
+          0.2,
+          0.9
+        ]
+      },
+      "config_sha256": "7fa8175da6467baf580040c99d8825e8a1863f581facc4e861a407c48b7ac129",
+      "profile_sha256": "d93b8b97215218a455f3bb85b60d9d7fa652221062baea3707705d8e9ceaae09",
+      "tariffs_sha256": "bfa28c0b7107f530380316fae0f5dedf0d4e97340f19e29e15dc1087340f74c1",
+      "model_sha256": "03d99b24134008289f738b257f734d9e8897df4f5c50e3f2e1e7e08219c3948b",
+      "hash_format": "sha256-utf8-csv-lf-float17g-v1",
+      "customers": 2700,
+      "cells": 18,
+      "smallest_cell": 67,
+      "largest_cell": 497,
+      "modeled_offers": 90,
+      "positive_offers": 36,
+      "call_saturation_offers": 10,
+      "positive_triples": [
+        {
+          "tariff_plan_code_from": "tariff_1",
+          "arpu_segment": "LOW",
+          "tariff_plan_code_to": "tariff_10"
+        },
+        {
+          "tariff_plan_code_from": "tariff_1",
+          "arpu_segment": "LOW",
+          "tariff_plan_code_to": "tariff_20"
+        },
+        {
+          "tariff_plan_code_from": "tariff_1",
+          "arpu_segment": "MID",
+          "tariff_plan_code_to": "tariff_6"
+        },
+        {
+          "tariff_plan_code_from": "tariff_1",
+          "arpu_segment": "HIGH",
+          "tariff_plan_code_to": "tariff_6"
+        },
+        {
+          "tariff_plan_code_from": "tariff_1",
+          "arpu_segment": "HIGH",
+          "tariff_plan_code_to": "tariff_13"
+        },
+        {
+          "tariff_plan_code_from": "tariff_6",
+          "arpu_segment": "LOW",
+          "tariff_plan_code_to": "tariff_13"
+        },
+        {
+          "tariff_plan_code_from": "tariff_6",
+          "arpu_segment": "LOW",
+          "tariff_plan_code_to": "tariff_18"
+        },
+        {
+          "tariff_plan_code_from": "tariff_6",
+          "arpu_segment": "MID",
+          "tariff_plan_code_to": "tariff_1"
+        },
+        {
+          "tariff_plan_code_from": "tariff_6",
+          "arpu_segment": "MID",
+          "tariff_plan_code_to": "tariff_10"
+        },
+        {
+          "tariff_plan_code_from": "tariff_6",
+          "arpu_segment": "MID",
+          "tariff_plan_code_to": "tariff_18"
+        },
+        {
+          "tariff_plan_code_from": "tariff_6",
+          "arpu_segment": "MID",
+          "tariff_plan_code_to": "tariff_20"
+        },
+        {
+          "tariff_plan_code_from": "tariff_6",
+          "arpu_segment": "HIGH",
+          "tariff_plan_code_to": "tariff_20"
+        },
+        {
+          "tariff_plan_code_from": "tariff_10",
+          "arpu_segment": "LOW",
+          "tariff_plan_code_to": "tariff_1"
+        },
+        {
+          "tariff_plan_code_from": "tariff_10",
+          "arpu_segment": "LOW",
+          "tariff_plan_code_to": "tariff_6"
+        },
+        {
+          "tariff_plan_code_from": "tariff_10",
+          "arpu_segment": "MID",
+          "tariff_plan_code_to": "tariff_18"
+        },
+        {
+          "tariff_plan_code_from": "tariff_10",
+          "arpu_segment": "MID",
+          "tariff_plan_code_to": "tariff_20"
+        },
+        {
+          "tariff_plan_code_from": "tariff_10",
+          "arpu_segment": "HIGH",
+          "tariff_plan_code_to": "tariff_1"
+        },
+        {
+          "tariff_plan_code_from": "tariff_10",
+          "arpu_segment": "HIGH",
+          "tariff_plan_code_to": "tariff_6"
+        },
+        {
+          "tariff_plan_code_from": "tariff_10",
+          "arpu_segment": "HIGH",
+          "tariff_plan_code_to": "tariff_13"
+        },
+        {
+          "tariff_plan_code_from": "tariff_13",
+          "arpu_segment": "LOW",
+          "tariff_plan_code_to": "tariff_10"
+        },
+        {
+          "tariff_plan_code_from": "tariff_13",
+          "arpu_segment": "LOW",
+          "tariff_plan_code_to": "tariff_18"
+        },
+        {
+          "tariff_plan_code_from": "tariff_13",
+          "arpu_segment": "MID",
+          "tariff_plan_code_to": "tariff_10"
+        },
+        {
+          "tariff_plan_code_from": "tariff_13",
+          "arpu_segment": "MID",
+          "tariff_plan_code_to": "tariff_18"
+        },
+        {
+          "tariff_plan_code_from": "tariff_13",
+          "arpu_segment": "HIGH",
+          "tariff_plan_code_to": "tariff_18"
+        },
+        {
+          "tariff_plan_code_from": "tariff_18",
+          "arpu_segment": "LOW",
+          "tariff_plan_code_to": "tariff_10"
+        },
+        {
+          "tariff_plan_code_from": "tariff_18",
+          "arpu_segment": "MID",
+          "tariff_plan_code_to": "tariff_13"
+        },
+        {
+          "tariff_plan_code_from": "tariff_18",
+          "arpu_segment": "MID",
+          "tariff_plan_code_to": "tariff_20"
+        },
+        {
+          "tariff_plan_code_from": "tariff_18",
+          "arpu_segment": "HIGH",
+          "tariff_plan_code_to": "tariff_6"
+        },
+        {
+          "tariff_plan_code_from": "tariff_18",
+          "arpu_segment": "HIGH",
+          "tariff_plan_code_to": "tariff_13"
+        },
+        {
+          "tariff_plan_code_from": "tariff_18",
+          "arpu_segment": "HIGH",
+          "tariff_plan_code_to": "tariff_20"
+        },
+        {
+          "tariff_plan_code_from": "tariff_20",
+          "arpu_segment": "LOW",
+          "tariff_plan_code_to": "tariff_13"
+        },
+        {
+          "tariff_plan_code_from": "tariff_20",
+          "arpu_segment": "MID",
+          "tariff_plan_code_to": "tariff_6"
+        },
+        {
+          "tariff_plan_code_from": "tariff_20",
+          "arpu_segment": "MID",
+          "tariff_plan_code_to": "tariff_10"
+        },
+        {
+          "tariff_plan_code_from": "tariff_20",
+          "arpu_segment": "HIGH",
+          "tariff_plan_code_to": "tariff_1"
+        },
+        {
+          "tariff_plan_code_from": "tariff_20",
+          "arpu_segment": "HIGH",
+          "tariff_plan_code_to": "tariff_6"
+        },
+        {
+          "tariff_plan_code_from": "tariff_20",
+          "arpu_segment": "HIGH",
+          "tariff_plan_code_to": "tariff_13"
+        }
+      ],
+      "rng_streams": {
+        "profile": [
+          0
+        ],
+        "effects": [
+          1
+        ],
+        "positive_placement": [
+          2
+        ]
+      },
+      "limitations": [
+        "Synthetic fixed models, not a prediction of hidden judging performance.",
+        "Repeating pilot-noise seeds does not create additional effect models.",
+        "Positive placements do not depend on cell sizes or agent behavior.",
+        "High conversion exercises saturation in the scorer; it does not force an agent to use calls."
+      ]
+    },
+    "packing_holdout_negative": {
+      "name": "packing_holdout_negative",
+      "config": {
+        "split": "packing_holdout",
+        "family": "negative",
+        "model_seed": 2026100102,
+        "tariffs": [
+          "tariff_1",
+          "tariff_6",
+          "tariff_10",
+          "tariff_13",
+          "tariff_18",
+          "tariff_20"
+        ],
+        "customers": 2700,
+        "positive_count": 0,
+        "positive_effect_range": [
+          0.04,
+          0.55
+        ],
+        "negative_effect_range": [
+          -0.3,
+          -0.01
+        ],
+        "conversion_range": [
+          0.3,
+          0.9
+        ]
+      },
+      "config_sha256": "168735b5cf821df2fc576463400467383d0f554ed810bd592fc71edb04ae3155",
+      "profile_sha256": "59962bfa367ad45878ac6723d04af145064c72443f7102364bf36f717270541e",
+      "tariffs_sha256": "bfa28c0b7107f530380316fae0f5dedf0d4e97340f19e29e15dc1087340f74c1",
+      "model_sha256": "5f38858804508fe18272b21633c0b54de3f7416ab11f18951f18972098f8e648",
+      "hash_format": "sha256-utf8-csv-lf-float17g-v1",
+      "customers": 2700,
+      "cells": 18,
+      "smallest_cell": 59,
+      "largest_cell": 360,
+      "modeled_offers": 90,
+      "positive_offers": 0,
+      "call_saturation_offers": 9,
+      "positive_triples": [],
+      "rng_streams": {
+        "profile": [
+          0
+        ],
+        "effects": [
+          1
+        ],
+        "positive_placement": [
+          2
+        ]
+      },
+      "limitations": [
+        "Synthetic fixed models, not a prediction of hidden judging performance.",
+        "Repeating pilot-noise seeds does not create additional effect models.",
+        "Positive placements do not depend on cell sizes or agent behavior.",
+        "High conversion exercises saturation in the scorer; it does not force an agent to use calls."
+      ]
+    },
+    "packing_holdout_rare": {
+      "name": "packing_holdout_rare",
+      "config": {
+        "split": "packing_holdout",
+        "family": "rare",
+        "model_seed": 2026100103,
+        "tariffs": [
+          "tariff_1",
+          "tariff_6",
+          "tariff_10",
+          "tariff_13",
+          "tariff_18",
+          "tariff_20"
+        ],
+        "customers": 2700,
+        "positive_count": 1,
+        "positive_effect_range": [
+          0.45,
+          0.95
+        ],
+        "negative_effect_range": [
+          -0.2,
+          -0.015
+        ],
+        "conversion_range": [
+          0.35,
+          0.85
+        ]
+      },
+      "config_sha256": "5ea46df7a13dd8edb232bcc8b9780ffe93c2bbace8eabc31004085f2f0b307b2",
+      "profile_sha256": "31ca9f81b4e1a6015f9385f7a8295255e4cd7f5b1b0cb7bd8d350c74cbd7b1a1",
+      "tariffs_sha256": "bfa28c0b7107f530380316fae0f5dedf0d4e97340f19e29e15dc1087340f74c1",
+      "model_sha256": "13f5c65c1beac6ae183b52e01f7c8a35836c769254a4f1bcbe5987178e485723",
+      "hash_format": "sha256-utf8-csv-lf-float17g-v1",
+      "customers": 2700,
+      "cells": 18,
+      "smallest_cell": 67,
+      "largest_cell": 362,
+      "modeled_offers": 90,
+      "positive_offers": 1,
+      "call_saturation_offers": 5,
+      "positive_triples": [
+        {
+          "tariff_plan_code_from": "tariff_6",
+          "arpu_segment": "HIGH",
+          "tariff_plan_code_to": "tariff_18"
+        }
+      ],
+      "rng_streams": {
+        "profile": [
+          0
+        ],
+        "effects": [
+          1
+        ],
+        "positive_placement": [
+          2
+        ]
+      },
+      "limitations": [
+        "Synthetic fixed models, not a prediction of hidden judging performance.",
+        "Repeating pilot-noise seeds does not create additional effect models.",
+        "Positive placements do not depend on cell sizes or agent behavior.",
+        "High conversion exercises saturation in the scorer; it does not force an agent to use calls."
+      ]
+    },
+    "packing_holdout_high_conversion": {
+      "name": "packing_holdout_high_conversion",
+      "config": {
+        "split": "packing_holdout",
+        "family": "high_conversion",
+        "model_seed": 2026100104,
+        "tariffs": [
+          "tariff_1",
+          "tariff_6",
+          "tariff_10",
+          "tariff_13",
+          "tariff_18",
+          "tariff_20"
+        ],
+        "customers": 2700,
+        "positive_count": 36,
+        "positive_effect_range": [
+          0.03,
+          0.6
+        ],
+        "negative_effect_range": [
+          -0.3,
+          -0.01
+        ],
+        "conversion_range": [
+          0.9,
+          0.999
+        ]
+      },
+      "config_sha256": "9bcd4f409aee615e5d53b216b546d5704b21c0364fedf6f0d8fd9fd85b0d64a3",
+      "profile_sha256": "edc787d116f766f6a79fc0c72692a92906deea1a9abc5e64b721612969c388ea",
+      "tariffs_sha256": "bfa28c0b7107f530380316fae0f5dedf0d4e97340f19e29e15dc1087340f74c1",
+      "model_sha256": "74c954167781dfbcd67f26042a86b0596b2307a3e57932ce36d9b768ba2e8a21",
+      "hash_format": "sha256-utf8-csv-lf-float17g-v1",
+      "customers": 2700,
+      "cells": 18,
+      "smallest_cell": 68,
+      "largest_cell": 322,
+      "modeled_offers": 90,
+      "positive_offers": 36,
+      "call_saturation_offers": 90,
+      "positive_triples": [
+        {
+          "tariff_plan_code_from": "tariff_1",
+          "arpu_segment": "LOW",
+          "tariff_plan_code_to": "tariff_6"
+        },
+        {
+          "tariff_plan_code_from": "tariff_1",
+          "arpu_segment": "LOW",
+          "tariff_plan_code_to": "tariff_10"
+        },
+        {
+          "tariff_plan_code_from": "tariff_1",
+          "arpu_segment": "LOW",
+          "tariff_plan_code_to": "tariff_20"
+        },
+        {
+          "tariff_plan_code_from": "tariff_1",
+          "arpu_segment": "MID",
+          "tariff_plan_code_to": "tariff_20"
+        },
+        {
+          "tariff_plan_code_from": "tariff_1",
+          "arpu_segment": "HIGH",
+          "tariff_plan_code_to": "tariff_6"
+        },
+        {
+          "tariff_plan_code_from": "tariff_1",
+          "arpu_segment": "HIGH",
+          "tariff_plan_code_to": "tariff_10"
+        },
+        {
+          "tariff_plan_code_from": "tariff_1",
+          "arpu_segment": "HIGH",
+          "tariff_plan_code_to": "tariff_18"
+        },
+        {
+          "tariff_plan_code_from": "tariff_6",
+          "arpu_segment": "LOW",
+          "tariff_plan_code_to": "tariff_20"
+        },
+        {
+          "tariff_plan_code_from": "tariff_6",
+          "arpu_segment": "MID",
+          "tariff_plan_code_to": "tariff_13"
+        },
+        {
+          "tariff_plan_code_from": "tariff_6",
+          "arpu_segment": "MID",
+          "tariff_plan_code_to": "tariff_20"
+        },
+        {
+          "tariff_plan_code_from": "tariff_6",
+          "arpu_segment": "HIGH",
+          "tariff_plan_code_to": "tariff_10"
+        },
+        {
+          "tariff_plan_code_from": "tariff_6",
+          "arpu_segment": "HIGH",
+          "tariff_plan_code_to": "tariff_20"
+        },
+        {
+          "tariff_plan_code_from": "tariff_10",
+          "arpu_segment": "LOW",
+          "tariff_plan_code_to": "tariff_13"
+        },
+        {
+          "tariff_plan_code_from": "tariff_10",
+          "arpu_segment": "LOW",
+          "tariff_plan_code_to": "tariff_20"
+        },
+        {
+          "tariff_plan_code_from": "tariff_10",
+          "arpu_segment": "MID",
+          "tariff_plan_code_to": "tariff_13"
+        },
+        {
+          "tariff_plan_code_from": "tariff_10",
+          "arpu_segment": "HIGH",
+          "tariff_plan_code_to": "tariff_6"
+        },
+        {
+          "tariff_plan_code_from": "tariff_13",
+          "arpu_segment": "LOW",
+          "tariff_plan_code_to": "tariff_1"
+        },
+        {
+          "tariff_plan_code_from": "tariff_13",
+          "arpu_segment": "LOW",
+          "tariff_plan_code_to": "tariff_10"
+        },
+        {
+          "tariff_plan_code_from": "tariff_13",
+          "arpu_segment": "MID",
+          "tariff_plan_code_to": "tariff_6"
+        },
+        {
+          "tariff_plan_code_from": "tariff_13",
+          "arpu_segment": "MID",
+          "tariff_plan_code_to": "tariff_10"
+        },
+        {
+          "tariff_plan_code_from": "tariff_13",
+          "arpu_segment": "MID",
+          "tariff_plan_code_to": "tariff_18"
+        },
+        {
+          "tariff_plan_code_from": "tariff_13",
+          "arpu_segment": "MID",
+          "tariff_plan_code_to": "tariff_20"
+        },
+        {
+          "tariff_plan_code_from": "tariff_13",
+          "arpu_segment": "HIGH",
+          "tariff_plan_code_to": "tariff_6"
+        },
+        {
+          "tariff_plan_code_from": "tariff_13",
+          "arpu_segment": "HIGH",
+          "tariff_plan_code_to": "tariff_18"
+        },
+        {
+          "tariff_plan_code_from": "tariff_13",
+          "arpu_segment": "HIGH",
+          "tariff_plan_code_to": "tariff_20"
+        },
+        {
+          "tariff_plan_code_from": "tariff_18",
+          "arpu_segment": "LOW",
+          "tariff_plan_code_to": "tariff_13"
+        },
+        {
+          "tariff_plan_code_from": "tariff_18",
+          "arpu_segment": "LOW",
+          "tariff_plan_code_to": "tariff_20"
+        },
+        {
+          "tariff_plan_code_from": "tariff_18",
+          "arpu_segment": "MID",
+          "tariff_plan_code_to": "tariff_6"
+        },
+        {
+          "tariff_plan_code_from": "tariff_18",
+          "arpu_segment": "MID",
+          "tariff_plan_code_to": "tariff_10"
+        },
+        {
+          "tariff_plan_code_from": "tariff_18",
+          "arpu_segment": "HIGH",
+          "tariff_plan_code_to": "tariff_6"
+        },
+        {
+          "tariff_plan_code_from": "tariff_18",
+          "arpu_segment": "HIGH",
+          "tariff_plan_code_to": "tariff_10"
+        },
+        {
+          "tariff_plan_code_from": "tariff_18",
+          "arpu_segment": "HIGH",
+          "tariff_plan_code_to": "tariff_20"
+        },
+        {
+          "tariff_plan_code_from": "tariff_20",
+          "arpu_segment": "LOW",
+          "tariff_plan_code_to": "tariff_6"
+        },
+        {
+          "tariff_plan_code_from": "tariff_20",
+          "arpu_segment": "LOW",
+          "tariff_plan_code_to": "tariff_13"
+        },
+        {
+          "tariff_plan_code_from": "tariff_20",
+          "arpu_segment": "MID",
+          "tariff_plan_code_to": "tariff_6"
+        },
+        {
+          "tariff_plan_code_from": "tariff_20",
+          "arpu_segment": "HIGH",
+          "tariff_plan_code_to": "tariff_13"
+        }
+      ],
+      "rng_streams": {
+        "profile": [
+          0
+        ],
+        "effects": [
+          1
+        ],
+        "positive_placement": [
+          2
+        ]
+      },
+      "limitations": [
+        "Synthetic fixed models, not a prediction of hidden judging performance.",
+        "Repeating pilot-noise seeds does not create additional effect models.",
+        "Positive placements do not depend on cell sizes or agent behavior.",
+        "High conversion exercises saturation in the scorer; it does not force an agent to use calls."
+      ]
+    }
+  }
+}
