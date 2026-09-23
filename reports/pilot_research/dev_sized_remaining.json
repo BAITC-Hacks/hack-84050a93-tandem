@@ -1,0 +1,100 @@
+{
+  "agent": "experiments.pilot_research.agent:Agent",
+  "git": {
+    "sha": "cbb08180d84b7cee1e26da74607bb7c4950e5577",
+    "dirty": true,
+    "status_porcelain": [
+      "?? experiments/pilot_research/measure.py",
+      "?? experiments/pilot_research/run_suite.py",
+      "?? experiments/pilot_research/test_research.py",
+      "?? reports/pilot_research/"
+    ]
+  },
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.5.3",
+    "pandas": "3.0.6"
+  },
+  "summary": {
+    "devin_mixed": {
+      "runs": 10,
+      "scored": 10,
+      "valid_positive": 10,
+      "errors": 0,
+      "timeouts": 0,
+      "invalid": 0,
+      "median_net": 435771.75499999995,
+      "min_net": 297948.41299999994,
+      "q10_net": 304393.80125,
+      "mean_loss": 0.0,
+      "positive_discovery_runs": 10,
+      "positive_deployment_runs": 10,
+      "mean_pilot_net": 297774.62294999993,
+      "mean_pilot_cost": 2328.0,
+      "mean_pilot_contacts": 582.0,
+      "mean_n_pilots": 16.2,
+      "mean_total_cost": 5320.0,
+      "mean_total_contacts": 707.2,
+      "mean_agent_seconds": 0.26780832001240923,
+      "mean_wall_seconds": 1.2504051200230606
+    },
+    "devin_small_and_empty": {
+      "runs": 10,
+      "scored": 10,
+      "valid_positive": 10,
+      "errors": 0,
+      "timeouts": 0,
+      "invalid": 0,
+      "median_net": 94992.24,
+      "min_net": 85508.41500000001,
+      "q10_net": 86705.64899999999,
+      "mean_loss": 0.0,
+      "positive_discovery_runs": 10,
+      "positive_deployment_runs": 10,
+      "mean_pilot_net": 52885.485,
+      "mean_pilot_cost": 120.0,
+      "mean_pilot_contacts": 30.0,
+      "mean_n_pilots": 1.0,
+      "mean_total_cost": 2088.0,
+      "mean_total_contacts": 86.0,
+      "mean_agent_seconds": 0.11665457000490279,
+      "mean_wall_seconds": 0.8869240300031379
+    },
+    "devin_unlucky_noisy_pilots": {
+      "runs": 10,
+      "scored": 10,
+      "valid_positive": 10,
+      "errors": 0,
+      "timeouts": 0,
+      "invalid": 0,
+      "median_net": 50109.6845,
+      "min_net": 9321.771000000006,
+      "q10_net": 27846.089400000008,
+      "mean_loss": 0.0,
+      "positive_discovery_runs": 10,
+      "positive_deployment_runs": 8,
+      "mean_pilot_net": 53285.68325,
+      "mean_pilot_cost": 3152.0,
+      "mean_pilot_contacts": 788.0,
+      "mean_n_pilots": 18.4,
+      "mean_total_cost": 3360.0,
+      "mean_total_contacts": 830.2,
+      "mean_agent_seconds": 0.27119990000501276,
+      "mean_wall_seconds": 1.264163909992203
+    }
+  },
+  "journal": "dev_sized_remaining.jsonl",
+  "disclaimer": "Synthetic effects are harness-only; same seeds do not imply identical pilot samples across policies."
+}
