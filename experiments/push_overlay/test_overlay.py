@@ -8,7 +8,7 @@ from pathlib import Path
 import pandas as pd
 import pytest
 
-from agent import Agent as ProductionAgent
+from agent import BaselineAgent as ProductionAgent
 from experiments.push_overlay.agent import (
     PushOverlayAgent, _ranking_gain, add_push_overlays, selected_audience,
 )

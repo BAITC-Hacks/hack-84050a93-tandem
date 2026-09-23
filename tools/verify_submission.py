@@ -73,8 +73,30 @@ def verify(timeout=300):
                 preflight = generated.get('preflight', {})
                 final = generated.get('final', {})
                 record('preflight', preflight.get('valid') is True, preflight.get('errors', []))
-                record('disjoint_audiences', preflight.get('unique_customers') == preflight.get('total_contacts'),
-                       'No repeated IDs between final campaign audiences')
+                if generated.get('version') == 'adaptive-portfolio-v1.3':
+                    base = generated.get('base_trace', {})
+                    base_preflight = base.get('preflight', {})
+                    extension = generated.get('overlay_validation', {})
+                    prefix = generated.get('baseline_prefix', [])
+                    record('base_disjoint_audiences',
+                           base_preflight.get('valid') is True and
+                           base_preflight.get('unique_customers') == base_preflight.get('total_contacts'),
+                           'Original final audiences do not overlap')
+                    record('covered_audience_extension', extension.get('valid') is True and
+                           extension.get('preflight') == preflight and
+                           len(extension.get('proofs', [])) == len(final.get('campaigns', [])) - len(prefix),
+                           extension.get('errors', []))
+                    fields = ('campaign_name', 'filter_arpu_segment', 'filter_data_segment',
+                              'filter_call_segment', 'filter_current_tariff', 'target_tariff', 'channel')
+                    actual_prefix = [{key: campaign.get(key) for key in fields}
+                                     for campaign in final.get('campaigns', [])[:len(prefix)]]
+                    record('original_final_prefix', bool(prefix) and actual_prefix == prefix,
+                           'All original campaigns remain first and unchanged')
+                    record('unchanged_final_cost', final.get('cost') == base.get('final', {}).get('cost'),
+                           'Every added contact is free; repeated contacts still use the contact limit')
+                else:
+                    record('disjoint_audiences', preflight.get('unique_customers') == preflight.get('total_contacts'),
+                           'No repeated IDs between final campaign audiences')
                 count = len(preflight.get('campaigns', []))
                 record('campaign_count', 1 <= count <= 10, f'{count} final campaigns')
                 record('total_budget', 0 <= final.get('total_cost_including_pilots', float('inf')) <= 100000,

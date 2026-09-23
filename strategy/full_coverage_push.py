@@ -1,22 +1,70 @@
-"""Free Push over final audiences or a cell covered by one complete pilot.
+"""Free Push additions on audiences already reached by the base plan or a full pilot.
 
-The public baseline trace is produced by ProductionAgent, whose pilots select a
-whole current-tariff/ARPU cell before sampling. Equality of one actual sample size
-and that cell's public size proves coverage; sums of partial samples do not.
+Policy functions are identical to the frozen FullCoveragePushAgent experiment.
+They use only public inputs and observed pilot summaries. Ranking is a heuristic;
+conditional non-decrease follows from the published scorer and validated coverage.
 """
-
 from copy import deepcopy
-from math import isfinite
+from math import hypot, isfinite
+from numbers import Real
 
 import numpy as np
 import pandas as pd
 
-from agent import BaselineAgent as ProductionAgent
-from experiments.push_overlay.agent import (
-    MAX_TOTAL_CONTACTS, _finite_number, _normalized, _ranking_gain, _signature,
-    selected_audience,
-)
+from strategy.beliefs import positive_normal
 from validation.plan import MAX_CAMPAIGNS, MAX_CUSTOMERS_PER_CAMPAIGN, validate_plan
+
+MAX_TOTAL_CONTACTS = 15000
+FILTER_COLUMNS = (
+    ("filter_arpu_segment", "arpu_segment"),
+    ("filter_data_segment", "data_segment"),
+    ("filter_call_segment", "call_segment"),
+)
+FILTER_KEYS = tuple(key for key, _ in FILTER_COLUMNS) + ("filter_current_tariff",)
+
+
+def _finite_number(value):
+    return isinstance(value, Real) and not isinstance(value, bool) and isfinite(float(value))
+
+
+def _normalized(value):
+    return None if value is None or pd.isna(value) else value
+
+
+def _signature(campaign):
+    return (campaign.get("target_tariff"), campaign.get("channel"),
+            *(_normalized(campaign.get(key)) for key in FILTER_KEYS))
+
+
+def selected_audience(profile, campaign):
+    """Evaluate the exact supported public filters; never broaden an audience."""
+    part = profile
+    for key, column in FILTER_COLUMNS:
+        value = _normalized(campaign.get(key))
+        if value is not None:
+            part = part[part[column] == value]
+    current = _normalized(campaign.get("filter_current_tariff"))
+    if current is not None:
+        wanted = [item.strip() for item in str(current).split(";") if item.strip()]
+        part = part[part.current_tariff.isin(wanted)]
+    return part
+
+
+def _ranking_gain(base_posterior, target_posterior, base_scale, push_scale, same_target):
+    """Bounded Gaussian positive-part proxy, with shared same-target error.
+
+Different targets use an independence approximation solely for ordering. Channel
+scales ignore saturation and prior pilot coverage. No sum is a portfolio gain.
+"""
+    base_mean, base_std = base_posterior
+    target_mean, target_std = target_posterior
+    mean_delta = push_scale * target_mean - base_scale * base_mean
+    if same_target:
+        std_delta = abs(push_scale - base_scale) * base_std
+    else:
+        std_delta = hypot(push_scale * target_std, base_scale * base_std)
+    return min(2.0, max(0.0, positive_normal(mean_delta, std_delta)))
+
 
 
 def coverage_anchors(base_campaigns, base_trace, profile):
@@ -157,37 +205,3 @@ def add_full_coverage_push(base_campaigns, base_trace, profile, tariffs, channel
     return plan, preflight, details
 
 
-class FullCoveragePushAgent(ProductionAgent):
-    def act(self, env):
-        base_campaigns = super().act(env)
-        base_trace = deepcopy(self.last_trace)
-        pilot_contacts = sum(int(pilot["n_customers"]) for pilot in env.pilot_history)
-        pilot_cost = sum(float(pilot["cost"]) for pilot in env.pilot_history)
-        plan, preflight, details = add_full_coverage_push(
-            base_campaigns, base_trace, env.customer_profile, env.tariffs, env.channels,
-            env.remaining_budget, env.remaining_contacts, pilot_contacts)
-        self.last_trace = {
-            "version": "full-coverage-push-experiment-v1",
-            "trace_schema": "experimental_nonadditive_full_coverage_overlay_v1",
-            "base_trace": base_trace, "baseline_prefix": deepcopy(base_campaigns),
-            "pilots": deepcopy(base_trace.get("pilots", [])),
-            "reference_channel": base_trace.get("reference_channel"),
-            "preflight": preflight, "overlay": details,
-            "final": {
-                "campaigns": [{**deepcopy(campaign), "contacts": item["segment_size"],
-                               "cost": item["cost"],
-                               "role": "baseline" if index < len(base_campaigns) else "overlay"}
-                              for index, (campaign, item) in enumerate(zip(plan, preflight["campaigns"]))],
-                "contacts": preflight["total_contacts"], "cost": preflight["total_cost"],
-                "unique_customers": preflight["unique_customers"],
-                "remaining_contacts_after_pilots": int(env.remaining_contacts),
-                "remaining_budget_after_pilots": float(env.remaining_budget),
-                "total_contacts_including_pilots": pilot_contacts + preflight["total_contacts"],
-                "total_cost_including_pilots": pilot_cost + preflight["total_cost"],
-                "note": "Each overlay repeats a final audience or one completely sampled pilot cell; ranking proxies are nonadditive, not judged profit.",
-            },
-        }
-        return plan
-
-
-Agent = FullCoveragePushAgent

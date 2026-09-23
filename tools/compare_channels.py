@@ -1,7 +1,8 @@
 """Compare channel allocation with identical pilot decisions and observations.
 
-Both agents use exactly the same current exploration policy. Only final channel
-allocation differs. The historical shadow-price planner remains the reference.
+Both agents use the BaselineAgent exploration policy. Only final channel
+allocation differs. This historical comparison excludes the later covered Push
+extension; the shadow-price planner remains the reference.
 """
 
 import argparse
@@ -15,7 +16,7 @@ import time
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from agent import Agent
+from agent import BaselineAgent as Agent
 from strategy.portfolio import choose_portfolio
 from experiments.channel_allocation.optimizer import allocate_channels
 from tools.benchmark import _git_metadata, parse_seeds

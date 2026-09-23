@@ -8,7 +8,7 @@ from pathlib import Path
 import pandas as pd
 import pytest
 
-from agent import Agent as ProductionAgent
+from agent import BaselineAgent as ProductionAgent
 from experiments.push_overlay import agent as version_one
 from experiments.push_overlay import full_coverage_agent as candidate_module
 from experiments.push_overlay.agent import selected_audience

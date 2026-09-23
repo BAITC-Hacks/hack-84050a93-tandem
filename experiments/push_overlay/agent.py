@@ -12,7 +12,7 @@ from numbers import Real
 import numpy as np
 import pandas as pd
 
-from agent import Agent as ProductionAgent
+from agent import BaselineAgent as ProductionAgent
 from strategy.beliefs import positive_normal
 from validation.plan import MAX_CAMPAIGNS, MAX_CUSTOMERS_PER_CAMPAIGN, validate_plan
 

@@ -6,6 +6,7 @@ observations and public profile. The agent itself is not rerun.
 """
 
 import argparse
+from copy import deepcopy
 import csv
 import hashlib
 import io
@@ -14,6 +15,7 @@ import math
 import os
 from pathlib import Path, PurePosixPath
 import re
+import sys
 import tempfile
 
 if __package__:
@@ -23,6 +25,8 @@ else:
 
 
 ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 TEMPLATE = ROOT / "reporting" / "decision_report.template.html"
 TOKEN = "__TANDEM_PAYLOAD__"
 COLUMNS = (
@@ -31,6 +35,11 @@ COLUMNS = (
 )
 # Public case contact prices; reading evidence never imports the agent/environment.
 CONTACT_COST = {"push": 0, "sms": 4, "digital_ads": 22, "call": 160}
+PUBLIC_CHANNELS = {
+    name: {"cost_per_contact": cost, "conversion_multiplier": multiplier}
+    for name, cost, multiplier in (("push", 0, 0.50), ("sms", 4, 0.65),
+                                   ("digital_ads", 22, 0.85), ("call", 160, 1.20))
+}
 FILTER_VALUES = {
     "filter_arpu_segment": {"LOW", "MID", "HIGH"},
     "filter_data_segment": {"NON_USER", "LITE", "HEAVY"},
@@ -262,6 +271,101 @@ def validate_run(trace, csv_text):
             "Remaining budget is inconsistent")
 
 
+def campaign_csv(campaigns):
+    stream = io.StringIO(newline="")
+    writer = csv.DictWriter(stream, fieldnames=COLUMNS, lineterminator="\n", extrasaction="ignore")
+    writer.writeheader()
+    writer.writerows(campaigns)
+    return stream.getvalue()
+
+
+def validate_overlay_run(trace, csv_text):
+    """Recompute covered-audience proofs; return the unchanged base and proofs.
+
+    The complete plan deliberately has no additive revenue estimates. Its base
+    retains the original estimates, which remain separate from free additions.
+    """
+    import pandas as pd
+    from validation.overlay import validate_overlay_extension
+
+    require(trace.get("version") == "adaptive-portfolio-v1.3", "Unsupported overlay strategy version")
+    require(trace.get("trace_schema") == "nonadditive_full_coverage_overlay_v1",
+            "Unsupported overlay trace schema")
+    base = deepcopy(mapping(trace.get("base_trace"), "base_trace"))
+    require(base.get("version") == "adaptive-portfolio-v1.2", "Unsupported baseline version")
+    base_final = mapping(base.get("final"), "base_trace.final")
+    base_campaigns = array(base_final.get("campaigns"), "base_trace.final.campaigns")
+    prefix = array(trace.get("baseline_prefix"), "baseline_prefix")
+    expected_prefix = [{key: campaign.get(key) for key in COLUMNS} for campaign in base_campaigns]
+    require(prefix == expected_prefix, "baseline_prefix differs from saved baseline campaigns")
+    require(trace.get("pilots") == base.get("pilots"), "Overlay changed the saved pilot observations")
+    require(trace.get("reference_channel") == base.get("reference_channel"), "Overlay changed the reference channel")
+    require(trace.get("warnings") == base.get("warnings"), "Overlay changed the baseline warnings")
+    require(trace.get("prior") == base.get("prior"), "Overlay changed the baseline prior provenance")
+    for key in ("submission_seed", "deterministic_submission", "environment", "versions",
+                "hash_format", "source_sha256", "input_sha256"):
+        base[key] = deepcopy(trace.get(key))
+    base["source_strategy_version"] = trace["version"]
+    validate_run(base, campaign_csv(prefix))
+
+    final = mapping(trace.get("final"), "final")
+    require(not any("gain" in key or "profit" in key for key in final),
+            "Complete overlay plan must not declare an additive gain or profit")
+    require(final.get("fallback") is base_final.get("fallback"), "Overlay changed baseline fallback status")
+    campaigns = array(final.get("campaigns"), "final.campaigns")
+    require(1 <= len(campaigns) <= 10 and len(campaigns) >= len(prefix), "Invalid full campaign count")
+    raw = []
+    for index, campaign in enumerate(campaigns):
+        mapping(campaign, f"final.campaigns[{index}]")
+        require(set(campaign) == set(COLUMNS) | {"contacts", "cost", "role"},
+                "Full overlay rows must contain only campaign fields, actual resources and role; no additive gain")
+        require(all(campaign[key] is None or isinstance(campaign[key], str) for key in COLUMNS),
+                "Full campaign fields must be text or null")
+        require(campaign["role"] == ("baseline" if index < len(prefix) else "overlay"), "Incorrect campaign role")
+        raw.append({key: campaign[key] for key in COLUMNS})
+    require(raw[:len(prefix)] == prefix, "Full CSV plan changed the exact baseline prefix")
+    rows = list(csv.reader(io.StringIO(csv_text, newline=""), strict=True))
+    require(rows == list(csv.reader(io.StringIO(campaign_csv(raw), newline=""), strict=True)),
+            "Submission CSV differs from the complete overlay plan")
+    require(len({c["campaign_name"] for c in raw}) == len(raw)
+            and all(isinstance(c["campaign_name"], str) and c["campaign_name"].strip() for c in raw),
+            "Full campaign names must be present and unique")
+
+    for key in ("remaining_contacts_after_pilots", "remaining_budget_after_pilots"):
+        same_number(final.get(key), base_final[key], f"final.{key}")
+    final_contacts = number(final.get("contacts"), "final.contacts", minimum=1, integer=True)
+    total_contacts = number(final.get("total_contacts_including_pilots"),
+                            "final.total_contacts_including_pilots", minimum=1, integer=True)
+    pilot_contacts = total_contacts - final_contacts
+    require(pilot_contacts == base_final["total_contacts_including_pilots"] - base_final["contacts"],
+            "Overlay changed total pilot contacts")
+    profile = pd.read_csv(ROOT / "customer_profile.csv")
+    tariffs = pd.read_csv(ROOT / "data" / "dict_tariff.csv")
+    checked = validate_overlay_extension(prefix, raw, trace["pilots"], profile, tariffs, PUBLIC_CHANNELS,
+                                         final["remaining_budget_after_pilots"], final["remaining_contacts_after_pilots"],
+                                         pilot_contacts=pilot_contacts)
+    require(checked["valid"], "Overlay coverage validation failed: " + "; ".join(checked["errors"]))
+    recorded = mapping(trace.get("overlay_validation"), "overlay_validation")
+    require(recorded == checked, "Saved overlay_validation differs from recomputed coverage proofs")
+    require(trace.get("preflight") == checked["preflight"], "Saved full preflight differs from recomputation")
+    require(base.get("preflight") == checked["base_preflight"], "Saved base preflight differs from recomputation")
+    for campaign, detail in zip(campaigns, checked["preflight"]["campaigns"]):
+        require(number(campaign["contacts"], "campaign.contacts", minimum=1, integer=True) == detail["segment_size"],
+                "Saved campaign audience differs from the public profile")
+        same_number(campaign["cost"], detail["cost"], "campaign.cost")
+    for key in ("contacts", "unique_customers"):
+        expected = checked["preflight"]["total_contacts" if key == "contacts" else key]
+        require(number(final.get(key), f"final.{key}", minimum=1, integer=True) == expected,
+                f"Saved final.{key} differs from the public profile")
+    same_number(final.get("cost"), checked["preflight"]["total_cost"], "final.cost")
+    same_number(final.get("cost"), base_final["cost"], "zero-cost suffix total")
+    same_number(final.get("total_cost_including_pilots"), base_final["total_cost_including_pilots"],
+                "final.total_cost_including_pilots")
+    require(checked["total_contacts_including_pilots"] == total_contacts, "Incorrect full contact count")
+    overlays = [{"campaign": campaigns[proof["campaign_index"]], "proof": proof} for proof in checked["proofs"]]
+    return base, overlays
+
+
 def load_payload(trace_path, submission_path):
     trace_bytes = canonical_bytes(trace_path)
     trace_text = trace_bytes.decode("utf-8")
@@ -277,12 +381,20 @@ def load_payload(trace_path, submission_path):
     require(submission_hash == trace.get("submission_sha256"), "Submission checksum differs from trace")
     csv_text = submission_bytes.decode("utf-8")
     require("\x00" not in csv_text, "Submission CSV contains a NUL byte")
-    validate_run(trace, csv_text)
+    overlays = []
+    if trace.get("version") == "adaptive-portfolio-v1.3":
+        base, overlays = validate_overlay_run(trace, csv_text)
+    else:
+        require(trace.get("version") == "adaptive-portfolio-v1.2", "Unsupported strategy version")
+        validate_run(trace, csv_text)
+        base = trace
     payload = {
         "trace": trace,
         "trace_json": trace_text,
         "csv": csv_text,
-        "channel_alternatives": build_channel_explanations(trace, ROOT / "customer_profile.csv"),
+        "base_trace": base,
+        "overlays": overlays,
+        "channel_alternatives": build_channel_explanations(base, ROOT / "customer_profile.csv"),
         "integrity": {
             "source_files": len(source_paths), "input_files": len(input_paths),
             "submission_sha256": submission_hash, "trace_sha256": digest(trace_bytes),

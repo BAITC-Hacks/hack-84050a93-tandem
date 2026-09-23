@@ -43,6 +43,11 @@ SUPPORTED_SOURCES = {
     "strategy/portfolio.py": "417b3b27da080f22e92fb16d964a8849592a9c464936763672cfd922f2e6bf40",
     "mock_environment.py": "e1e4a480126d2896e89a868194b3ed7f7ee48d7c5fc2c8a2491970d8e231f506",
 }
+SUPPORTED_OVERLAY_SOURCES = {
+    **SUPPORTED_SOURCES,
+    "agent.py": "35ae71030b768cd87fdeb5607712852af50b29d181295bf3d9d9e2c5c2209459",
+    "strategy/full_coverage_push.py": "ed8dacbf17034ef8dc2c80ee2d1a5091e8fc3f05e195bde2e80d2e53088b1d1d",
+}
 
 
 def _require(condition, message):
@@ -104,7 +109,11 @@ def build_channel_explanations(trace, profile_path):
     _require(trace.get("hash_format") == "sha256-text-lf-v1",
              "unsupported source hash format")
     manifest = trace.get("source_sha256", {})
-    for source, expected in SUPPORTED_SOURCES.items():
+    source_version = trace.get("source_strategy_version", trace.get("version"))
+    _require(source_version in ("adaptive-portfolio-v1.2", "adaptive-portfolio-v1.3"),
+             "unsupported source strategy version")
+    supported = SUPPORTED_OVERLAY_SOURCES if source_version == "adaptive-portfolio-v1.3" else SUPPORTED_SOURCES
+    for source, expected in supported.items():
         _require(manifest.get(source) == expected,
                  f"unsupported implementation of {source}; review the explanation adapter before rendering")
     reference = trace.get("reference_channel")

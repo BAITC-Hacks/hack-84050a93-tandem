@@ -1,0 +1,203 @@
+{
+  "environment": "Official mock; validates reproducibility, not hidden judging performance",
+  "checks": [
+    {
+      "name": "hash_format",
+      "passed": true,
+      "detail": "Text hashes normalize CRLF to LF"
+    },
+    {
+      "name": "seed",
+      "passed": true,
+      "detail": "Committed evidence must use official seed 42"
+    },
+    {
+      "name": "repeated_export",
+      "passed": true,
+      "detail": "Exporter recorded two identical generations"
+    },
+    {
+      "name": "csv_hash",
+      "passed": true,
+      "detail": "Committed CSV matches the trace hash after LF normalization"
+    },
+    {
+      "name": "source_sha256:agent.py",
+      "passed": true,
+      "detail": "Current file must match exported evidence"
+    },
+    {
+      "name": "source_sha256:environment.py",
+      "passed": true,
+      "detail": "Current file must match exported evidence"
+    },
+    {
+      "name": "source_sha256:make_submission.py",
+      "passed": true,
+      "detail": "Current file must match exported evidence"
+    },
+    {
+      "name": "source_sha256:mock_environment.py",
+      "passed": true,
+      "detail": "Current file must match exported evidence"
+    },
+    {
+      "name": "source_sha256:requirements.txt",
+      "passed": true,
+      "detail": "Current file must match exported evidence"
+    },
+    {
+      "name": "source_sha256:scoring_core.py",
+      "passed": true,
+      "detail": "Current file must match exported evidence"
+    },
+    {
+      "name": "source_sha256:strategy/__init__.py",
+      "passed": true,
+      "detail": "Current file must match exported evidence"
+    },
+    {
+      "name": "source_sha256:strategy/beliefs.py",
+      "passed": true,
+      "detail": "Current file must match exported evidence"
+    },
+    {
+      "name": "source_sha256:strategy/full_coverage_push.py",
+      "passed": true,
+      "detail": "Current file must match exported evidence"
+    },
+    {
+      "name": "source_sha256:strategy/portfolio.py",
+      "passed": true,
+      "detail": "Current file must match exported evidence"
+    },
+    {
+      "name": "source_sha256:tools/export_strategy.py",
+      "passed": true,
+      "detail": "Current file must match exported evidence"
+    },
+    {
+      "name": "source_sha256:validation/__init__.py",
+      "passed": true,
+      "detail": "Current file must match exported evidence"
+    },
+    {
+      "name": "source_sha256:validation/overlay.py",
+      "passed": true,
+      "detail": "Current file must match exported evidence"
+    },
+    {
+      "name": "source_sha256:validation/plan.py",
+      "passed": true,
+      "detail": "Current file must match exported evidence"
+    },
+    {
+      "name": "input_sha256:customer_profile.csv",
+      "passed": true,
+      "detail": "Current file must match exported evidence"
+    },
+    {
+      "name": "input_sha256:data/change_tariff.csv",
+      "passed": true,
+      "detail": "Current file must match exported evidence"
+    },
+    {
+      "name": "input_sha256:data/dict_tariff.csv",
+      "passed": true,
+      "detail": "Current file must match exported evidence"
+    },
+    {
+      "name": "input_sha256:tariff_dictionary.csv",
+      "passed": true,
+      "detail": "Current file must match exported evidence"
+    },
+    {
+      "name": "fresh_process_export",
+      "passed": true,
+      "detail": "Export from outside the project directory"
+    },
+    {
+      "name": "csv_reproduced",
+      "passed": true,
+      "detail": "Fresh seed-42 export equals committed CSV exactly"
+    },
+    {
+      "name": "source_sha256:complete",
+      "passed": true,
+      "detail": "Committed manifest includes every current export dependency"
+    },
+    {
+      "name": "input_sha256:complete",
+      "passed": true,
+      "detail": "Committed manifest includes every current export dependency"
+    },
+    {
+      "name": "preflight",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "base_disjoint_audiences",
+      "passed": true,
+      "detail": "Original final audiences do not overlap"
+    },
+    {
+      "name": "covered_audience_extension",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "original_final_prefix",
+      "passed": true,
+      "detail": "All original campaigns remain first and unchanged"
+    },
+    {
+      "name": "unchanged_final_cost",
+      "passed": true,
+      "detail": "Every added contact is free; repeated contacts still use the contact limit"
+    },
+    {
+      "name": "campaign_count",
+      "passed": true,
+      "detail": "5 final campaigns"
+    },
+    {
+      "name": "total_budget",
+      "passed": true,
+      "detail": 30632.0
+    },
+    {
+      "name": "total_contacts",
+      "passed": true,
+      "detail": 6732
+    },
+    {
+      "name": "pilots",
+      "passed": true,
+      "detail": "20 recorded pilots"
+    },
+    {
+      "name": "runtime",
+      "passed": true,
+      "detail": "Two seed-42 runs within the configured total time allowance"
+    },
+    {
+      "name": "committed_artifacts_unchanged",
+      "passed": true,
+      "detail": "Verification did not replace committed submission or evidence"
+    }
+  ],
+  "result": {
+    "campaigns": 5,
+    "pilots": 20,
+    "total_contacts": 6732,
+    "total_cost": 30632.0,
+    "versions": {
+      "python": "3.12.13",
+      "numpy": "2.5.3",
+      "pandas": "3.0.6"
+    }
+  },
+  "passed": true,
+  "seconds": 3.244486700001289
+}

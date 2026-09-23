@@ -1,0 +1,73 @@
+{
+  "status": "complete",
+  "started_at_utc": "2026-09-23T11:44:37+00:00",
+  "environment": "Official organizer mock; does not predict hidden judging results",
+  "submission_seed": 42,
+  "timeout_seconds": 300,
+  "python": "3.12.13",
+  "steps": [
+    {
+      "name": "export",
+      "status": "complete",
+      "stdout": "export_stdout.txt",
+      "stderr": "export_stderr.txt",
+      "returncode": 0,
+      "seconds": 3.3430000000007567
+    },
+    {
+      "name": "report",
+      "status": "complete",
+      "stdout": "report_stdout.txt",
+      "stderr": "report_stderr.txt",
+      "returncode": 0,
+      "seconds": 1.4379999999982829
+    }
+  ],
+  "input_sha256_before": {
+    "agent.py": "35ae71030b768cd87fdeb5607712852af50b29d181295bf3d9d9e2c5c2209459",
+    "customer_profile.csv": "a85e9badf4cb51b1ba8c43a868498b6fa8075509f3cd8e19ef72e1c25a6dc815",
+    "data/change_tariff.csv": "c52d7dad11fccc7425afe6d36a44a1fa03c8cc148be2039ce264d0c5c100f230",
+    "data/dict_tariff.csv": "a34d81dacffbb937ddd542e87d421afcea4842379acfbad55b8d59bdf710f4be",
+    "environment.py": "8003a305ea9a560270ee875b2c48a6b1fbf8198d9c6c680e4827542532bb3dd1",
+    "make_submission.py": "25c82a71640814de613261a2684824db66c53c7f948af5aa8ba333ae263a9622",
+    "mock_environment.py": "e1e4a480126d2896e89a868194b3ed7f7ee48d7c5fc2c8a2491970d8e231f506",
+    "reporting/decision_report.template.html": "07f41945abc9c124a1c363c1ea2835354bfa6dd8cc70d93f23f59a021347c122",
+    "requirements.txt": "983cdc62971ed1127bfd018abe32e0360d7179049ea0b00ed76ac9e9739fa5d5",
+    "scoring_core.py": "ba68595daebb12418000fa4d59ffbbf156df045f589bdbb789f3531145c58327",
+    "strategy/__init__.py": "d307ba7f3d80724bbfc3f1e97bdd171f1168f9a8deeb67ff97db863f25d33607",
+    "strategy/beliefs.py": "c9c326345bec6d7005931ba3da908d22347c720f78ab710f1ff22a56ceea7f84",
+    "strategy/full_coverage_push.py": "ed8dacbf17034ef8dc2c80ee2d1a5091e8fc3f05e195bde2e80d2e53088b1d1d",
+    "strategy/portfolio.py": "417b3b27da080f22e92fb16d964a8849592a9c464936763672cfd922f2e6bf40",
+    "tariff_dictionary.csv": "d3e6588f5d8e8e51202b4a77b2d4c0243080965a82d8e1d9411149220dd9df1c",
+    "tools/channel_explanations.py": "6f44b2d3bbf483b4aee01988879f7736ccfce4db9f2c6e7b0396236d9a46c371",
+    "tools/export_strategy.py": "00aba12390834711df5cd14003940215facd7c89aa2f9016dc7cb37a54d85a0d",
+    "tools/render_decision_report.py": "6eccc9835764fd83eb282cee461615601b6274caad06273567566c967b00f488",
+    "tools/run_demo.py": "d46bd9ec55c6db4bba0c162785a7f7a85a5494dd7f8813cb7d1920335603b680",
+    "validation/__init__.py": "62c1fc5f965bafe7fa7c17e6ef3b0630dfb1812e457b554cc40126cb20f4380b",
+    "validation/overlay.py": "bc7199f5742a683af26e0814174c42a69db4de19e274628be4cf8f1509512540",
+    "validation/plan.py": "bd13a612f6b93905c418b01fa1336ea040c0d10c88607764cfe2de7e790420b8"
+  },
+  "inputs_unchanged_during_run": true,
+  "result": {
+    "campaigns": 5,
+    "pilots": 20,
+    "total_contacts": 6732,
+    "total_cost": 30632.0,
+    "preflight_valid": true,
+    "deterministic_submission": true
+  },
+  "artifact_sha256": {
+    "submission.csv": "be16f35e89ef044fa7fb05a9436fc2422fe38b98a66afb2ba42b2d9eafca65e9",
+    "decision_trace.json": "b176604c75714d2caa6c40c0fe50e0cad19318918637df0914907fc200381492",
+    "decision_report.html": "4de98b7e8d0545a285580e9729ba6bf71ac2e801f735c8c4762978a0798615c4"
+  },
+  "presentation_source_sha256": {
+    "tools/run_demo.py": "d46bd9ec55c6db4bba0c162785a7f7a85a5494dd7f8813cb7d1920335603b680",
+    "tools/render_decision_report.py": "6eccc9835764fd83eb282cee461615601b6274caad06273567566c967b00f488",
+    "tools/channel_explanations.py": "6f44b2d3bbf483b4aee01988879f7736ccfce4db9f2c6e7b0396236d9a46c371",
+    "reporting/decision_report.template.html": "07f41945abc9c124a1c363c1ea2835354bfa6dd8cc70d93f23f59a021347c122"
+  },
+  "hash_format": "sha256-text-lf-v1",
+  "finished_at_utc": "2026-09-23T11:44:42+00:00",
+  "seconds": 4.890999999999622
+}

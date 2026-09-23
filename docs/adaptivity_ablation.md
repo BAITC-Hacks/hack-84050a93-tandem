@@ -94,6 +94,12 @@ Seed 0–4 воспроизведены: net (допуск 1e-6), общие р�
 
 ## Воспроизводимость и файлы
 
+Команды ниже повторяют историческую пару политик в отдельной рабочей копии
+коммита `ae89521`. Текущий `Agent` v1.3 добавляет бесплатные Push, поэтому
+запуск старого harness на новом коде уже не изолирует одну адаптацию.
+Создайте копию: `git worktree add --detach ../tandem-adaptivity-reproduction ae89521`,
+перейдите в неё и установите зависимости в отдельное окружение.
+
 ```sh
 python -m pytest -q experiments/adaptivity_ablation/test_ablation.py
 python experiments/adaptivity_ablation/measure.py --mode reproduce --out reports/adaptivity_ablation/reproduction_rerun.json

@@ -146,7 +146,12 @@ CRLF/LF, чтобы новый checkout на Linux/Windows не давал ло�
 
 ## Воспроизведение
 
-После установки существующих `requirements-dev.txt` из корня репозитория:
+Для исходного сравнения используйте отдельную рабочую копию коммита `2f8188e`:
+`git worktree add --detach ../tandem-pilot-reproduction 2f8188e`.
+Перейдите в неё и установите `requirements-dev.txt` в отдельное окружение.
+Текущий `agent:Agent` v1.3 включает дополнительные Push и является другой
+политикой; старые числа не относятся к его сравнению с кандидатами.
+Команды из корня исторической рабочей копии:
 
 ```bash
 python experiments/pilot_research/run_suite.py --agent agent:Agent --seeds 0:10 --prefix rerun_dev_baseline

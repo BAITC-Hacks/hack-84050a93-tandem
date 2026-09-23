@@ -30,7 +30,9 @@ from scoring_core import apply_filters, sanitize_campaigns
 from tools.benchmark import _git_metadata, parse_seeds
 from validation.plan import validate_plan
 
-POLICIES = {"baseline": "agent:Agent", "candidate": "experiments.push_overlay.agent:PushOverlayAgent"}
+# Integrated checkouts keep the pre-overlay policy under an explicit name.
+# Original measurements and their source hashes remain frozen at fbcd614.
+POLICIES = {"baseline": "agent:BaselineAgent", "candidate": "experiments.push_overlay.agent:PushOverlayAgent"}
 
 
 def encoded(value):

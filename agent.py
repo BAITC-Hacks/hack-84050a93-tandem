@@ -5,6 +5,7 @@ module state, random tie breaks, or dependencies outside numpy and pandas.
 The optional last_trace attribute explains the most recent decision.
 """
 
+from copy import deepcopy
 from math import isfinite, sqrt
 from pathlib import Path
 
@@ -14,9 +15,11 @@ import pandas as pd
 from strategy.beliefs import ARPU_SEGMENTS, NOISE_STD, HistoricalPrior, positive_normal
 from strategy.portfolio import choose_portfolio, make_options
 from validation.plan import validate_plan
+from validation.overlay import validate_overlay_extension
+from strategy.full_coverage_push import add_full_coverage_push
 
 
-class Agent:
+class BaselineAgent:
     def __init__(self):
         self.last_trace = {}
 
@@ -234,3 +237,46 @@ class Agent:
             "note": "Planning estimates, not measured judging profit; final audiences are disjoint.",
         }
         return campaigns
+
+
+class Agent(BaselineAgent):
+    def act(self, env):
+        base_campaigns = super().act(env)
+        base_trace = deepcopy(self.last_trace)
+        pilot_contacts = sum(int(pilot["n_customers"]) for pilot in env.pilot_history)
+        pilot_cost = sum(float(pilot["cost"]) for pilot in env.pilot_history)
+        plan, preflight, details = add_full_coverage_push(
+            base_campaigns, base_trace, env.customer_profile, env.tariffs, env.channels,
+            env.remaining_budget, env.remaining_contacts, pilot_contacts)
+        extension = validate_overlay_extension(
+            base_campaigns, plan, base_trace.get("pilots", []),
+            env.customer_profile, env.tariffs, env.channels,
+            env.remaining_budget, env.remaining_contacts, pilot_contacts=pilot_contacts)
+        if not extension["valid"]:
+            raise RuntimeError("Invalid covered-audience extension: " + "; ".join(extension["errors"]))
+        self.last_trace = {
+            "version": "adaptive-portfolio-v1.3",
+            "trace_schema": "nonadditive_full_coverage_overlay_v1",
+            "base_trace": base_trace, "baseline_prefix": deepcopy(base_campaigns),
+            "pilots": deepcopy(base_trace.get("pilots", [])),
+            "reference_channel": base_trace.get("reference_channel"),
+            "preflight": preflight, "overlay": details,
+            "overlay_validation": extension,
+            "warnings": deepcopy(base_trace.get("warnings", [])),
+            "prior": base_trace.get("prior"),
+            "final": {
+                "campaigns": [{**deepcopy(campaign), "contacts": item["segment_size"],
+                               "cost": item["cost"],
+                               "role": "baseline" if index < len(base_campaigns) else "overlay"}
+                              for index, (campaign, item) in enumerate(zip(plan, preflight["campaigns"]))],
+                "contacts": preflight["total_contacts"], "cost": preflight["total_cost"],
+                "unique_customers": preflight["unique_customers"],
+                "fallback": base_trace["final"]["fallback"],
+                "remaining_contacts_after_pilots": int(env.remaining_contacts),
+                "remaining_budget_after_pilots": float(env.remaining_budget),
+                "total_contacts_including_pilots": pilot_contacts + preflight["total_contacts"],
+                "total_cost_including_pilots": pilot_cost + preflight["total_cost"],
+                "note": "Each overlay repeats a final audience or one completely sampled pilot cell; ranking proxies are nonadditive, not judged profit.",
+            },
+        }
+        return plan
