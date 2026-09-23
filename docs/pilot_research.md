@@ -156,8 +156,15 @@ python experiments/pilot_research/run_suite.py --agent agent:Agent --seeds 30:50
 python experiments/pilot_research/run_suite.py --agent experiments.pilot_research.agent:StopAgent --seeds 30:50 --prefix rerun_holdout_stop
 python -m pytest -q tests experiments/pilot_research/test_research.py
 python experiments/pilot_research/summarize.py
-python experiments/pilot_research/audit.py
 ```
+
+Для полного повторения исходного исследования используйте коммит `2f8188e`
+в отдельной рабочей копии. Там же запускается
+`python experiments/pilot_research/audit.py`: аудит проверяет, что относительно
+базы `c65003c` изменены только файлы исследования. На более новом `main`
+его `outside_scope` также обнаружит независимые изменения основного продукта;
+это не означает расхождение сохранённых экспериментальных результатов.
+Включённый `integrity.json` относится к изолированной исследовательской ветке.
 
 Runner вызывает неизменённые `tools/benchmark.py` и `tools/stress_benchmark.py`
 через `--agent`, затем дополнительный harness. Префикс должен быть новым:
