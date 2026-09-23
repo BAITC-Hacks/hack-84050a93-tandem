@@ -1,0 +1,1128 @@
+{
+  "files": {
+    "customer_profile": {
+      "path": "customer_profile.csv",
+      "sha256": "a85e9badf4cb51b1ba8c43a868498b6fa8075509f3cd8e19ef72e1c25a6dc815",
+      "rows": 23441,
+      "columns": 29,
+      "dtypes": {
+        "ID_NUMBER": "int64",
+        "ARPU_current": "float64",
+        "ARPU_3m_avg": "float64",
+        "ARPU_trend": "str",
+        "current_tariff": "str",
+        "OUT_LOC_ONNET_MIN": "float64",
+        "OUT_LOC_OFFNET_MIN": "float64",
+        "OUT_LOC_OFFNET_UNPAID_MIN": "float64",
+        "OUT_LOC_OFFNET_PAID_MIN": "float64",
+        "OUT_INTER_MIN": "float64",
+        "OUT_LOC_LAND_MIN": "float64",
+        "OUT_LOCAL_ONNET_SMS_AMT": "float64",
+        "OUT_LOCAL_OFFNET_SMS_AMT": "float64",
+        "OUT_LOCAL_LAND_PAID_SMS_AMT": "float64",
+        "OUT_INTER_SMS_AMT": "float64",
+        "DATA_VOLUME": "float64",
+        "LTE_DATA_VOLUME": "float64",
+        "TOTAL_ROAM_CALL_AMT": "float64",
+        "TOTAL_ROAM_SMS_AMT": "float64",
+        "TOTAL_ROAM_GPRS_MB": "float64",
+        "COUNT_CONTACT": "float64",
+        "AVG_TRANSACT_CONTACT": "float64",
+        "SUM_TRANSACT_CONTACT": "float64",
+        "AVG_DURATION_CONTACT": "float64",
+        "COUNT_BASE_STATION": "float64",
+        "arpu_segment": "str",
+        "data_segment": "str",
+        "call_segment": "str",
+        "predicted_arpu": "float64"
+      },
+      "missing": {
+        "ARPU_current": 28,
+        "ARPU_3m_avg": 5,
+        "ARPU_trend": 5,
+        "current_tariff": 95,
+        "OUT_LOC_ONNET_MIN": 110,
+        "OUT_LOC_OFFNET_MIN": 110,
+        "OUT_LOC_OFFNET_UNPAID_MIN": 110,
+        "OUT_LOC_OFFNET_PAID_MIN": 110,
+        "OUT_INTER_MIN": 110,
+        "OUT_LOC_LAND_MIN": 110,
+        "OUT_LOCAL_ONNET_SMS_AMT": 110,
+        "OUT_LOCAL_OFFNET_SMS_AMT": 110,
+        "OUT_LOCAL_LAND_PAID_SMS_AMT": 110,
+        "OUT_INTER_SMS_AMT": 110,
+        "DATA_VOLUME": 110,
+        "LTE_DATA_VOLUME": 110,
+        "TOTAL_ROAM_CALL_AMT": 110,
+        "TOTAL_ROAM_SMS_AMT": 110,
+        "TOTAL_ROAM_GPRS_MB": 110,
+        "COUNT_CONTACT": 470,
+        "AVG_TRANSACT_CONTACT": 470,
+        "SUM_TRANSACT_CONTACT": 470,
+        "AVG_DURATION_CONTACT": 470,
+        "COUNT_BASE_STATION": 162,
+        "arpu_segment": 5,
+        "data_segment": 110
+      },
+      "duplicate_rows": 0,
+      "key": [
+        "ID_NUMBER"
+      ],
+      "duplicate_keys": 0,
+      "unique_ids": 23441
+    },
+    "arpu_monthly": {
+      "path": "data/arpu_monthly.csv",
+      "sha256": "83d96b61c38a8bf7cdf5f07bc4f17f7f2f39885559c496fc28c266cef8ad3c4a",
+      "rows": 78798,
+      "columns": 3,
+      "dtypes": {
+        "ARPU_1M": "float64",
+        "TIME_KEY": "str",
+        "ID_NUMBER": "int64"
+      },
+      "missing": {},
+      "duplicate_rows": 84,
+      "key": [
+        "ID_NUMBER",
+        "TIME_KEY"
+      ],
+      "duplicate_keys": 351,
+      "time": {
+        "column": "TIME_KEY",
+        "unparsed": 0,
+        "min": "2026-04-01",
+        "max": "2026-09-01",
+        "rows_per_period": {
+          "2026-04-01": 11738,
+          "2026-05-01": 12225,
+          "2026-06-01": 12771,
+          "2026-07-01": 13265,
+          "2026-08-01": 14004,
+          "2026-09-01": 14795
+        }
+      },
+      "unique_ids": 14991
+    },
+    "change_tariff": {
+      "path": "data/change_tariff.csv",
+      "sha256": "c52d7dad11fccc7425afe6d36a44a1fa03c8cc148be2039ce264d0c5c100f230",
+      "rows": 14823,
+      "columns": 6,
+      "dtypes": {
+        "TIME_KEY": "str",
+        "AVG_ARPU_PREV_3M": "float64",
+        "AVG_ARPU_NEXT_3M": "float64",
+        "ID_NUMBER": "int64",
+        "tariff_plan_code_from": "str",
+        "tariff_plan_code_to": "str"
+      },
+      "missing": {},
+      "duplicate_rows": 6,
+      "key": [
+        "ID_NUMBER",
+        "TIME_KEY"
+      ],
+      "duplicate_keys": 6,
+      "time": {
+        "column": "TIME_KEY",
+        "unparsed": 0,
+        "min": "2026-10-01",
+        "max": "2026-10-01",
+        "rows_per_period": {
+          "2026-10-01": 14823
+        }
+      },
+      "unique_ids": 14817
+    },
+    "dict_tariff": {
+      "path": "data/dict_tariff.csv",
+      "sha256": "a34d81dacffbb937ddd542e87d421afcea4842379acfbad55b8d59bdf710f4be",
+      "rows": 21,
+      "columns": 5,
+      "dtypes": {
+        "Data_in_PKG": "int64",
+        "Min_another_operator_in_PKG": "int64",
+        "Min_another_operator_and_city_in_PKG": "int64",
+        "price_tariff": "float64",
+        "tariff_plan_code": "str"
+      },
+      "missing": {},
+      "duplicate_rows": 0,
+      "key": [
+        "tariff_plan_code"
+      ],
+      "duplicate_keys": 0
+    },
+    "traffic": {
+      "path": "data/traffic.csv",
+      "sha256": "cb0a3f8827d8be6989b65dc5bf0b7c901047cf64e485f4ee74e3c24787ee846c",
+      "rows": 75736,
+      "columns": 30,
+      "dtypes": {
+        "DEVICE_ID": "float64",
+        "time_key": "str",
+        "OUT_LOC_ONNET_MIN": "float64",
+        "OUT_LOC_OFFNET_MIN": "float64",
+        "OUT_LOC_OFFNET_UNPAID_MIN": "float64",
+        "OUT_LOC_OFFNET_PAID_MIN": "float64",
+        "OUT_INTER_MIN": "float64",
+        "OUT_LOC_LAND_MIN": "float64",
+        "OUT_LOCAL_ONNET_SMS_AMT": "float64",
+        "OUT_LOCAL_OFFNET_SMS_AMT": "float64",
+        "OUT_LOCAL_LAND_PAID_SMS_AMT": "float64",
+        "OUT_INTER_SMS_AMT": "float64",
+        "DATA_VOLUME": "float64",
+        "LTE_DATA_VOLUME": "float64",
+        "TOTAL_ROAM_CALL_AMT": "float64",
+        "TOTAL_ROAM_SMS_AMT": "float64",
+        "TOTAL_ROAM_GPRS_MB": "float64",
+        "COUNT_CONTACT": "float64",
+        "AVG_TRANSACT_CONTACT": "float64",
+        "SUM_TRANSACT_CONTACT": "float64",
+        "AVG_DURATION_CONTACT": "float64",
+        "COUNT_BASE_STATION": "float64",
+        "FIRST_DISP_DIAG": "float64",
+        "OS_1": "float64",
+        "OS_2": "float64",
+        "OS_3": "float64",
+        "OS_4": "float64",
+        "date_issue_device": "str",
+        "ID_NUMBER": "int64",
+        "tariff_plan_code": "str"
+      },
+      "missing": {
+        "DEVICE_ID": 2697,
+        "COUNT_CONTACT": 3987,
+        "AVG_TRANSACT_CONTACT": 3987,
+        "SUM_TRANSACT_CONTACT": 3987,
+        "AVG_DURATION_CONTACT": 3987,
+        "COUNT_BASE_STATION": 2251,
+        "FIRST_DISP_DIAG": 6302,
+        "OS_1": 6027,
+        "OS_2": 6027,
+        "OS_3": 6027,
+        "OS_4": 6027,
+        "tariff_plan_code": 16725
+      },
+      "duplicate_rows": 0,
+      "key": [
+        "ID_NUMBER",
+        "time_key"
+      ],
+      "duplicate_keys": 0,
+      "time": {
+        "column": "time_key",
+        "unparsed": 0,
+        "min": "2026-04-01",
+        "max": "2026-09-01",
+        "rows_per_period": {
+          "2026-04-01": 11296,
+          "2026-05-01": 11621,
+          "2026-06-01": 11998,
+          "2026-07-01": 12781,
+          "2026-08-01": 13438,
+          "2026-09-01": 14602
+        }
+      },
+      "unique_ids": 14875
+    },
+    "tariff_dictionary": {
+      "path": "tariff_dictionary.csv",
+      "sha256": "d3e6588f5d8e8e51202b4a77b2d4c0243080965a82d8e1d9411149220dd9df1c",
+      "rows": 21,
+      "columns": 6,
+      "dtypes": {
+        "Data_in_PKG": "int64",
+        "Min_another_operator_in_PKG": "int64",
+        "Min_another_operator_and_city_in_PKG": "int64",
+        "price_tariff": "float64",
+        "tariff_plan_code": "str",
+        "description": "str"
+      },
+      "missing": {},
+      "duplicate_rows": 0,
+      "key": [
+        "tariff_plan_code"
+      ],
+      "duplicate_keys": 0
+    }
+  },
+  "tariff_dictionaries_consistent": true,
+  "domain": {
+    "unknown_current_tariff": [],
+    "unknown_history_from": [],
+    "unknown_history_to": [],
+    "unknown_traffic_tariff": [],
+    "tariffs_without_customers": [],
+    "history_same_from_to_rows": 0,
+    "arpu_segment": {
+      "counts": {
+        "HIGH": 13918,
+        "MID": 6780,
+        "LOW": 2738,
+        "<missing>": 5
+      },
+      "invalid_values": []
+    },
+    "data_segment": {
+      "counts": {
+        "HEAVY": 11735,
+        "LITE": 10253,
+        "NON_USER": 1343,
+        "<missing>": 110
+      },
+      "invalid_values": []
+    },
+    "call_segment": {
+      "counts": {
+        "LOW": 10716,
+        "MEDIUM": 8309,
+        "HIGH": 4416
+      },
+      "invalid_values": []
+    }
+  },
+  "audience_grid": {
+    "cells": 70,
+    "cells_with_n_ge_200": 21,
+    "cells_with_n_lt_10": 13,
+    "rows": [
+      {
+        "current_tariff": "<missing>",
+        "arpu_segment": "HIGH",
+        "n": 13,
+        "arpu_sum": 84761.572044,
+        "arpu_mean": 6520.120926
+      },
+      {
+        "current_tariff": "<missing>",
+        "arpu_segment": "LOW",
+        "n": 41,
+        "arpu_sum": 72143.317934,
+        "arpu_mean": 1759.59312
+      },
+      {
+        "current_tariff": "<missing>",
+        "arpu_segment": "MID",
+        "n": 41,
+        "arpu_sum": 136536.032864,
+        "arpu_mean": 3330.147143
+      },
+      {
+        "current_tariff": "tariff_1",
+        "arpu_segment": "HIGH",
+        "n": 11,
+        "arpu_sum": 82638.481709,
+        "arpu_mean": 7512.589246
+      },
+      {
+        "current_tariff": "tariff_1",
+        "arpu_segment": "LOW",
+        "n": 40,
+        "arpu_sum": 132219.590895,
+        "arpu_mean": 3305.489772
+      },
+      {
+        "current_tariff": "tariff_1",
+        "arpu_segment": "MID",
+        "n": 32,
+        "arpu_sum": 165169.065447,
+        "arpu_mean": 5161.533295
+      },
+      {
+        "current_tariff": "tariff_10",
+        "arpu_segment": "HIGH",
+        "n": 2950,
+        "arpu_sum": 24190636.440913,
+        "arpu_mean": 8200.215743
+      },
+      {
+        "current_tariff": "tariff_10",
+        "arpu_segment": "LOW",
+        "n": 370,
+        "arpu_sum": 972233.568226,
+        "arpu_mean": 2627.658293
+      },
+      {
+        "current_tariff": "tariff_10",
+        "arpu_segment": "MID",
+        "n": 645,
+        "arpu_sum": 3003700.147275,
+        "arpu_mean": 4656.899453
+      },
+      {
+        "current_tariff": "tariff_11",
+        "arpu_segment": "HIGH",
+        "n": 1633,
+        "arpu_sum": 14175708.00287,
+        "arpu_mean": 8680.776487
+      },
+      {
+        "current_tariff": "tariff_11",
+        "arpu_segment": "LOW",
+        "n": 387,
+        "arpu_sum": 1067637.796154,
+        "arpu_mean": 2758.753995
+      },
+      {
+        "current_tariff": "tariff_11",
+        "arpu_segment": "MID",
+        "n": 464,
+        "arpu_sum": 2059004.340584,
+        "arpu_mean": 4437.509355
+      },
+      {
+        "current_tariff": "tariff_12",
+        "arpu_segment": "HIGH",
+        "n": 567,
+        "arpu_sum": 5244797.051879,
+        "arpu_mean": 9250.082984
+      },
+      {
+        "current_tariff": "tariff_12",
+        "arpu_segment": "LOW",
+        "n": 363,
+        "arpu_sum": 1017502.054351,
+        "arpu_mean": 2803.035962
+      },
+      {
+        "current_tariff": "tariff_12",
+        "arpu_segment": "MID",
+        "n": 342,
+        "arpu_sum": 1503059.906131,
+        "arpu_mean": 4394.912006
+      },
+      {
+        "current_tariff": "tariff_13",
+        "arpu_segment": "HIGH",
+        "n": 516,
+        "arpu_sum": 3712751.173785,
+        "arpu_mean": 7195.254213
+      },
+      {
+        "current_tariff": "tariff_13",
+        "arpu_segment": "LOW",
+        "n": 251,
+        "arpu_sum": 756421.083396,
+        "arpu_mean": 3013.629814
+      },
+      {
+        "current_tariff": "tariff_13",
+        "arpu_segment": "MID",
+        "n": 1022,
+        "arpu_sum": 5000571.23814,
+        "arpu_mean": 4892.926847
+      },
+      {
+        "current_tariff": "tariff_14",
+        "arpu_segment": "HIGH",
+        "n": 963,
+        "arpu_sum": 7609558.492534,
+        "arpu_mean": 7901.929899
+      },
+      {
+        "current_tariff": "tariff_14",
+        "arpu_segment": "LOW",
+        "n": 231,
+        "arpu_sum": 721988.302461,
+        "arpu_mean": 3125.490487
+      },
+      {
+        "current_tariff": "tariff_14",
+        "arpu_segment": "MID",
+        "n": 755,
+        "arpu_sum": 3686020.025356,
+        "arpu_mean": 4882.145729
+      },
+      {
+        "current_tariff": "tariff_15",
+        "arpu_segment": "HIGH",
+        "n": 14,
+        "arpu_sum": 96923.366621,
+        "arpu_mean": 6923.097616
+      },
+      {
+        "current_tariff": "tariff_15",
+        "arpu_segment": "LOW",
+        "n": 14,
+        "arpu_sum": 43367.060105,
+        "arpu_mean": 3097.64715
+      },
+      {
+        "current_tariff": "tariff_15",
+        "arpu_segment": "MID",
+        "n": 80,
+        "arpu_sum": 402182.259632,
+        "arpu_mean": 5027.278245
+      },
+      {
+        "current_tariff": "tariff_16",
+        "arpu_segment": "HIGH",
+        "n": 2,
+        "arpu_sum": 8012.469158,
+        "arpu_mean": 4006.234579
+      },
+      {
+        "current_tariff": "tariff_16",
+        "arpu_segment": "LOW",
+        "n": 8,
+        "arpu_sum": 21006.127868,
+        "arpu_mean": 2625.765984
+      },
+      {
+        "current_tariff": "tariff_16",
+        "arpu_segment": "MID",
+        "n": 10,
+        "arpu_sum": 47207.16015,
+        "arpu_mean": 4720.716015
+      },
+      {
+        "current_tariff": "tariff_17",
+        "arpu_segment": "HIGH",
+        "n": 27,
+        "arpu_sum": 233018.899047,
+        "arpu_mean": 8630.329594
+      },
+      {
+        "current_tariff": "tariff_17",
+        "arpu_segment": "LOW",
+        "n": 8,
+        "arpu_sum": 23317.104493,
+        "arpu_mean": 2914.638062
+      },
+      {
+        "current_tariff": "tariff_17",
+        "arpu_segment": "MID",
+        "n": 32,
+        "arpu_sum": 166536.649399,
+        "arpu_mean": 5204.270294
+      },
+      {
+        "current_tariff": "tariff_18",
+        "arpu_segment": "HIGH",
+        "n": 35,
+        "arpu_sum": 286137.260823,
+        "arpu_mean": 8175.350309
+      },
+      {
+        "current_tariff": "tariff_18",
+        "arpu_segment": "LOW",
+        "n": 19,
+        "arpu_sum": 60062.980206,
+        "arpu_mean": 3161.209485
+      },
+      {
+        "current_tariff": "tariff_18",
+        "arpu_segment": "MID",
+        "n": 13,
+        "arpu_sum": 70016.131531,
+        "arpu_mean": 5385.856272
+      },
+      {
+        "current_tariff": "tariff_19",
+        "arpu_segment": "<missing>",
+        "n": 1,
+        "arpu_sum": 2438.498383,
+        "arpu_mean": 2438.498383
+      },
+      {
+        "current_tariff": "tariff_19",
+        "arpu_segment": "HIGH",
+        "n": 33,
+        "arpu_sum": 259350.813547,
+        "arpu_mean": 7859.115562
+      },
+      {
+        "current_tariff": "tariff_19",
+        "arpu_segment": "LOW",
+        "n": 14,
+        "arpu_sum": 40738.450383,
+        "arpu_mean": 2909.889313
+      },
+      {
+        "current_tariff": "tariff_19",
+        "arpu_segment": "MID",
+        "n": 26,
+        "arpu_sum": 119249.023999,
+        "arpu_mean": 4586.500923
+      },
+      {
+        "current_tariff": "tariff_2",
+        "arpu_segment": "HIGH",
+        "n": 7,
+        "arpu_sum": 36800.230724,
+        "arpu_mean": 5257.175818
+      },
+      {
+        "current_tariff": "tariff_2",
+        "arpu_segment": "LOW",
+        "n": 9,
+        "arpu_sum": 23951.38716,
+        "arpu_mean": 2661.26524
+      },
+      {
+        "current_tariff": "tariff_2",
+        "arpu_segment": "MID",
+        "n": 20,
+        "arpu_sum": 92193.042153,
+        "arpu_mean": 4609.652108
+      },
+      {
+        "current_tariff": "tariff_20",
+        "arpu_segment": "HIGH",
+        "n": 38,
+        "arpu_sum": 287290.722915,
+        "arpu_mean": 7560.282182
+      },
+      {
+        "current_tariff": "tariff_20",
+        "arpu_segment": "LOW",
+        "n": 5,
+        "arpu_sum": 18274.493796,
+        "arpu_mean": 3654.898759
+      },
+      {
+        "current_tariff": "tariff_20",
+        "arpu_segment": "MID",
+        "n": 7,
+        "arpu_sum": 40256.809538,
+        "arpu_mean": 5750.972791
+      },
+      {
+        "current_tariff": "tariff_21",
+        "arpu_segment": "HIGH",
+        "n": 5,
+        "arpu_sum": 40063.828162,
+        "arpu_mean": 8012.765632
+      },
+      {
+        "current_tariff": "tariff_21",
+        "arpu_segment": "LOW",
+        "n": 12,
+        "arpu_sum": 56342.329315,
+        "arpu_mean": 4695.19411
+      },
+      {
+        "current_tariff": "tariff_21",
+        "arpu_segment": "MID",
+        "n": 13,
+        "arpu_sum": 57141.377768,
+        "arpu_mean": 4395.490598
+      },
+      {
+        "current_tariff": "tariff_3",
+        "arpu_segment": "HIGH",
+        "n": 27,
+        "arpu_sum": 180049.659293,
+        "arpu_mean": 6668.5059
+      },
+      {
+        "current_tariff": "tariff_3",
+        "arpu_segment": "LOW",
+        "n": 56,
+        "arpu_sum": 160544.447236,
+        "arpu_mean": 2866.865129
+      },
+      {
+        "current_tariff": "tariff_3",
+        "arpu_segment": "MID",
+        "n": 87,
+        "arpu_sum": 353907.756155,
+        "arpu_mean": 4067.905243
+      },
+      {
+        "current_tariff": "tariff_4",
+        "arpu_segment": "HIGH",
+        "n": 2108,
+        "arpu_sum": 15794121.771708,
+        "arpu_mean": 7492.467634
+      },
+      {
+        "current_tariff": "tariff_4",
+        "arpu_segment": "LOW",
+        "n": 299,
+        "arpu_sum": 857563.179027,
+        "arpu_mean": 2868.104278
+      },
+      {
+        "current_tariff": "tariff_4",
+        "arpu_segment": "MID",
+        "n": 1227,
+        "arpu_sum": 5840537.244104,
+        "arpu_mean": 4760.014054
+      },
+      {
+        "current_tariff": "tariff_5",
+        "arpu_segment": "<missing>",
+        "n": 1,
+        "arpu_sum": 3644.565628,
+        "arpu_mean": 3644.565628
+      },
+      {
+        "current_tariff": "tariff_5",
+        "arpu_segment": "HIGH",
+        "n": 109,
+        "arpu_sum": 740120.061614,
+        "arpu_mean": 6790.092308
+      },
+      {
+        "current_tariff": "tariff_5",
+        "arpu_segment": "LOW",
+        "n": 44,
+        "arpu_sum": 132153.683917,
+        "arpu_mean": 3003.492816
+      },
+      {
+        "current_tariff": "tariff_5",
+        "arpu_segment": "MID",
+        "n": 91,
+        "arpu_sum": 367820.610111,
+        "arpu_mean": 4041.984726
+      },
+      {
+        "current_tariff": "tariff_6",
+        "arpu_segment": "<missing>",
+        "n": 2,
+        "arpu_sum": 9109.74473,
+        "arpu_mean": 4554.872365
+      },
+      {
+        "current_tariff": "tariff_6",
+        "arpu_segment": "HIGH",
+        "n": 53,
+        "arpu_sum": 341665.538097,
+        "arpu_mean": 6446.519587
+      },
+      {
+        "current_tariff": "tariff_6",
+        "arpu_segment": "LOW",
+        "n": 30,
+        "arpu_sum": 97039.609156,
+        "arpu_mean": 3234.653639
+      },
+      {
+        "current_tariff": "tariff_6",
+        "arpu_segment": "MID",
+        "n": 34,
+        "arpu_sum": 135351.600838,
+        "arpu_mean": 3980.929436
+      },
+      {
+        "current_tariff": "tariff_7",
+        "arpu_segment": "HIGH",
+        "n": 72,
+        "arpu_sum": 519437.624644,
+        "arpu_mean": 7214.411453
+      },
+      {
+        "current_tariff": "tariff_7",
+        "arpu_segment": "LOW",
+        "n": 29,
+        "arpu_sum": 93486.112547,
+        "arpu_mean": 3223.659053
+      },
+      {
+        "current_tariff": "tariff_7",
+        "arpu_segment": "MID",
+        "n": 52,
+        "arpu_sum": 267570.677983,
+        "arpu_mean": 5145.589961
+      },
+      {
+        "current_tariff": "tariff_8",
+        "arpu_segment": "<missing>",
+        "n": 1,
+        "arpu_sum": 3906.51802,
+        "arpu_mean": 3906.51802
+      },
+      {
+        "current_tariff": "tariff_8",
+        "arpu_segment": "HIGH",
+        "n": 4726,
+        "arpu_sum": 36988107.972429,
+        "arpu_mean": 7826.514594
+      },
+      {
+        "current_tariff": "tariff_8",
+        "arpu_segment": "LOW",
+        "n": 457,
+        "arpu_sum": 1312258.164756,
+        "arpu_mean": 2871.462067
+      },
+      {
+        "current_tariff": "tariff_8",
+        "arpu_segment": "MID",
+        "n": 1720,
+        "arpu_sum": 8024489.894818,
+        "arpu_mean": 4665.401102
+      },
+      {
+        "current_tariff": "tariff_9",
+        "arpu_segment": "HIGH",
+        "n": 9,
+        "arpu_sum": 52537.212756,
+        "arpu_mean": 5837.468084
+      },
+      {
+        "current_tariff": "tariff_9",
+        "arpu_segment": "LOW",
+        "n": 51,
+        "arpu_sum": 157453.035089,
+        "arpu_mean": 3087.314414
+      },
+      {
+        "current_tariff": "tariff_9",
+        "arpu_segment": "MID",
+        "n": 67,
+        "arpu_sum": 281271.399788,
+        "arpu_mean": 4198.080594
+      }
+    ]
+  },
+  "audience_by_filter": {
+    "current_tariff": [
+      {
+        "current_tariff": "tariff_8",
+        "n": 6904,
+        "arpu_sum": 46328762.550024,
+        "arpu_mean": 6710.423313
+      },
+      {
+        "current_tariff": "tariff_10",
+        "n": 3965,
+        "arpu_sum": 28166570.156414,
+        "arpu_mean": 7103.800796
+      },
+      {
+        "current_tariff": "tariff_4",
+        "n": 3634,
+        "arpu_sum": 22492222.194839,
+        "arpu_mean": 6189.384203
+      },
+      {
+        "current_tariff": "tariff_11",
+        "n": 2484,
+        "arpu_sum": 17302350.139608,
+        "arpu_mean": 6965.51938
+      },
+      {
+        "current_tariff": "tariff_14",
+        "n": 1949,
+        "arpu_sum": 12017566.820351,
+        "arpu_mean": 6166.01684
+      },
+      {
+        "current_tariff": "tariff_13",
+        "n": 1789,
+        "arpu_sum": 9469743.495322,
+        "arpu_mean": 5293.316655
+      },
+      {
+        "current_tariff": "tariff_12",
+        "n": 1272,
+        "arpu_sum": 7765359.012361,
+        "arpu_mean": 6104.841991
+      },
+      {
+        "current_tariff": "tariff_5",
+        "n": 245,
+        "arpu_sum": 1243738.92127,
+        "arpu_mean": 5076.485393
+      },
+      {
+        "current_tariff": "tariff_3",
+        "n": 170,
+        "arpu_sum": 694501.862684,
+        "arpu_mean": 4085.305075
+      },
+      {
+        "current_tariff": "tariff_7",
+        "n": 153,
+        "arpu_sum": 880494.415174,
+        "arpu_mean": 5754.865459
+      },
+      {
+        "current_tariff": "tariff_9",
+        "n": 127,
+        "arpu_sum": 491261.647633,
+        "arpu_mean": 3868.20195
+      },
+      {
+        "current_tariff": "tariff_6",
+        "n": 119,
+        "arpu_sum": 583166.492821,
+        "arpu_mean": 4900.558763
+      },
+      {
+        "current_tariff": "tariff_15",
+        "n": 108,
+        "arpu_sum": 542472.686358,
+        "arpu_mean": 5022.895244
+      },
+      {
+        "current_tariff": "<missing>",
+        "n": 95,
+        "arpu_sum": 293440.922842,
+        "arpu_mean": 3088.851819
+      },
+      {
+        "current_tariff": "tariff_1",
+        "n": 83,
+        "arpu_sum": 380027.138051,
+        "arpu_mean": 4578.640217
+      },
+      {
+        "current_tariff": "tariff_19",
+        "n": 74,
+        "arpu_sum": 421776.786311,
+        "arpu_mean": 5699.686302
+      },
+      {
+        "current_tariff": "tariff_17",
+        "n": 67,
+        "arpu_sum": 422872.652939,
+        "arpu_mean": 6311.532133
+      },
+      {
+        "current_tariff": "tariff_18",
+        "n": 67,
+        "arpu_sum": 416216.37256,
+        "arpu_mean": 6212.184665
+      },
+      {
+        "current_tariff": "tariff_20",
+        "n": 50,
+        "arpu_sum": 345822.026248,
+        "arpu_mean": 6916.440525
+      },
+      {
+        "current_tariff": "tariff_2",
+        "n": 36,
+        "arpu_sum": 152944.660037,
+        "arpu_mean": 4248.462779
+      },
+      {
+        "current_tariff": "tariff_21",
+        "n": 30,
+        "arpu_sum": 153547.535245,
+        "arpu_mean": 5118.251175
+      },
+      {
+        "current_tariff": "tariff_16",
+        "n": 20,
+        "arpu_sum": 76225.757177,
+        "arpu_mean": 3811.287859
+      }
+    ],
+    "arpu_segment": [
+      {
+        "arpu_segment": "HIGH",
+        "n": 13918,
+        "arpu_sum": 110964488.647273,
+        "arpu_mean": 7972.732336
+      },
+      {
+        "arpu_segment": "MID",
+        "n": 6780,
+        "arpu_sum": 31819792.393764,
+        "arpu_mean": 4693.184719
+      },
+      {
+        "arpu_segment": "LOW",
+        "n": 2738,
+        "arpu_sum": 7837703.87847,
+        "arpu_mean": 2862.565332
+      },
+      {
+        "arpu_segment": "<missing>",
+        "n": 5,
+        "arpu_sum": 19099.326761,
+        "arpu_mean": 3819.865352
+      }
+    ],
+    "data_segment": [
+      {
+        "data_segment": "HEAVY",
+        "n": 11735,
+        "arpu_sum": 84446893.212661,
+        "arpu_mean": 7196.156218
+      },
+      {
+        "data_segment": "LITE",
+        "n": 10253,
+        "arpu_sum": 60281236.135931,
+        "arpu_mean": 5879.375416
+      },
+      {
+        "data_segment": "NON_USER",
+        "n": 1343,
+        "arpu_sum": 5556485.809495,
+        "arpu_mean": 4137.368436
+      },
+      {
+        "data_segment": "<missing>",
+        "n": 110,
+        "arpu_sum": 356469.088182,
+        "arpu_mean": 3240.628074
+      }
+    ],
+    "call_segment": [
+      {
+        "call_segment": "LOW",
+        "n": 10716,
+        "arpu_sum": 52829839.552803,
+        "arpu_mean": 4929.996226
+      },
+      {
+        "call_segment": "MEDIUM",
+        "n": 8309,
+        "arpu_sum": 61862597.396758,
+        "arpu_mean": 7445.251823
+      },
+      {
+        "call_segment": "HIGH",
+        "n": 4416,
+        "arpu_sum": 35948647.296707,
+        "arpu_mean": 8140.545131
+      }
+    ]
+  },
+  "segments_over_campaign_cap": {
+    "current_tariff": [
+      "tariff_8"
+    ],
+    "arpu_segment": [
+      "HIGH",
+      "MID"
+    ],
+    "data_segment": [
+      "HEAVY",
+      "LITE"
+    ],
+    "call_segment": [
+      "LOW",
+      "MEDIUM"
+    ]
+  },
+  "predicted_arpu": {
+    "count": 23441,
+    "nan": 0,
+    "inf": 0,
+    "negative": 0,
+    "zero": 103,
+    "min": 0.0,
+    "p01": 280.37,
+    "p50": 6237.886748,
+    "p99": 16626.357522,
+    "max": 216619.82,
+    "mean": 6426.393253,
+    "sum": 150641084.246268,
+    "share_top_10pct_customers": 0.199972
+  },
+  "arpu_segment_matches_mock_bins_share": {
+    "ARPU_current": 0.768291,
+    "ARPU_3m_avg": 1.0
+  },
+  "arpu_segment_ranges": {
+    "HIGH": {
+      "ARPU_3m_avg_min": 5000.175,
+      "ARPU_3m_avg_max": 476043.626667,
+      "predicted_arpu_median": 7658.11621
+    },
+    "LOW": {
+      "ARPU_3m_avg_min": 0.0,
+      "ARPU_3m_avg_max": 999.943333,
+      "predicted_arpu_median": 2571.549012
+    },
+    "MID": {
+      "ARPU_3m_avg_min": 1001.99,
+      "ARPU_3m_avg_max": 4999.706667,
+      "predicted_arpu_median": 4655.236204
+    }
+  },
+  "joins": {
+    "profile_ids_in_arpu_monthly": 0,
+    "profile_ids_in_traffic": 0,
+    "profile_ids_in_change_tariff": 0,
+    "change_tariff_ids_not_in_profile": 14817,
+    "change_tariff_customers_with_multiple_switches": 6,
+    "traffic_ids_not_in_profile": 14875,
+    "arpu_ids_not_in_profile": 14991,
+    "traffic_arpu_same_id_month_pairs": 75736,
+    "profile_tariff_equals_last_traffic_tariff_share": null,
+    "overlap_current_equals_history_to_share": null,
+    "overlap_current_equals_history_from_share": null
+  },
+  "history_bias": {
+    "rows_total": 14823,
+    "rows_prev_arpu_below_100_excluded": 2118,
+    "rows_prev_arpu_nonpositive": 1407,
+    "lift_raw": {
+      "count": 12705,
+      "nan": 0,
+      "inf": 0,
+      "negative": 6373,
+      "zero": 2,
+      "min": -1.0,
+      "p01": -1.0,
+      "p50": -0.001912,
+      "p99": 17.578803,
+      "max": 76.097285,
+      "mean": 0.714079,
+      "sum": 9072.372717
+    },
+    "rows_lift_clipped_high": 845,
+    "rows_lift_clipped_low": 0,
+    "share_positive_lift": 0.498229,
+    "history_prev_arpu_median": 3162.72,
+    "profile_arpu_3m_avg_median": 5930.411667,
+    "history_arpu_segment_share": {
+      "MID": 0.510429,
+      "HIGH": 0.347973,
+      "LOW": 0.141598
+    },
+    "profile_arpu_segment_share": {
+      "HIGH": 0.593873,
+      "MID": 0.289299,
+      "LOW": 0.116829
+    },
+    "history_from_top10": {
+      "tariff_8": 1939,
+      "tariff_15": 1582,
+      "tariff_4": 1369,
+      "tariff_10": 1166,
+      "tariff_3": 958,
+      "tariff_11": 903,
+      "tariff_1": 806,
+      "tariff_16": 715,
+      "tariff_18": 625,
+      "tariff_12": 586
+    },
+    "profile_current_top10": {
+      "tariff_8": 6904,
+      "tariff_10": 3965,
+      "tariff_4": 3634,
+      "tariff_11": 2484,
+      "tariff_14": 1949,
+      "tariff_13": 1789,
+      "tariff_12": 1272,
+      "tariff_5": 245,
+      "tariff_3": 170,
+      "tariff_7": 153
+    },
+    "change_time_after_profile_traffic": true
+  },
+  "meta": {
+    "tool": "tools/analyze_data.py",
+    "versions": {
+      "python": "3.13.14",
+      "pandas": "3.0.6",
+      "numpy": "2.5.3"
+    },
+    "notes": [
+      "History is a selected sample of switchers: a prior, not the judging model.",
+      "Missing segment values are reported as <missing>, never imputed."
+    ]
+  }
+}
