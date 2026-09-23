@@ -1,0 +1,223 @@
+{
+  "source_commit": "80cef96373426e9be62f55dfe27f368039496f4e",
+  "environment": "Official organizer mock; channel alternatives are model estimates, not measured profit",
+  "verification": "Fresh run_demo invocation from committed sources; selected metrics reconstructed by renderer",
+  "status": "complete",
+  "seconds": 2.875,
+  "finished_at_utc": "2026-09-23T10:41:12+00:00",
+  "result": {
+    "campaigns": 3,
+    "pilots": 20,
+    "total_contacts": 5976,
+    "total_cost": 30632.0,
+    "preflight_valid": true,
+    "deterministic_submission": true
+  },
+  "inputs_unchanged_during_run": true,
+  "committed_submission_and_trace_unchanged": true,
+  "fresh_csv_matches_committed_csv": true,
+  "all_selected_channel_metrics_reproduced": true,
+  "source_sha256": {
+    "tools/run_demo.py": "d46bd9ec55c6db4bba0c162785a7f7a85a5494dd7f8813cb7d1920335603b680",
+    "tools/render_decision_report.py": "dbb54fa32fb0f2192e83ee9c5b5fcabca5af7621c05fc4493964d582ab35262f",
+    "tools/channel_explanations.py": "d57b43f74176e53936b645638d4bb495cbaaf9aee6a2bca74e2de919a8978781",
+    "reporting/decision_report.template.html": "d02cf86b2af58d6a443755e73b506f3d013e04ea3ccc3b4707b29c85cb777cd0"
+  },
+  "artifact_sha256": {
+    "submission.csv": "58b9328d66fa2532a8df2bb13cfbe5d15ea295cb49fbbe1c88c40333d209abf8",
+    "decision_trace.json": "29239f6d8d4a0c2dc3ff35acf9789c013c9a032e20d5a79d1aa84165c22fd404",
+    "decision_report.html": "b2e1097c8a9a3fa9409cbf115eafeb012510de48a44cef5e714abb15d42292fe"
+  },
+  "channel_alternatives": {
+    "tandem_01": [
+      {
+        "channel": "push",
+        "contacts": 457,
+        "cost": 0.0,
+        "cost_delta": -10054.0,
+        "estimated_mean_gain": 116324.37877441235,
+        "risk_adjusted_gain": 64627.934554659994,
+        "reference_scaled_mean": 0.1576284245848975,
+        "reference_scaled_std": 0.042456141440134064,
+        "delta_estimated_mean_gain": -107582.98849599136,
+        "delta_risk_adjusted_gain": -35185.55418826202,
+        "total_cost_including_pilots": 20578.0,
+        "replacement_feasible": true,
+        "selected": false
+      },
+      {
+        "channel": "sms",
+        "contacts": 457,
+        "cost": 1828.0,
+        "cost_delta": -8226.0,
+        "estimated_mean_gain": 149393.69240673605,
+        "risk_adjusted_gain": 82188.31492105799,
+        "reference_scaled_mean": 0.20491695196036674,
+        "reference_scaled_std": 0.055192983872174285,
+        "delta_estimated_mean_gain": -74513.67486366766,
+        "delta_risk_adjusted_gain": -17625.173821864024,
+        "total_cost_including_pilots": 22406.0,
+        "replacement_feasible": true,
+        "selected": false
+      },
+      {
+        "channel": "digital_ads",
+        "contacts": 457,
+        "cost": 10054.0,
+        "cost_delta": 0.0,
+        "estimated_mean_gain": 223907.36727040372,
+        "risk_adjusted_gain": 99813.48874292201,
+        "reference_scaled_mean": 0.2679683217943258,
+        "reference_scaled_std": 0.0721754404482279,
+        "delta_estimated_mean_gain": 0.0,
+        "delta_risk_adjusted_gain": 0.0,
+        "total_cost_including_pilots": 30632.0,
+        "replacement_feasible": true,
+        "selected": true
+      },
+      {
+        "channel": "call",
+        "contacts": 457,
+        "cost": 73120.0,
+        "cost_delta": 63066.0,
+        "estimated_mean_gain": 222896.12341815443,
+        "risk_adjusted_gain": 56135.86910931999,
+        "reference_scaled_mean": 0.315256849169795,
+        "reference_scaled_std": 0.08491228288026813,
+        "delta_estimated_mean_gain": -1011.2438522492885,
+        "delta_risk_adjusted_gain": -43677.61963360202,
+        "total_cost_including_pilots": 93698.0,
+        "replacement_feasible": true,
+        "selected": false
+      }
+    ],
+    "tandem_02": [
+      {
+        "channel": "push",
+        "contacts": 299,
+        "cost": 0.0,
+        "cost_delta": -6578.0,
+        "estimated_mean_gain": 116426.6954043558,
+        "risk_adjusted_gain": 61362.160636699,
+        "reference_scaled_mean": 0.20398797053124365,
+        "reference_scaled_std": 0.05847093201065201,
+        "delta_estimated_mean_gain": -98323.03761809542,
+        "delta_risk_adjusted_gain": -36375.512445689325,
+        "total_cost_including_pilots": 24054.0,
+        "replacement_feasible": true,
+        "selected": false
+      },
+      {
+        "channel": "sms",
+        "contacts": 299,
+        "cost": 1196.0,
+        "cost_delta": -5382.0,
+        "estimated_mean_gain": 150158.70402566253,
+        "risk_adjusted_gain": 78574.80882770871,
+        "reference_scaled_mean": 0.26518436169061677,
+        "reference_scaled_std": 0.07601221161384762,
+        "delta_estimated_mean_gain": -64591.02899678869,
+        "delta_risk_adjusted_gain": -19162.864254679618,
+        "total_cost_including_pilots": 25250.0,
+        "replacement_feasible": true,
+        "selected": false
+      },
+      {
+        "channel": "digital_ads",
+        "contacts": 299,
+        "cost": 6578.0,
+        "cost_delta": 0.0,
+        "estimated_mean_gain": 214749.73302245123,
+        "risk_adjusted_gain": 97737.67308238833,
+        "reference_scaled_mean": 0.3467795499031142,
+        "reference_scaled_std": 0.09940058441810842,
+        "delta_estimated_mean_gain": 0.0,
+        "delta_risk_adjusted_gain": 0.0,
+        "total_cost_including_pilots": 30632.0,
+        "replacement_feasible": true,
+        "selected": true
+      },
+      {
+        "channel": "call",
+        "contacts": 299,
+        "cost": 47840.0,
+        "cost_delta": 41262.0,
+        "estimated_mean_gain": 225967.50477004278,
+        "risk_adjusted_gain": 74884.321273398,
+        "reference_scaled_mean": 0.4079759410624873,
+        "reference_scaled_std": 0.11694186402130402,
+        "delta_estimated_mean_gain": 11217.771747591556,
+        "delta_risk_adjusted_gain": -22853.351808990323,
+        "total_cost_including_pilots": 71894.0,
+        "replacement_feasible": true,
+        "selected": false
+      }
+    ],
+    "tandem_03": [
+      {
+        "channel": "push",
+        "contacts": 1720,
+        "cost": 0.0,
+        "cost_delta": 0.0,
+        "estimated_mean_gain": 315505.41096098797,
+        "risk_adjusted_gain": 1012.8448362886486,
+        "reference_scaled_mean": 0.05034531880291356,
+        "reference_scaled_std": 0.03041436288845624,
+        "delta_estimated_mean_gain": 0.0,
+        "delta_risk_adjusted_gain": 0.0,
+        "total_cost_including_pilots": 30632.0,
+        "replacement_feasible": true,
+        "selected": true
+      },
+      {
+        "channel": "sms",
+        "contacts": 1720,
+        "cost": 6880.0,
+        "cost_delta": 6880.0,
+        "estimated_mean_gain": 403277.0342492843,
+        "risk_adjusted_gain": -5563.301712824757,
+        "reference_scaled_mean": 0.06544891444378763,
+        "reference_scaled_std": 0.039538671754993114,
+        "delta_estimated_mean_gain": 87771.62328829634,
+        "delta_risk_adjusted_gain": -6576.146549113405,
+        "total_cost_including_pilots": 37512.0,
+        "replacement_feasible": true,
+        "selected": false
+      },
+      {
+        "channel": "digital_ads",
+        "contacts": 1720,
+        "cost": 37840.0,
+        "cost_delta": 37840.0,
+        "estimated_mean_gain": 533915.2350434302,
+        "risk_adjusted_gain": -36118.163778309296,
+        "reference_scaled_mean": 0.08558704196495305,
+        "reference_scaled_std": 0.05170441691037561,
+        "delta_estimated_mean_gain": 218409.82408244227,
+        "delta_risk_adjusted_gain": -37131.008614597944,
+        "total_cost_including_pilots": 68472.0,
+        "replacement_feasible": true,
+        "selected": false
+      },
+      {
+        "channel": "call",
+        "contacts": 1720,
+        "cost": 275200.0,
+        "cost_delta": 275200.0,
+        "estimated_mean_gain": 417753.8856390397,
+        "risk_adjusted_gain": -273174.3103274227,
+        "reference_scaled_mean": 0.10069063760582712,
+        "reference_scaled_std": 0.06082872577691248,
+        "delta_estimated_mean_gain": 102248.47467805172,
+        "delta_risk_adjusted_gain": -274187.15516371134,
+        "total_cost_including_pilots": 305832.0,
+        "replacement_feasible": false,
+        "selected": false
+      }
+    ]
+  },
+  "limitations": [
+    "Fresh browser interaction with the new table was not automated; independent teammate walkthrough pending.",
+    "No claim of better agent performance: production policy is unchanged."
+  ]
+}
