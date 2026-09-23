@@ -56,6 +56,7 @@ def main():
     if not agent.last_trace.get('preflight', {}).get('valid'):
         raise RuntimeError('Submission has no successful preflight; existing artifacts preserved')
     agent.last_trace["submission_seed"] = SUBMISSION_SEED
+    agent.last_trace['hash_format'] = 'sha256-text-lf-v1'
     agent.last_trace["deterministic_submission"] = True
     agent.last_trace["submission_sha256"] = hashlib.sha256(csv_bytes).hexdigest()
     agent.last_trace["environment"] = "Organizer mock; observations do not predict judging effects"
@@ -68,11 +69,11 @@ def main():
     if output in source_files + data_files or trace_path in source_files + data_files:
         parser.error('Output must not overwrite source code or input data')
     agent.last_trace["source_sha256"] = {
-        path.relative_to(ROOT).as_posix(): hashlib.sha256(path.read_bytes()).hexdigest()
+        path.relative_to(ROOT).as_posix(): hashlib.sha256(path.read_bytes().replace(b'\r\n', b'\n')).hexdigest()
         for path in source_files
     }
     agent.last_trace['input_sha256'] = {
-        path.relative_to(ROOT).as_posix(): hashlib.sha256(path.read_bytes()).hexdigest()
+        path.relative_to(ROOT).as_posix(): hashlib.sha256(path.read_bytes().replace(b'\r\n', b'\n')).hexdigest()
         for path in data_files
     }
     import numpy as np

@@ -18,7 +18,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def sha256(path):
-    return hashlib.sha256(path.read_bytes()).hexdigest()
+    return hashlib.sha256(path.read_bytes().replace(b'\r\n', b'\n')).hexdigest()
 
 
 def verify(timeout=300):
@@ -35,6 +35,7 @@ def verify(timeout=300):
         csv_before = csv_path.read_bytes()
         trace_before = trace_path.read_bytes()
         trace = json.loads(trace_before)
+        record('hash_format', trace.get('hash_format') == 'sha256-text-lf-v1', 'Text hashes normalize CRLF to LF')
         record('seed', trace.get('submission_seed') == 42, 'Committed evidence must use official seed 42')
         record('repeated_export', trace.get('deterministic_submission') is True, 'Exporter recorded two identical generations')
         canonical_csv = csv_before.replace(b'\r\n', b'\n')
