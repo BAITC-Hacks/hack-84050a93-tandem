@@ -1,0 +1,30 @@
+{
+  "base_sha": "571cb7581e60db84614a8610a7c74e13bdd589be",
+  "fresh_html": "reports/final_acceptance/demo_runs/run_20260923T105619Z_7ljnlft5/decision_report.html",
+  "method": "Interactive Chrome UI actions through browser accessibility controls, with visible state inspection and a screenshot; no headless test substituted for the UI pass.",
+  "transport": "A loopback server served only the fresh HTML at /; all other paths return 404. Original HTML bytes were not modified.",
+  "file_url_open": {"status": "NOT CHECKED", "reason": "Browser tool security policy denied file:// navigation. No browser policy was disabled."},
+  "tabs": {"plan": "PASS", "pilots": "PASS", "evidence": "PASS"},
+  "campaigns": [
+    {"name": "tandem_01", "selection": "PASS", "direct_pilots": [3], "channels": ["push", "sms", "digital_ads", "call"], "selected": "digital_ads", "selected_count": 1},
+    {"name": "tandem_02", "selection": "PASS", "direct_pilots": [6], "channels": ["push", "sms", "digital_ads", "call"], "selected": "digital_ads", "selected_count": 1},
+    {"name": "tandem_03", "selection": "PASS", "direct_pilots": [5, 19], "channels": ["push", "sms", "digital_ads", "call"], "selected": "push", "selected_count": 1, "displayed_push_estimate": 1013, "displayed_sms_estimate": -5563, "displayed_call_total": 305832, "call_budget_exceeded_label": true}
+  ],
+  "pilot_links": {"tandem_01": "Show in journal: 1 of 20, pilot 03", "tandem_02": "Offer filter: 1 of 20, pilot 06", "tandem_03": "Show in journal: 2 of 20, pilots 05 and 19"},
+  "filters": [
+    {"selection": "HIGH + tandem_03", "rows": 0, "empty_message": "Для этих фильтров пилотов нет.", "status": "PASS"},
+    {"selection": "HIGH + all offers", "rows": 14, "status": "PASS"},
+    {"selection": "all segments + all offers", "rows": 20, "status": "PASS"}
+  ],
+  "offline": {
+    "status": "PASS",
+    "scope": "Already-loaded fresh HTML. Tab-scoped Chrome network emulation offline=true; no operating-system network settings changed.",
+    "actions": ["Plan tab and selecting first campaign", "Pilots tab, offer filters and reset", "Evidence tab", "CSV download", "JSON download"],
+    "network_restored_after_test": true,
+    "cold_file_open_with_network_disconnected": "NOT CHECKED"
+  },
+  "downloads": {"csv": "PASS", "json": "PASS", "hash_comparison": "evidence_checks.json", "downloaded_while_tab_offline": true},
+  "javascript_errors_or_warnings_observed": [],
+  "visual_check": "Evidence tab screenshot: readable layout, selected tab and resource cards visible; no overlap observed at the tested desktop viewport.",
+  "second_physical_computer": "NOT CHECKED"
+}

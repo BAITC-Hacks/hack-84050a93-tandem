@@ -1,0 +1,178 @@
+{
+  "base_sha": "571cb7581e60db84614a8610a7c74e13bdd589be",
+  "downloads": {
+    "submission.csv": {
+      "download_sha256_lf": "58b9328d66fa2532a8df2bb13cfbe5d15ea295cb49fbbe1c88c40333d209abf8",
+      "fresh_artifact_sha256_lf": "58b9328d66fa2532a8df2bb13cfbe5d15ea295cb49fbbe1c88c40333d209abf8",
+      "exact_raw_match": true,
+      "normalized_match": true
+    },
+    "decision_trace.json": {
+      "download_sha256_lf": "ed5c5cc5c94c44a8f4ddaba7102112335c926e3211391ba77874688bdd6a4d23",
+      "fresh_artifact_sha256_lf": "ed5c5cc5c94c44a8f4ddaba7102112335c926e3211391ba77874688bdd6a4d23",
+      "exact_raw_match": true,
+      "normalized_match": true
+    }
+  },
+  "fresh_run": "reports/final_acceptance/demo_runs/run_20260923T105619Z_7ljnlft5",
+  "official_csv_independent_preflight": {
+    "valid": true,
+    "errors": [],
+    "warnings": [],
+    "total_contacts": 2476,
+    "total_cost": 16632.0,
+    "unique_customers": 2476,
+    "campaigns": [
+      {
+        "index": 0,
+        "campaign_name": "tandem_01",
+        "segment_size": 457,
+        "cost_per_contact": 22.0,
+        "cost": 10054.0,
+        "overlap_with_previous": 0
+      },
+      {
+        "index": 1,
+        "campaign_name": "tandem_02",
+        "segment_size": 299,
+        "cost_per_contact": 22.0,
+        "cost": 6578.0,
+        "overlap_with_previous": 0
+      },
+      {
+        "index": 2,
+        "campaign_name": "tandem_03",
+        "segment_size": 1720,
+        "cost_per_contact": 0.0,
+        "cost": 0.0,
+        "overlap_with_previous": 0
+      }
+    ]
+  },
+  "pilot_contacts": 3500,
+  "pilot_cost": 14000,
+  "posterior_checks": [
+    {
+      "pilot": 1,
+      "mean_error": 6.938893903907228e-18,
+      "std_error": 0.0,
+      "passed": true
+    },
+    {
+      "pilot": 2,
+      "mean_error": 0.0,
+      "std_error": 0.0,
+      "passed": true
+    },
+    {
+      "pilot": 3,
+      "mean_error": 2.7755575615628914e-17,
+      "std_error": 0.0,
+      "passed": true
+    },
+    {
+      "pilot": 4,
+      "mean_error": 0.0,
+      "std_error": 0.0,
+      "passed": true
+    },
+    {
+      "pilot": 5,
+      "mean_error": 0.0,
+      "std_error": 0.0,
+      "passed": true
+    },
+    {
+      "pilot": 6,
+      "mean_error": 0.0,
+      "std_error": 0.0,
+      "passed": true
+    },
+    {
+      "pilot": 7,
+      "mean_error": 0.0,
+      "std_error": 0.0,
+      "passed": true
+    },
+    {
+      "pilot": 8,
+      "mean_error": 0.0,
+      "std_error": 0.0,
+      "passed": true
+    },
+    {
+      "pilot": 9,
+      "mean_error": 0.0,
+      "std_error": 0.0,
+      "passed": true
+    },
+    {
+      "pilot": 10,
+      "mean_error": 0.0,
+      "std_error": 0.0,
+      "passed": true
+    },
+    {
+      "pilot": 11,
+      "mean_error": 0.0,
+      "std_error": 0.0,
+      "passed": true
+    },
+    {
+      "pilot": 12,
+      "mean_error": 3.469446951953614e-18,
+      "std_error": 0.0,
+      "passed": true
+    },
+    {
+      "pilot": 13,
+      "mean_error": 0.0,
+      "std_error": 0.0,
+      "passed": true
+    },
+    {
+      "pilot": 14,
+      "mean_error": 0.0,
+      "std_error": 0.0,
+      "passed": true
+    },
+    {
+      "pilot": 15,
+      "mean_error": 0.0,
+      "std_error": 0.0,
+      "passed": true
+    },
+    {
+      "pilot": 16,
+      "mean_error": 3.469446951953614e-18,
+      "std_error": 0.0,
+      "passed": true
+    },
+    {
+      "pilot": 17,
+      "mean_error": 0.0,
+      "std_error": 0.0,
+      "passed": true
+    },
+    {
+      "pilot": 18,
+      "mean_error": 0.0,
+      "std_error": 0.0,
+      "passed": true
+    },
+    {
+      "pilot": 19,
+      "mean_error": 1.3877787807814457e-17,
+      "std_error": 6.938893903907228e-18,
+      "passed": true
+    },
+    {
+      "pilot": 20,
+      "mean_error": 6.938893903907228e-18,
+      "std_error": 0.0,
+      "passed": true
+    }
+  ],
+  "posterior_note": "Scalar Gaussian update reconstructed from logged real replies and original priors, without calling Belief.observe/posterior or running Agent again.",
+  "passed": true
+}
