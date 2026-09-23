@@ -1,0 +1,48 @@
+{
+  "base_sha": "c65003c5ec8811b829b583bc98e9fe79954b6538",
+  "implementation_commit": "cbb0818",
+  "candidate": "experiments.pilot_research.agent:StopAgent",
+  "rejected_development_alternative": "experiments.pilot_research.agent:Agent",
+  "source_sha256": "7327c6e0e5441b1e2f3fa85bc49763a62994886857be7601f54658471050ef86",
+  "development_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "heldout_seeds": [
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49
+  ],
+  "frozen_at_utc": "2026-09-23T09:44:56.234777+00:00",
+  "reason": "StopAgent preserves public mock and mixed development outcomes while reducing bad-scenario losses. Smaller first pilots reduce mock median by about 24%. StopAgent already has a discovery regression: Devin rare_good 0/10 versus baseline 8/10; no integration claim is made. No changes to policy after this freeze.",
+  "integration_requirements": [
+    "Preserve profitable-offer discovery, not merely lower total losses.",
+    "Preserve mock and mixed performance including lower tail.",
+    "Reduce adverse-scenario losses over multiple seeds and shifted synthetic models."
+  ]
+}

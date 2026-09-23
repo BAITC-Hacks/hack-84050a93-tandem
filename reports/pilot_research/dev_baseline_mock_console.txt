@@ -1,0 +1,26 @@
+seed=   0 status=ok          net=  1,609,503.85 final=3 pilots=20 seconds=1.69
+seed=   1 status=ok          net=  1,597,128.10 final=7 pilots=20 seconds=1.68
+seed=   2 status=ok          net=  1,452,731.29 final=9 pilots=20 seconds=1.74
+seed=   3 status=ok          net=  1,415,933.02 final=8 pilots=18 seconds=1.72
+seed=   4 status=ok          net=  1,540,051.44 final=8 pilots=20 seconds=1.70
+seed=   5 status=ok          net=  1,183,551.35 final=5 pilots=17 seconds=1.69
+seed=   6 status=ok          net=  1,383,675.38 final=3 pilots=20 seconds=1.68
+seed=   7 status=ok          net=  1,537,315.42 final=3 pilots=17 seconds=1.58
+seed=   8 status=ok          net=  1,194,181.68 final=3 pilots=20 seconds=1.69
+seed=   9 status=ok          net=  1,058,935.01 final=9 pilots=20 seconds=1.78
+{
+  "runs": 10,
+  "scored_runs": 10,
+  "successful_runs": 10,
+  "failed_runs": 0,
+  "timeouts": 0,
+  "invalid_plan_runs": 0,
+  "valid_positive_runs": 10,
+  "positive_runs": 10,
+  "positive_rate_all_runs": 1.0,
+  "median_net": 1434332.1542737489,
+  "min_net": 1058935.0051480401,
+  "max_net": 1609503.853190322,
+  "deterministic_submission_seed42": true
+}
+wrote C:\Users\era\Documents\Codex\2026-09-23\new-chat-2\work\pilot-research\reports\pilot_research\dev_baseline_mock.json and C:\Users\era\Documents\Codex\2026-09-23\new-chat-2\work\pilot-research\reports\pilot_research\dev_baseline_mock.csv

@@ -1,0 +1,102 @@
+all_bad                seed=0 net=-324789.59 pilots=12 negative=12 valid=True
+all_bad                seed=1 net=-324789.59 pilots=12 negative=12 valid=True
+all_bad                seed=2 net=-324789.59 pilots=12 negative=11 valid=True
+all_bad                seed=3 net=-324789.59 pilots=12 negative=12 valid=True
+all_bad                seed=4 net=-325429.59 pilots=14 negative=12 valid=True
+all_bad                seed=5 net=-325429.59 pilots=14 negative=13 valid=True
+all_bad                seed=6 net=-325749.59 pilots=15 negative=13 valid=True
+all_bad                seed=7 net=-325109.59 pilots=13 negative=13 valid=True
+all_bad                seed=8 net=-325429.59 pilots=14 negative=13 valid=True
+all_bad                seed=9 net=-325749.59 pilots=15 negative=13 valid=True
+mixed                  seed=0 net=361059.19999999995 pilots=14 negative=9 valid=True
+mixed                  seed=1 net=361059.19999999995 pilots=14 negative=9 valid=True
+mixed                  seed=2 net=361379.19999999995 pilots=13 negative=7 valid=True
+mixed                  seed=3 net=361059.19999999995 pilots=14 negative=10 valid=True
+mixed                  seed=4 net=360739.19999999995 pilots=15 negative=8 valid=True
+mixed                  seed=5 net=360419.19999999995 pilots=16 negative=9 valid=True
+mixed                  seed=6 net=361059.19999999995 pilots=14 negative=8 valid=True
+mixed                  seed=7 net=361379.19999999995 pilots=13 negative=9 valid=True
+mixed                  seed=8 net=360419.19999999995 pilots=16 negative=8 valid=True
+mixed                  seed=9 net=360419.19999999995 pilots=16 negative=7 valid=True
+rare_good              seed=0 net=-232069.22000000003 pilots=12 negative=11 valid=True
+rare_good              seed=1 net=-232069.22000000003 pilots=12 negative=11 valid=True
+rare_good              seed=2 net=-232709.22000000003 pilots=14 negative=11 valid=True
+rare_good              seed=3 net=-232069.22000000003 pilots=12 negative=10 valid=True
+rare_good              seed=4 net=-233029.22000000003 pilots=15 negative=11 valid=True
+rare_good              seed=5 net=-232709.22000000003 pilots=14 negative=11 valid=True
+rare_good              seed=6 net=-240346.73 pilots=14 negative=10 valid=True
+rare_good              seed=7 net=-232389.22000000003 pilots=13 negative=11 valid=True
+rare_good              seed=8 net=-232709.22000000003 pilots=14 negative=12 valid=True
+rare_good              seed=9 net=-240026.73 pilots=13 negative=8 valid=True
+unlucky_noisy_pilots   seed=0 net=89245.5 pilots=17 negative=8 valid=True
+unlucky_noisy_pilots   seed=1 net=93284.51999999999 pilots=20 negative=7 valid=True
+unlucky_noisy_pilots   seed=2 net=90029.7025 pilots=15 negative=5 valid=True
+unlucky_noisy_pilots   seed=3 net=94244.51999999999 pilots=17 negative=7 valid=True
+unlucky_noisy_pilots   seed=4 net=46814.80000000001 pilots=17 negative=8 valid=True
+unlucky_noisy_pilots   seed=5 net=70741.82 pilots=17 negative=10 valid=True
+unlucky_noisy_pilots   seed=6 net=66062.80000000002 pilots=16 negative=8 valid=True
+unlucky_noisy_pilots   seed=7 net=94244.51999999999 pilots=17 negative=10 valid=True
+unlucky_noisy_pilots   seed=8 net=65422.80000000002 pilots=18 negative=9 valid=True
+unlucky_noisy_pilots   seed=9 net=94884.51999999999 pilots=15 negative=6 valid=True
+small_and_empty        seed=0 net=211112.3 pilots=1 negative=0 valid=True
+small_and_empty        seed=1 net=274180.7 pilots=1 negative=0 valid=True
+small_and_empty        seed=2 net=203436.23 pilots=1 negative=0 valid=True
+small_and_empty        seed=3 net=189886.38499999998 pilots=1 negative=1 valid=True
+small_and_empty        seed=4 net=211112.3 pilots=1 negative=0 valid=True
+small_and_empty        seed=5 net=183090.5 pilots=1 negative=0 valid=True
+small_and_empty        seed=6 net=274180.7 pilots=1 negative=0 valid=True
+small_and_empty        seed=7 net=274180.7 pilots=1 negative=0 valid=True
+small_and_empty        seed=8 net=183058.04 pilots=1 negative=0 valid=True
+small_and_empty        seed=9 net=274180.7 pilots=1 negative=0 valid=True
+{
+  "all_bad": {
+    "runs": 10,
+    "scored_runs": 10,
+    "positive_runs": 0,
+    "median_net": -325269.59,
+    "min_net": -325749.59,
+    "max_net": -324789.59,
+    "invalid_preflight_runs": 0,
+    "runs_with_negative_observed_pilots": 10
+  },
+  "mixed": {
+    "runs": 10,
+    "scored_runs": 10,
+    "positive_runs": 10,
+    "median_net": 361059.19999999995,
+    "min_net": 360419.19999999995,
+    "max_net": 361379.19999999995,
+    "invalid_preflight_runs": 0,
+    "runs_with_negative_observed_pilots": 10
+  },
+  "rare_good": {
+    "runs": 10,
+    "scored_runs": 10,
+    "positive_runs": 0,
+    "median_net": -232709.22000000003,
+    "min_net": -240346.73,
+    "max_net": -232069.22000000003,
+    "invalid_preflight_runs": 0,
+    "runs_with_negative_observed_pilots": 10
+  },
+  "unlucky_noisy_pilots": {
+    "runs": 10,
+    "scored_runs": 10,
+    "positive_runs": 10,
+    "median_net": 89637.60125,
+    "min_net": 46814.80000000001,
+    "max_net": 94884.51999999999,
+    "invalid_preflight_runs": 0,
+    "runs_with_negative_observed_pilots": 10
+  },
+  "small_and_empty": {
+    "runs": 10,
+    "scored_runs": 10,
+    "positive_runs": 10,
+    "median_net": 211112.3,
+    "min_net": 183058.04,
+    "max_net": 274180.7,
+    "invalid_preflight_runs": 0,
+    "runs_with_negative_observed_pilots": 1
+  }
+}

@@ -1,0 +1,2000 @@
+{
+  "negative_1": {
+    "profile_rows": 2780,
+    "profile_sha256": "e7a08eb9dd593c0305937eaf2b0406481ac30568fa44037ea1bd2b7a38dab0d7",
+    "model_sha256": "019e0bc0a78dc29202d7abc22189f0cbf63755f8ab1dac3896f05fe230554bd8",
+    "cells": [
+      {
+        "current_tariff": "tariff_1",
+        "arpu_segment": "HIGH",
+        "n": 400,
+        "arpu": 3607721.151778625
+      },
+      {
+        "current_tariff": "tariff_1",
+        "arpu_segment": "LOW",
+        "n": 60,
+        "arpu": 42039.44676683335
+      },
+      {
+        "current_tariff": "tariff_1",
+        "arpu_segment": "MID",
+        "n": 400,
+        "arpu": 1399671.8112661697
+      },
+      {
+        "current_tariff": "tariff_10",
+        "arpu_segment": "HIGH",
+        "n": 400,
+        "arpu": 3600181.479133948
+      },
+      {
+        "current_tariff": "tariff_10",
+        "arpu_segment": "LOW",
+        "n": 60,
+        "arpu": 42016.885098203195
+      },
+      {
+        "current_tariff": "tariff_10",
+        "arpu_segment": "MID",
+        "n": 400,
+        "arpu": 1401439.4841082497
+      },
+      {
+        "current_tariff": "tariff_4",
+        "arpu_segment": "HIGH",
+        "n": 400,
+        "arpu": 3598221.332792843
+      },
+      {
+        "current_tariff": "tariff_4",
+        "arpu_segment": "LOW",
+        "n": 240,
+        "arpu": 167881.55571031902
+      },
+      {
+        "current_tariff": "tariff_4",
+        "arpu_segment": "MID",
+        "n": 60,
+        "arpu": 211633.51491774953
+      },
+      {
+        "current_tariff": "tariff_8",
+        "arpu_segment": "HIGH",
+        "n": 240,
+        "arpu": 2162269.027109938
+      },
+      {
+        "current_tariff": "tariff_8",
+        "arpu_segment": "LOW",
+        "n": 60,
+        "arpu": 42142.369645352686
+      },
+      {
+        "current_tariff": "tariff_8",
+        "arpu_segment": "MID",
+        "n": 60,
+        "arpu": 209651.870744544
+      }
+    ],
+    "effects_harness_only": [
+      {
+        "tariff_plan_code_from": "tariff_1",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_4",
+        "arpu_change_pct": -0.22,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_1",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_8",
+        "arpu_change_pct": 0.12,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_1",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_10",
+        "arpu_change_pct": -0.22,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_1",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_4",
+        "arpu_change_pct": -0.22,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_1",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_8",
+        "arpu_change_pct": -0.22,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_1",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_10",
+        "arpu_change_pct": -0.22,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_1",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_4",
+        "arpu_change_pct": -0.22,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_1",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_8",
+        "arpu_change_pct": -0.22,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_1",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_10",
+        "arpu_change_pct": -0.22,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_4",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_1",
+        "arpu_change_pct": -0.22,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_4",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_8",
+        "arpu_change_pct": 0.12,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_4",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_10",
+        "arpu_change_pct": -0.22,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_4",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_1",
+        "arpu_change_pct": -0.22,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_4",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_8",
+        "arpu_change_pct": -0.22,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_4",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_10",
+        "arpu_change_pct": -0.22,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_4",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_1",
+        "arpu_change_pct": -0.22,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_4",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_8",
+        "arpu_change_pct": -0.22,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_4",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_10",
+        "arpu_change_pct": -0.22,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_8",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_1",
+        "arpu_change_pct": -0.22,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_8",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_4",
+        "arpu_change_pct": -0.22,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_8",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_10",
+        "arpu_change_pct": -0.22,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_8",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_1",
+        "arpu_change_pct": -0.22,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_8",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_4",
+        "arpu_change_pct": -0.22,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_8",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_10",
+        "arpu_change_pct": -0.22,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_8",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_1",
+        "arpu_change_pct": -0.22,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_8",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_4",
+        "arpu_change_pct": -0.22,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_8",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_10",
+        "arpu_change_pct": -0.22,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_10",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_1",
+        "arpu_change_pct": -0.22,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_10",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_4",
+        "arpu_change_pct": -0.22,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_10",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_8",
+        "arpu_change_pct": -0.22,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_10",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_1",
+        "arpu_change_pct": -0.22,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_10",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_4",
+        "arpu_change_pct": -0.22,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_10",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_8",
+        "arpu_change_pct": -0.22,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_10",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_1",
+        "arpu_change_pct": -0.22,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_10",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_4",
+        "arpu_change_pct": -0.22,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_10",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_8",
+        "arpu_change_pct": -0.22,
+        "conversion_rate": 0.8
+      }
+    ]
+  },
+  "negative_2": {
+    "profile_rows": 2720,
+    "profile_sha256": "67264e2c7bf2856de17bb04fe96c58780d0b74af3631efcb4dde09553e00002a",
+    "model_sha256": "790bba6afaf00f5d4b1a0553a776ac04e8fc8ff27c18e3e15e8d13cc22b5c061",
+    "cells": [
+      {
+        "current_tariff": "tariff_1",
+        "arpu_segment": "HIGH",
+        "n": 400,
+        "arpu": 3604321.198869478
+      },
+      {
+        "current_tariff": "tariff_1",
+        "arpu_segment": "LOW",
+        "n": 60,
+        "arpu": 41966.8343430467
+      },
+      {
+        "current_tariff": "tariff_1",
+        "arpu_segment": "MID",
+        "n": 60,
+        "arpu": 210628.0507913302
+      },
+      {
+        "current_tariff": "tariff_10",
+        "arpu_segment": "HIGH",
+        "n": 60,
+        "arpu": 540594.4028635074
+      },
+      {
+        "current_tariff": "tariff_10",
+        "arpu_segment": "LOW",
+        "n": 120,
+        "arpu": 83813.50264258313
+      },
+      {
+        "current_tariff": "tariff_10",
+        "arpu_segment": "MID",
+        "n": 120,
+        "arpu": 420857.23840786074
+      },
+      {
+        "current_tariff": "tariff_4",
+        "arpu_segment": "HIGH",
+        "n": 400,
+        "arpu": 3603386.649505166
+      },
+      {
+        "current_tariff": "tariff_4",
+        "arpu_segment": "LOW",
+        "n": 60,
+        "arpu": 42138.37858947166
+      },
+      {
+        "current_tariff": "tariff_4",
+        "arpu_segment": "MID",
+        "n": 400,
+        "arpu": 1399394.2110653454
+      },
+      {
+        "current_tariff": "tariff_8",
+        "arpu_segment": "HIGH",
+        "n": 400,
+        "arpu": 3595178.4255807176
+      },
+      {
+        "current_tariff": "tariff_8",
+        "arpu_segment": "LOW",
+        "n": 240,
+        "arpu": 168161.25955122308
+      },
+      {
+        "current_tariff": "tariff_8",
+        "arpu_segment": "MID",
+        "n": 400,
+        "arpu": 1399328.8551162174
+      }
+    ],
+    "effects_harness_only": [
+      {
+        "tariff_plan_code_from": "tariff_1",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_4",
+        "arpu_change_pct": -0.12,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_1",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_8",
+        "arpu_change_pct": -0.12,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_1",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_10",
+        "arpu_change_pct": -0.12,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_1",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_4",
+        "arpu_change_pct": -0.12,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_1",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_8",
+        "arpu_change_pct": -0.12,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_1",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_10",
+        "arpu_change_pct": 0.25,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_1",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_4",
+        "arpu_change_pct": -0.12,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_1",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_8",
+        "arpu_change_pct": -0.12,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_1",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_10",
+        "arpu_change_pct": -0.12,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_4",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_1",
+        "arpu_change_pct": -0.12,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_4",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_8",
+        "arpu_change_pct": -0.12,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_4",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_10",
+        "arpu_change_pct": -0.12,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_4",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_1",
+        "arpu_change_pct": -0.12,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_4",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_8",
+        "arpu_change_pct": -0.12,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_4",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_10",
+        "arpu_change_pct": -0.12,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_4",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_1",
+        "arpu_change_pct": -0.12,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_4",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_8",
+        "arpu_change_pct": -0.12,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_4",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_10",
+        "arpu_change_pct": -0.12,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_8",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_1",
+        "arpu_change_pct": -0.12,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_8",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_4",
+        "arpu_change_pct": -0.12,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_8",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_10",
+        "arpu_change_pct": -0.12,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_8",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_1",
+        "arpu_change_pct": -0.12,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_8",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_4",
+        "arpu_change_pct": -0.12,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_8",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_10",
+        "arpu_change_pct": -0.12,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_8",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_1",
+        "arpu_change_pct": -0.12,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_8",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_4",
+        "arpu_change_pct": -0.12,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_8",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_10",
+        "arpu_change_pct": -0.12,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_10",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_1",
+        "arpu_change_pct": -0.12,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_10",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_4",
+        "arpu_change_pct": -0.12,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_10",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_8",
+        "arpu_change_pct": -0.12,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_10",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_1",
+        "arpu_change_pct": 0.25,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_10",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_4",
+        "arpu_change_pct": -0.12,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_10",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_8",
+        "arpu_change_pct": -0.12,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_10",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_1",
+        "arpu_change_pct": -0.12,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_10",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_4",
+        "arpu_change_pct": -0.12,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_10",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_8",
+        "arpu_change_pct": -0.12,
+        "conversion_rate": 0.6
+      }
+    ]
+  },
+  "mixed_1": {
+    "profile_rows": 2180,
+    "profile_sha256": "2d1048b2b163e9186cee2f0fef1b3e241664ba91b44b93674168dac25dd2e594",
+    "model_sha256": "c98615663ea4710cca4cbe51eb227bbd6158daad47d05a04931e2d9637ca72fe",
+    "cells": [
+      {
+        "current_tariff": "tariff_1",
+        "arpu_segment": "HIGH",
+        "n": 60,
+        "arpu": 538597.4835524124
+      },
+      {
+        "current_tariff": "tariff_1",
+        "arpu_segment": "LOW",
+        "n": 240,
+        "arpu": 167889.98983071194
+      },
+      {
+        "current_tariff": "tariff_1",
+        "arpu_segment": "MID",
+        "n": 120,
+        "arpu": 419810.0792273003
+      },
+      {
+        "current_tariff": "tariff_10",
+        "arpu_segment": "HIGH",
+        "n": 400,
+        "arpu": 3603146.880082636
+      },
+      {
+        "current_tariff": "tariff_10",
+        "arpu_segment": "LOW",
+        "n": 60,
+        "arpu": 42085.98349252761
+      },
+      {
+        "current_tariff": "tariff_10",
+        "arpu_segment": "MID",
+        "n": 60,
+        "arpu": 210128.4734685985
+      },
+      {
+        "current_tariff": "tariff_4",
+        "arpu_segment": "HIGH",
+        "n": 400,
+        "arpu": 3600431.371885606
+      },
+      {
+        "current_tariff": "tariff_4",
+        "arpu_segment": "LOW",
+        "n": 240,
+        "arpu": 167741.51406027869
+      },
+      {
+        "current_tariff": "tariff_4",
+        "arpu_segment": "MID",
+        "n": 120,
+        "arpu": 421273.12145455217
+      },
+      {
+        "current_tariff": "tariff_8",
+        "arpu_segment": "HIGH",
+        "n": 120,
+        "arpu": 1080215.5264512978
+      },
+      {
+        "current_tariff": "tariff_8",
+        "arpu_segment": "LOW",
+        "n": 120,
+        "arpu": 83755.2189381568
+      },
+      {
+        "current_tariff": "tariff_8",
+        "arpu_segment": "MID",
+        "n": 240,
+        "arpu": 839693.4951476133
+      }
+    ],
+    "effects_harness_only": [
+      {
+        "tariff_plan_code_from": "tariff_1",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_4",
+        "arpu_change_pct": 0.35,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_1",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_8",
+        "arpu_change_pct": -0.12,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_1",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_10",
+        "arpu_change_pct": 0.35,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_1",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_4",
+        "arpu_change_pct": -0.12,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_1",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_8",
+        "arpu_change_pct": -0.12,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_1",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_10",
+        "arpu_change_pct": -0.12,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_1",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_4",
+        "arpu_change_pct": -0.12,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_1",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_8",
+        "arpu_change_pct": 0.35,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_1",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_10",
+        "arpu_change_pct": -0.12,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_4",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_1",
+        "arpu_change_pct": 0.35,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_4",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_8",
+        "arpu_change_pct": -0.12,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_4",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_10",
+        "arpu_change_pct": 0.35,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_4",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_1",
+        "arpu_change_pct": -0.12,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_4",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_8",
+        "arpu_change_pct": -0.12,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_4",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_10",
+        "arpu_change_pct": -0.12,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_4",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_1",
+        "arpu_change_pct": -0.12,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_4",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_8",
+        "arpu_change_pct": -0.12,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_4",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_10",
+        "arpu_change_pct": 0.35,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_8",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_1",
+        "arpu_change_pct": 0.35,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_8",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_4",
+        "arpu_change_pct": -0.12,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_8",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_10",
+        "arpu_change_pct": -0.12,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_8",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_1",
+        "arpu_change_pct": -0.12,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_8",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_4",
+        "arpu_change_pct": -0.12,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_8",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_10",
+        "arpu_change_pct": -0.12,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_8",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_1",
+        "arpu_change_pct": -0.12,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_8",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_4",
+        "arpu_change_pct": -0.12,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_8",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_10",
+        "arpu_change_pct": 0.35,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_10",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_1",
+        "arpu_change_pct": -0.12,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_10",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_4",
+        "arpu_change_pct": -0.12,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_10",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_8",
+        "arpu_change_pct": 0.35,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_10",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_1",
+        "arpu_change_pct": 0.35,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_10",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_4",
+        "arpu_change_pct": -0.12,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_10",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_8",
+        "arpu_change_pct": 0.35,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_10",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_1",
+        "arpu_change_pct": 0.35,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_10",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_4",
+        "arpu_change_pct": -0.12,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_10",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_8",
+        "arpu_change_pct": -0.12,
+        "conversion_rate": 0.8
+      }
+    ]
+  },
+  "mixed_2": {
+    "profile_rows": 2500,
+    "profile_sha256": "e925621d3dc94fdb2f6c7a04718f88a0496a1a6cb3953a4a631d2b4401802b95",
+    "model_sha256": "a1a1975f38b0317bb59f5a2c6d965e0fbba92c73adf2f1e31c297c8c42dc596c",
+    "cells": [
+      {
+        "current_tariff": "tariff_1",
+        "arpu_segment": "HIGH",
+        "n": 60,
+        "arpu": 538126.6640839914
+      },
+      {
+        "current_tariff": "tariff_1",
+        "arpu_segment": "LOW",
+        "n": 120,
+        "arpu": 84178.68481516554
+      },
+      {
+        "current_tariff": "tariff_1",
+        "arpu_segment": "MID",
+        "n": 120,
+        "arpu": 418777.7545246783
+      },
+      {
+        "current_tariff": "tariff_10",
+        "arpu_segment": "HIGH",
+        "n": 400,
+        "arpu": 3600512.2672452466
+      },
+      {
+        "current_tariff": "tariff_10",
+        "arpu_segment": "LOW",
+        "n": 60,
+        "arpu": 41715.703233445034
+      },
+      {
+        "current_tariff": "tariff_10",
+        "arpu_segment": "MID",
+        "n": 60,
+        "arpu": 210096.81654324153
+      },
+      {
+        "current_tariff": "tariff_4",
+        "arpu_segment": "HIGH",
+        "n": 240,
+        "arpu": 2154508.281027218
+      },
+      {
+        "current_tariff": "tariff_4",
+        "arpu_segment": "LOW",
+        "n": 120,
+        "arpu": 84152.61451151948
+      },
+      {
+        "current_tariff": "tariff_4",
+        "arpu_segment": "MID",
+        "n": 400,
+        "arpu": 1402639.6457540882
+      },
+      {
+        "current_tariff": "tariff_8",
+        "arpu_segment": "HIGH",
+        "n": 400,
+        "arpu": 3596498.466824353
+      },
+      {
+        "current_tariff": "tariff_8",
+        "arpu_segment": "LOW",
+        "n": 120,
+        "arpu": 84184.31487956386
+      },
+      {
+        "current_tariff": "tariff_8",
+        "arpu_segment": "MID",
+        "n": 400,
+        "arpu": 1403566.8351746474
+      }
+    ],
+    "effects_harness_only": [
+      {
+        "tariff_plan_code_from": "tariff_1",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_4",
+        "arpu_change_pct": 0.22,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_1",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_8",
+        "arpu_change_pct": -0.2,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_1",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_10",
+        "arpu_change_pct": -0.2,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_1",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_4",
+        "arpu_change_pct": -0.2,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_1",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_8",
+        "arpu_change_pct": -0.2,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_1",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_10",
+        "arpu_change_pct": 0.22,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_1",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_4",
+        "arpu_change_pct": 0.22,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_1",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_8",
+        "arpu_change_pct": -0.2,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_1",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_10",
+        "arpu_change_pct": -0.2,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_4",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_1",
+        "arpu_change_pct": -0.2,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_4",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_8",
+        "arpu_change_pct": -0.2,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_4",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_10",
+        "arpu_change_pct": -0.2,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_4",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_1",
+        "arpu_change_pct": 0.22,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_4",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_8",
+        "arpu_change_pct": 0.22,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_4",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_10",
+        "arpu_change_pct": -0.2,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_4",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_1",
+        "arpu_change_pct": -0.2,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_4",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_8",
+        "arpu_change_pct": -0.2,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_4",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_10",
+        "arpu_change_pct": -0.2,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_8",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_1",
+        "arpu_change_pct": -0.2,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_8",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_4",
+        "arpu_change_pct": -0.2,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_8",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_10",
+        "arpu_change_pct": -0.2,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_8",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_1",
+        "arpu_change_pct": -0.2,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_8",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_4",
+        "arpu_change_pct": 0.22,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_8",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_10",
+        "arpu_change_pct": 0.22,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_8",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_1",
+        "arpu_change_pct": -0.2,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_8",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_4",
+        "arpu_change_pct": -0.2,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_8",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_10",
+        "arpu_change_pct": -0.2,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_10",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_1",
+        "arpu_change_pct": -0.2,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_10",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_4",
+        "arpu_change_pct": 0.22,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_10",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_8",
+        "arpu_change_pct": 0.22,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_10",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_1",
+        "arpu_change_pct": -0.2,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_10",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_4",
+        "arpu_change_pct": -0.2,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_10",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_8",
+        "arpu_change_pct": 0.22,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_10",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_1",
+        "arpu_change_pct": -0.2,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_10",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_4",
+        "arpu_change_pct": 0.22,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_10",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_8",
+        "arpu_change_pct": 0.22,
+        "conversion_rate": 0.6
+      }
+    ]
+  },
+  "rare_1": {
+    "profile_rows": 1278,
+    "profile_sha256": "a5ca706310821914287e810ec5f6462f3bbd5064433b9e96e2275774a525fca8",
+    "model_sha256": "561d92047dfbcc46a51f813c6b31e4ea0508b91c732804f836c4907e1e16f4a5",
+    "cells": [
+      {
+        "current_tariff": "tariff_1",
+        "arpu_segment": "HIGH",
+        "n": 60,
+        "arpu": 538688.1911465029
+      },
+      {
+        "current_tariff": "tariff_1",
+        "arpu_segment": "LOW",
+        "n": 240,
+        "arpu": 167363.66444229434
+      },
+      {
+        "current_tariff": "tariff_1",
+        "arpu_segment": "MID",
+        "n": 240,
+        "arpu": 840760.1434718209
+      },
+      {
+        "current_tariff": "tariff_10",
+        "arpu_segment": "HIGH",
+        "n": 120,
+        "arpu": 1075572.1267716184
+      },
+      {
+        "current_tariff": "tariff_10",
+        "arpu_segment": "LOW",
+        "n": 120,
+        "arpu": 83954.04731078024
+      },
+      {
+        "current_tariff": "tariff_10",
+        "arpu_segment": "MID",
+        "n": 18,
+        "arpu": 62263.04995052574
+      },
+      {
+        "current_tariff": "tariff_4",
+        "arpu_segment": "HIGH",
+        "n": 60,
+        "arpu": 540741.0535743962
+      },
+      {
+        "current_tariff": "tariff_4",
+        "arpu_segment": "LOW",
+        "n": 120,
+        "arpu": 83872.6288975325
+      },
+      {
+        "current_tariff": "tariff_4",
+        "arpu_segment": "MID",
+        "n": 60,
+        "arpu": 209790.25522360893
+      },
+      {
+        "current_tariff": "tariff_8",
+        "arpu_segment": "HIGH",
+        "n": 60,
+        "arpu": 540965.3782327006
+      },
+      {
+        "current_tariff": "tariff_8",
+        "arpu_segment": "LOW",
+        "n": 60,
+        "arpu": 42088.36321099381
+      },
+      {
+        "current_tariff": "tariff_8",
+        "arpu_segment": "MID",
+        "n": 120,
+        "arpu": 417929.4318957666
+      }
+    ],
+    "effects_harness_only": [
+      {
+        "tariff_plan_code_from": "tariff_1",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_4",
+        "arpu_change_pct": -0.16,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_1",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_8",
+        "arpu_change_pct": -0.16,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_1",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_10",
+        "arpu_change_pct": -0.16,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_1",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_4",
+        "arpu_change_pct": -0.16,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_1",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_8",
+        "arpu_change_pct": -0.16,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_1",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_10",
+        "arpu_change_pct": -0.16,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_1",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_4",
+        "arpu_change_pct": -0.16,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_1",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_8",
+        "arpu_change_pct": -0.16,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_1",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_10",
+        "arpu_change_pct": -0.16,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_4",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_1",
+        "arpu_change_pct": -0.16,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_4",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_8",
+        "arpu_change_pct": -0.16,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_4",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_10",
+        "arpu_change_pct": -0.16,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_4",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_1",
+        "arpu_change_pct": -0.16,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_4",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_8",
+        "arpu_change_pct": -0.16,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_4",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_10",
+        "arpu_change_pct": -0.16,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_4",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_1",
+        "arpu_change_pct": -0.16,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_4",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_8",
+        "arpu_change_pct": -0.16,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_4",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_10",
+        "arpu_change_pct": -0.16,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_8",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_1",
+        "arpu_change_pct": -0.16,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_8",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_4",
+        "arpu_change_pct": -0.16,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_8",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_10",
+        "arpu_change_pct": -0.16,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_8",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_1",
+        "arpu_change_pct": -0.16,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_8",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_4",
+        "arpu_change_pct": -0.16,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_8",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_10",
+        "arpu_change_pct": -0.16,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_8",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_1",
+        "arpu_change_pct": -0.16,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_8",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_4",
+        "arpu_change_pct": -0.16,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_8",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_10",
+        "arpu_change_pct": -0.16,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_10",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_1",
+        "arpu_change_pct": -0.16,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_10",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_4",
+        "arpu_change_pct": -0.16,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_10",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_8",
+        "arpu_change_pct": -0.16,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_10",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_1",
+        "arpu_change_pct": -0.16,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_10",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_4",
+        "arpu_change_pct": 1.0,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_10",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_8",
+        "arpu_change_pct": -0.16,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_10",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_1",
+        "arpu_change_pct": -0.16,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_10",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_4",
+        "arpu_change_pct": -0.16,
+        "conversion_rate": 0.8
+      },
+      {
+        "tariff_plan_code_from": "tariff_10",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_8",
+        "arpu_change_pct": -0.16,
+        "conversion_rate": 0.8
+      }
+    ]
+  },
+  "rare_2": {
+    "profile_rows": 2496,
+    "profile_sha256": "a690c7443a03b9c0a859de703aa690c81988e00cc211d65a35bbf3971df4bb83",
+    "model_sha256": "2d9e9360f95a6a3870e7d8ae7f69fb4ee3af4db1cae6bff94e59f25ec15bd787",
+    "cells": [
+      {
+        "current_tariff": "tariff_1",
+        "arpu_segment": "HIGH",
+        "n": 240,
+        "arpu": 2156934.1665988485
+      },
+      {
+        "current_tariff": "tariff_1",
+        "arpu_segment": "LOW",
+        "n": 240,
+        "arpu": 168222.8407880481
+      },
+      {
+        "current_tariff": "tariff_1",
+        "arpu_segment": "MID",
+        "n": 60,
+        "arpu": 209150.5611215091
+      },
+      {
+        "current_tariff": "tariff_10",
+        "arpu_segment": "HIGH",
+        "n": 60,
+        "arpu": 538985.2333778545
+      },
+      {
+        "current_tariff": "tariff_10",
+        "arpu_segment": "LOW",
+        "n": 120,
+        "arpu": 83846.90201030186
+      },
+      {
+        "current_tariff": "tariff_10",
+        "arpu_segment": "MID",
+        "n": 60,
+        "arpu": 209883.96721205025
+      },
+      {
+        "current_tariff": "tariff_4",
+        "arpu_segment": "HIGH",
+        "n": 400,
+        "arpu": 3600299.4658680367
+      },
+      {
+        "current_tariff": "tariff_4",
+        "arpu_segment": "LOW",
+        "n": 400,
+        "arpu": 280399.5616699792
+      },
+      {
+        "current_tariff": "tariff_4",
+        "arpu_segment": "MID",
+        "n": 240,
+        "arpu": 840519.5439348771
+      },
+      {
+        "current_tariff": "tariff_8",
+        "arpu_segment": "HIGH",
+        "n": 240,
+        "arpu": 2154491.880990089
+      },
+      {
+        "current_tariff": "tariff_8",
+        "arpu_segment": "LOW",
+        "n": 36,
+        "arpu": 25185.220620703487
+      },
+      {
+        "current_tariff": "tariff_8",
+        "arpu_segment": "MID",
+        "n": 400,
+        "arpu": 1400944.6703793455
+      }
+    ],
+    "effects_harness_only": [
+      {
+        "tariff_plan_code_from": "tariff_1",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_4",
+        "arpu_change_pct": -0.08,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_1",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_8",
+        "arpu_change_pct": -0.08,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_1",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_10",
+        "arpu_change_pct": -0.08,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_1",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_4",
+        "arpu_change_pct": -0.08,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_1",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_8",
+        "arpu_change_pct": -0.08,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_1",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_10",
+        "arpu_change_pct": -0.08,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_1",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_4",
+        "arpu_change_pct": -0.08,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_1",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_8",
+        "arpu_change_pct": -0.08,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_1",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_10",
+        "arpu_change_pct": -0.08,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_4",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_1",
+        "arpu_change_pct": -0.08,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_4",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_8",
+        "arpu_change_pct": -0.08,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_4",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_10",
+        "arpu_change_pct": -0.08,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_4",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_1",
+        "arpu_change_pct": -0.08,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_4",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_8",
+        "arpu_change_pct": -0.08,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_4",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_10",
+        "arpu_change_pct": -0.08,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_4",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_1",
+        "arpu_change_pct": -0.08,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_4",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_8",
+        "arpu_change_pct": -0.08,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_4",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_10",
+        "arpu_change_pct": -0.08,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_8",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_1",
+        "arpu_change_pct": -0.08,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_8",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_4",
+        "arpu_change_pct": 0.7,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_8",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_10",
+        "arpu_change_pct": -0.08,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_8",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_1",
+        "arpu_change_pct": -0.08,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_8",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_4",
+        "arpu_change_pct": -0.08,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_8",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_10",
+        "arpu_change_pct": -0.08,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_8",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_1",
+        "arpu_change_pct": -0.08,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_8",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_4",
+        "arpu_change_pct": -0.08,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_8",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_10",
+        "arpu_change_pct": -0.08,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_10",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_1",
+        "arpu_change_pct": -0.08,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_10",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_4",
+        "arpu_change_pct": -0.08,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_10",
+        "arpu_segment": "LOW",
+        "tariff_plan_code_to": "tariff_8",
+        "arpu_change_pct": -0.08,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_10",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_1",
+        "arpu_change_pct": -0.08,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_10",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_4",
+        "arpu_change_pct": -0.08,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_10",
+        "arpu_segment": "MID",
+        "tariff_plan_code_to": "tariff_8",
+        "arpu_change_pct": -0.08,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_10",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_1",
+        "arpu_change_pct": -0.08,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_10",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_4",
+        "arpu_change_pct": -0.08,
+        "conversion_rate": 0.6
+      },
+      {
+        "tariff_plan_code_from": "tariff_10",
+        "arpu_segment": "HIGH",
+        "tariff_plan_code_to": "tariff_8",
+        "arpu_change_pct": -0.08,
+        "conversion_rate": 0.6
+      }
+    ]
+  }
+}

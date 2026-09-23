@@ -1,0 +1,54 @@
+{
+  "source": "reports/benchmark_review_agent.json",
+  "reproduced": "dev_baseline_mock.json",
+  "fields": [
+    "net_arpu_gain",
+    "total_cost",
+    "total_contacts",
+    "n_final_campaigns",
+    "n_pilots",
+    "preflight_valid"
+  ],
+  "checks": [
+    {
+      "seed": 0,
+      "matches": true
+    },
+    {
+      "seed": 1,
+      "matches": true
+    },
+    {
+      "seed": 2,
+      "matches": true
+    },
+    {
+      "seed": 3,
+      "matches": true
+    },
+    {
+      "seed": 4,
+      "matches": true
+    },
+    {
+      "seed": 5,
+      "matches": true
+    },
+    {
+      "seed": 6,
+      "matches": true
+    },
+    {
+      "seed": 7,
+      "matches": true
+    },
+    {
+      "seed": 8,
+      "matches": true
+    },
+    {
+      "seed": 9,
+      "matches": true
+    }
+  ]
+}

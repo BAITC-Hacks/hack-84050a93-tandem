@@ -1,0 +1,36 @@
+seed=  30 status=ok          net=  1,545,234.39 final=7 pilots=20 seconds=1.60
+seed=  31 status=ok          net=  1,618,234.16 final=7 pilots=20 seconds=1.57
+seed=  32 status=ok          net=  1,252,816.91 final=3 pilots=20 seconds=1.55
+seed=  33 status=ok          net=  1,534,757.45 final=3 pilots=19 seconds=1.51
+seed=  34 status=ok          net=  1,559,144.15 final=10 pilots=20 seconds=1.59
+seed=  35 status=ok          net=  1,192,034.50 final=3 pilots=19 seconds=1.46
+seed=  36 status=ok          net=  1,604,102.26 final=6 pilots=20 seconds=1.52
+seed=  37 status=ok          net=  1,170,671.01 final=3 pilots=17 seconds=1.50
+seed=  38 status=ok          net=  1,593,120.60 final=7 pilots=20 seconds=1.56
+seed=  39 status=ok          net=  1,537,603.67 final=3 pilots=20 seconds=1.49
+seed=  40 status=ok          net=  1,583,323.19 final=4 pilots=19 seconds=1.54
+seed=  41 status=ok          net=  1,039,956.03 final=5 pilots=20 seconds=1.56
+seed=  42 status=ok          net=  1,277,117.46 final=3 pilots=20 seconds=1.49
+seed=  43 status=ok          net=  1,087,743.85 final=3 pilots=20 seconds=1.63
+seed=  44 status=ok          net=  1,235,540.74 final=9 pilots=20 seconds=1.67
+seed=  45 status=ok          net=  1,108,187.00 final=4 pilots=19 seconds=1.51
+seed=  46 status=ok          net=  1,580,058.82 final=4 pilots=19 seconds=1.51
+seed=  47 status=ok          net=    981,824.28 final=9 pilots=20 seconds=1.62
+seed=  48 status=ok          net=  1,057,312.62 final=7 pilots=20 seconds=1.67
+seed=  49 status=ok          net=  1,141,791.73 final=10 pilots=20 seconds=1.70
+{
+  "runs": 20,
+  "scored_runs": 20,
+  "successful_runs": 20,
+  "failed_runs": 0,
+  "timeouts": 0,
+  "invalid_plan_runs": 0,
+  "valid_positive_runs": 20,
+  "positive_runs": 20,
+  "positive_rate_all_runs": 1.0,
+  "median_net": 1264967.1809519792,
+  "min_net": 981824.2773362731,
+  "max_net": 1618234.1633281023,
+  "deterministic_submission_seed42": true
+}
+wrote C:\Users\era\Documents\Codex\2026-09-23\new-chat-2\work\pilot-research\reports\pilot_research\holdout_baseline_mock.json and C:\Users\era\Documents\Codex\2026-09-23\new-chat-2\work\pilot-research\reports\pilot_research\holdout_baseline_mock.csv
