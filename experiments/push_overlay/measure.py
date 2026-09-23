@@ -75,7 +75,7 @@ def evaluate(spec, scenario, seed):
     audiences = [set(apply_filters(env.customer_profile, row).ID_NUMBER.tolist()) for row in final]
     details = dict(status="ok" if validation["valid"] and not dropped and not capped else "invalid_plan",
                    net=net, total_contacts=result["total_contacts"], total_cost=result["total_cost"],
-                   unique_customers=result["unique_customers"], campaigns=len(final),
+                   unique_customers=result["unique_customers_targeted"], campaigns=len(final),
                    pilots=len(pilots), dropped=dropped, capped=capped, preflight=validation,
                    agent_seconds=elapsed, raw_final=raw, trace=agent.last_trace,
                    pilot_history_sha256=fingerprint(env.pilot_history),

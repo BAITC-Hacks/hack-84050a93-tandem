@@ -1,0 +1,15 @@
+{
+  "status": "invalid_measurement",
+  "source_sha": "5f9a684",
+  "attempts_retained": 33,
+  "reason": "Measurement runner requested unique_customers; official scorer returns unique_customers_targeted. No valid paired scores were recorded. Interrupted after repeated identical runner errors. Candidate unchanged; rerun uses new output name.",
+  "raw_log": "development.jsonl",
+  "policy_sha256_lf": "321e8096b880e356c0c229a48305a9648f89e6d9662aa62777fa2b1a1ff38770",
+  "full_tests": {
+    "passed": 60,
+    "seconds": 9.6,
+    "stdout": "tests_stdout.txt",
+    "stderr": "tests_stderr.txt"
+  },
+  "environment_note": "pytest and its dev dependencies were installed in .venv during setup; numeric runtime versions unchanged. Full tests used separate work/beeline-runtime environment."
+}
