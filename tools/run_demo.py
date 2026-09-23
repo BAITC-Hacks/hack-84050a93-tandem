@@ -47,6 +47,7 @@ def write_status(directory, status):
 def input_snapshot():
     names = expected_manifest_names("source_sha256") | expected_manifest_names("input_sha256")
     names |= {"tools/run_demo.py", "tools/render_decision_report.py",
+              "tools/channel_explanations.py",
               "reporting/decision_report.template.html"}
     return {name: sha256(ROOT / name) for name in sorted(names)}
 
@@ -63,6 +64,7 @@ def run_pipeline(output_root=DEFAULT_OUTPUT, timeout=300):
         raise ValueError("Missing dependencies: " + ", ".join(missing)
                          + ". Install requirements.txt with the same Python interpreter.")
     for path in (ROOT / "tools/export_strategy.py", ROOT / "tools/render_decision_report.py",
+                 ROOT / "tools/channel_explanations.py",
                  ROOT / "reporting/decision_report.template.html"):
         if not path.is_file():
             raise ValueError(f"Required project file is missing: {path.relative_to(ROOT)}")
@@ -141,6 +143,7 @@ def run_pipeline(output_root=DEFAULT_OUTPUT, timeout=300):
         status["presentation_source_sha256"] = {
             path.relative_to(ROOT).as_posix(): sha256(path)
             for path in (Path(__file__).resolve(), ROOT / "tools/render_decision_report.py",
+                         ROOT / "tools/channel_explanations.py",
                          ROOT / "reporting/decision_report.template.html")
         }
         status["hash_format"] = "sha256-text-lf-v1"

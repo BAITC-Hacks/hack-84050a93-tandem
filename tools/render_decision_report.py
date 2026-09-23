@@ -1,7 +1,8 @@
 """Render a standalone report from saved evidence, without rerunning the agent.
 
 Checksums and recorded preflight totals are checked before any output is written.
-This is an integrity check of a saved run, not a new audience or runtime check.
+Selected audience totals and channel estimates are reconstructed from the saved
+observations and public profile. The agent itself is not rerun.
 """
 
 import argparse
@@ -14,6 +15,11 @@ import os
 from pathlib import Path, PurePosixPath
 import re
 import tempfile
+
+if __package__:
+    from .channel_explanations import build_channel_explanations
+else:
+    from channel_explanations import build_channel_explanations
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -276,6 +282,7 @@ def load_payload(trace_path, submission_path):
         "trace": trace,
         "trace_json": trace_text,
         "csv": csv_text,
+        "channel_alternatives": build_channel_explanations(trace, ROOT / "customer_profile.csv"),
         "integrity": {
             "source_files": len(source_paths), "input_files": len(input_paths),
             "submission_sha256": submission_hash, "trace_sha256": digest(trace_bytes),
