@@ -1,5 +1,9 @@
 # Независимая валидация и benchmark
 
+Сначала создайте окружение по [README](../README.md). Все команды ниже
+выполняются из корня проекта в Windows PowerShell; на Linux/macOS замените
+`.venv\Scripts\python.exe` на `.venv/bin/python`.
+
 ## Preflight финального плана
 
 Публичная функция:
@@ -25,30 +29,28 @@ report = validate_plan(
 
 Тесты используют только маленькие синтетические DataFrame и не требуют API:
 
-```bash
-python -m pip install -r requirements-dev.txt
-python -m pytest -q
+```powershell
+.venv\Scripts\python.exe -m pip install -r requirements-dev.txt
+.venv\Scripts\python.exe -m pytest -q
 ```
 
 ## Воспроизводимый benchmark
 
 Шаблон организатора:
 
-```bash
-python tools/benchmark.py \
-  --agent agent_template:Agent \
-  --seeds 0:10 \
-  --out reports/benchmark_template.json
+```powershell
+.venv\Scripts\python.exe tools/benchmark.py --agent agent_template:Agent --seeds 0:10 --out reports/rerun_validation_template.json
 ```
 
 Текущий агент команды:
 
-```bash
-python tools/benchmark.py \
-  --agent agent:Agent \
-  --seeds 0:10 \
-  --out reports/benchmark_agent.json
+```powershell
+.venv\Scripts\python.exe tools/benchmark.py --agent agent:Agent --seeds 0:10 --out reports/rerun_validation_agent.json
 ```
+
+Новые имена отделяют повторный расчёт от сохранённых исторических измерений.
+Для следующего повторения выберите новый суффикс: существующий выходной
+отчёт по указанному пути будет заменён.
 
 `0:10` означает seed 0–9. Для каждого прогона инструмент запускает официальный `local_eval.evaluate_agent` в отдельном процессе и сохраняет seed, net, расходы, контакты, уникальный охват, количество пилотов и финальных кампаний, время, исключение, timeout и число отброшенных скорером кампаний. `--timeout` по умолчанию равен 300 секундам на прогон. Ошибки и timeout остаются в знаменателе `runs` и `positive_rate_all_runs`.
 
@@ -77,11 +79,15 @@ python tools/benchmark.py \
 
 Отдельный harness создаёт собственные профили и модели эффекта внутри замыкания `make_environment`; агент получает только публичный интерфейс:
 
-```bash
-python tools/stress_benchmark.py --agent agent:Agent --seeds 0:5 \
-  --out reports/benchmark_stress.json
+```powershell
+.venv\Scripts\python.exe tools/stress_benchmark.py --agent agent:Agent --seeds 0:5 --out reports/rerun_validation_stress.json
 ```
 
 Сценарии явно помечены как искусственные: все эффекты отрицательны; смесь хороших и плохих; редкий хороший сегмент; слабый сигнал с неудачными шумными пилотами; малые, пропущенные и пустые ячейки. Они не имитируют и не раскрывают скрытые тесты организатора.
 
-На зафиксированном запуске текущий агент соблюдал preflight во всех 25 попытках. Он был положительным 5/5 в mixed, low-signal noisy и small/empty сценариях, отрицательным 5/5 при всех плохих эффектах и 5/5 в сценарии с редким хорошим сегментом. Отрицательный итог не доказывает, что сегмент не был обнаружен: это требует анализа журнала действий. Все результаты сохранены в отчёте.
+В [сохранённой серии на `acf89ab`](../reports/benchmark_review_stress.json)
+агент соблюдал preflight во всех 25 попытках. Он был положительным 5/5 в mixed,
+low-signal noisy и small/empty сценариях, отрицательным 5/5 при всех плохих
+эффектах и 5/5 в сценарии с редким хорошим сегментом. Отрицательный итог
+не доказывает, что сегмент не был обнаружен: это требует анализа журнала действий.
+Полная привязка измерений к версиям — в [карте доказательств](evidence.md).

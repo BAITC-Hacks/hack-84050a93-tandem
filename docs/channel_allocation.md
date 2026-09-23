@@ -38,12 +38,17 @@
 В отчётах `current_*` означает экспериментальный кандидат, `reference_*` —
 исходный подбор. Эти названия не обозначают текущую production-версию.
 
-Повторение после изоляции кандидата:
+Повторение после изоляции кандидата, из корня проекта после установки
+окружения по [README](../README.md). Windows PowerShell:
 
-```bash
-python tools/compare_channels.py --seeds 0:10 --out reports/channel_development.json
-python tools/compare_channels.py --seeds 30:50 --out reports/channel_additional.json
+```powershell
+.venv\Scripts\python.exe tools/compare_channels.py --seeds 0:10 --out reports/rerun_channel_development.json
+.venv\Scripts\python.exe tools/compare_channels.py --seeds 30:50 --out reports/rerun_channel_additional.json
 ```
+
+На Linux/macOS используйте `.venv/bin/python`. Команды сохраняют новые
+измерения отдельно от исходных; при следующем повторении выберите новый
+суффикс, чтобы не перезаписать предыдущий результат.
 
 Эксперимент: `experiments/channel_allocation/optimizer.py`.
 Исходные измерения: `reports/channel_development.json`,
